@@ -7,234 +7,464 @@
 <html>
 <head>
 
-<!-- bootstrap 사용하기 위해 필요한 라이브러리 3개 로드 -->
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CelestialUI Admin</title>
+    <!-- base:css -->
+    <link rel="stylesheet" href="resources/vendors/typicons.font/font/typicons.css">
+    <link rel="stylesheet" href="resources/vendors/css/vendor.bundle.base.css">
+    <!-- endinject --> 
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="resources/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="resources/images/favicon.png" />
+<title>index</title>
 
-<!-- jQuery library -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
+	<div class="row" id="proBanner">
+      <div class="col-12">
+        <span class="d-flex align-items-center purchase-popup">
+          <p>Get tons of UI components, Plugins, multiple layouts, 20+ sample pages, and more!</p>
+          <a href="https://www.bootstrapdash.com/product/celestial-admin-template/?utm_source=organic&utm_medium=banner&utm_campaign=free-preview" target="_blank" class="btn download-button purchase-button ml-auto">Upgrade To Pro</a>
+          <i class="typcn typcn-delete-outline" id="bannerClose"></i>
+        </span>
+      </div>
+    </div>
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo" href="basic.jsp"><img src="resources/images/logo.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="basic.jsp"><img src="resources/images/logo-mini.svg" alt="logo"/></a>
+          <button class="navbar-toggler navbar-toggler align-self-center d-none d-lg-flex" type="button" data-toggle="minimize">
+            <span class="typcn typcn-th-menu"></span>
+          </button>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
 
-	<div class="container">
-	    <h2>jQuery+ajax활용하기</h2>
-		<div class="panel panel-default">
-			<div class="panel-heading">Spring MVC02 게시판</div>
-			<div class="panel-body">
-				<table class = "table table-bordered table-hover">
-					<tr class="heading">
-						<td>번호</td>
-						<td>제목</td>
-						<td>작성자</td>
-						<td>작성일</td>
-						<td>삭제</td>
-					</tr>
-					
-					<tr>
-							<td colspan="5">
-								<button onclick ="goInsert()" class="btn-success btn btn-sm">글쓰기</button>
-							</td>
-					</tr>
-					</table>
-					<div id="insertview" style="display:none">
-						<form id="frm">
-						  <div class="form-group">
-						    <label for="title">제목:</label>
-						    <input type="text" class="form-control" name="title" id="title">
-						  </div>
-						  <div class="form-group">
-						    <label for="writer">작성자:</label>
-						    <input type="text" class="form-control" name="writer" id="writer">
-						  </div>
-						  <div class="form-group">
-						    <label for="contents">내용:</label>
-						    <textarea rows = "10" class="form-control" name="contents" id="contents"></textarea>
-						  </div>
-						  <button type="button" onclick="boardInsert()" class="btn btn-success btn-sm" >글쓰기</button>
-						  <button type="reset" class="btn btn-warning btn-sm close">닫기</button>
-						</form>
-				   </div>
-			</div>
-		</div>
-	</div>
-
-
-<script type="text/javascript">
- //1. 해당하는 페이지에 접속하자마자 서버에 데이터를 요청하는 ajax 함수를 실행
- $(document).ready(function(){
-	 loadList();		//()까지 써야 호출한 것
- })
-
- //2. 서버에 요청하는 ajax 함수를 생성
- function loadList(){
-	 $.ajax({
-		 // 서버 URL 필요
-		 url : '${cpath}/boardListAjax.do',
-		 //요청 방식
-		 type : 'get',
-		 //받아올 데이터 타입 지정
-		 dataType : 'json',
-		 //성공했을 때 실행할 함수
-		 success:listView,
-		 
-		 //실패했을 때 실행할 함수
-		 error : function(){
-			 alert('실패!');
-		 }
-	 })
- }
- 
- 
- 
- 
-  //3. 화면에 보여주는 함수 생성
-  function listView(data){
-	  //내가 화면에 출력해줄 tr 태그들의 모음
-	  console.log(data);
-	  var blist = "";
-	  
-	  //for-each 문을 사용하는 방법
-	  // $.each (어떤 데이터를 가지고 반복, 어떤 함수로 처리해줄건지)
-	  $.each(data, function(index, board){
-		  //function(인덱스번호, )
-		  blist += "<tr class='innerContent'>"
-		  blist += "<td>"+board.idx+"</td>"
-		  //href안에 javascript 코드 실행되게 작성
-		  blist += "<td><a href='javascript:viewContent("+board.idx+")'>"+board.title+"</a></td>"
-		  blist += "<td>"+board.writer+"</td>"
-		  blist += "<td>"+board.indate+"</td>"
-		  blist += "<td><button onclick='boardDelete("+board.idx+")' class='btn-sm btn-danger btn'>삭제</button></td>"
-		  blist += "</tr>"
-		  
-		  
-		  //제목 눌렀을 때 펼쳐지는 부분
-		  blist += "<tr class='innerContent' id='vc"+board.idx+"' style='display:none'>" //각 게시글마다 idx 부여
-		  blist += "<td colspan = '5'>"
-		  blist += "<textarea rows='5' name='con"+board.idx+"' class='form-control'>"+board.contents+"</textarea>"
-		  blist += "<br>"
-		  blist += "<button onclick='boardUpdate("+board.idx+")' class = 'btn-primary btn btn-sm'>수정</button>"
-		  blist += "&nbsp<button class = 'btn-warning btn btn-sm'>닫기</button>"
-		  blist += "</td>"
-		  blist += "</tr>"
-	  })
-	  
-	  //heading이라는 클래스명 가진 tr태그 다음에 blist 추가하기
-	  $('.innerContent').remove();
-	  $('.heading').after(blist);
-  }
-
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item d-none d-lg-flex  mr-2">
+              <a class="nav-link" href="#">
+                Help
+              </a>
+            </li>
+            <li class="nav-item dropdown d-flex">
+              <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
+                <i class="typcn typcn-message-typing"></i>
+                <span class="count bg-success">2</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+                <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <img src="resources/images/faces/face4.jpg" alt="image" class="profile-pic">
+                  </div>
+                  <div class="preview-item-content flex-grow">
+                    <h6 class="preview-subject ellipsis font-weight-normal">David Grey
+                    </h6>
+                    <p class="font-weight-light small-text mb-0">
+                      The meeting is cancelled
+                    </p>
+                  </div>
+                </a>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <img src="resources/images/faces/face2.jpg" alt="image" class="profile-pic">
+                  </div>
+                  <div class="preview-item-content flex-grow">
+                    <h6 class="preview-subject ellipsis font-weight-normal">Tim Cook
+                    </h6>
+                    <p class="font-weight-light small-text mb-0">
+                      New product launch
+                    </p>
+                  </div>
+                </a>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <img src="resources/images/faces/face3.jpg" alt="image" class="profile-pic">
+                  </div>
+                  <div class="preview-item-content flex-grow">
+                    <h6 class="preview-subject ellipsis font-weight-normal"> Johnson
+                    </h6>
+                    <p class="font-weight-light small-text mb-0">
+                      Upcoming board meeting
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="nav-item dropdown  d-flex">
+              <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
+                <i class="typcn typcn-bell mr-0"></i>
+                <span class="count bg-danger">2</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-success">
+                      <i class="typcn typcn-info-large mx-0"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <h6 class="preview-subject font-weight-normal">Application Error</h6>
+                    <p class="font-weight-light small-text mb-0">
+                      Just now
+                    </p>
+                  </div>
+                </a>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-warning">
+                      <i class="typcn typcn-cog mx-0"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <h6 class="preview-subject font-weight-normal">Settings</h6>
+                    <p class="font-weight-light small-text mb-0">
+                      Private message
+                    </p>
+                  </div>
+                </a>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-info">
+                      <i class="typcn typcn-user-outline mx-0"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <h6 class="preview-subject font-weight-normal">New user registration</h6>
+                    <p class="font-weight-light small-text mb-0">
+                      2 days ago
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="nav-item nav-profile dropdown">
+              <a class="nav-link dropdown-toggle  pl-0 pr-0" href="#" data-toggle="dropdown" id="profileDropdown">
+                <i class="typcn typcn-user-outline mr-0"></i>
+                <span class="nav-profile-name">김연이</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                <a class="dropdown-item">
+                <i class="typcn typcn-cog text-primary"></i>
+                설정
+                </a>
+                <a class="dropdown-item">
+                <i class="typcn typcn-power text-primary"></i>
+                로그아웃
+                </a>
+              </div>
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="typcn typcn-th-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_settings-panel.html -->
+        <div class="theme-setting-wrapper">
+          <div id="settings-trigger"><i class="typcn typcn-cog-outline"></i></div>
+          <div id="theme-settings" class="settings-panel">
+            <i class="settings-close typcn typcn-delete-outline"></i>
+            <p class="settings-heading">SIDEBAR SKINS</p>
+            <div class="sidebar-bg-options" id="sidebar-light-theme">
+              <div class="img-ss rounded-circle bg-light border mr-3"></div>
+              Light
+            </div>
+            <div class="sidebar-bg-options selected" id="sidebar-dark-theme">
+              <div class="img-ss rounded-circle bg-dark border mr-3"></div>
+              Dark
+            </div>
+            <p class="settings-heading mt-2">HEADER SKINS</p>
+            <div class="color-tiles mx-0 px-4">
+              <div class="tiles success"></div>
+              <div class="tiles warning"></div>
+              <div class="tiles danger"></div>
+              <div class="tiles primary"></div>
+              <div class="tiles info"></div>
+              <div class="tiles dark"></div>
+              <div class="tiles default border"></div>
+            </div>
+          </div>
+        </div>
+        <!-- partial -->
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <div class="d-flex sidebar-profile">
+              <div class="sidebar-profile-image">
+                <img src="resources/images/faces/face29.png" alt="image">
+                <span class="sidebar-status-indicator"></span>
+              </div>
+              <div class="sidebar-profile-name">
+                <p class="sidebar-name">
+                  김연이
+                </p>
+                <p class="sidebar-designation">
+                  사원
+                </p>
+              </div>
+            </div>
+            <div class="nav-search">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Type to search..." aria-label="search" aria-describedby="search">
+                <div class="input-group-append">
+                  <span class="input-group-text" id="search">
+                    <i class="typcn typcn-zoom"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <p class="sidebar-menu-title">Menu</p>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="basic.jsp">
+              <i class="typcn typcn-device-desktop menu-icon"></i>
+              <span class="menu-title">마이페이지<span class="badge badge-primary ml-3">New</span></span>
+            </a>
+          </li>
   
-  
-  function goInsert(){
-	  if($('#insertview').css('display') == 'none'){
-		 //$('#insertview').css('display', 'block')
-		 $('#insertview').slideDown();
-	  }else{
-		  $('#insertview').css('display', 'none')
-			 $('#insertview').slideUp();
-	  }
-  }
-  
-  
-  
+          <li class="nav-item">
+            <a class="nav-link" href="resources/pages/forms/basic_elements.html">
+              <i class="typcn typcn-film menu-icon"></i>
+              <span class="menu-title">기안문 제출 현황</span>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="resources/pages/charts/chartjs.html">
+              <i class="typcn typcn-chart-pie-outline menu-icon"></i>
+              <span class="menu-title">회사 정보</span>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="resources/pages/tables/basic-table.html">
+              <i class="typcn typcn-th-small-outline menu-icon"></i>
+              <span class="menu-title">결재 대기 현황</span>
+            </a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="typcn typcn-user-add-outline menu-icon"></i>
+              <span class="menu-title">로그인</span>
+             
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="resources/pages/samples/login.html"> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href="resources/pages/samples/register.html"> Register </a></li>
+              </ul>
+            </div>
+          </li>     
+        </ul>
+       
+      </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
 
-  
+            <div class="row">
+              <div class="col-lg-12 d-flex grid-margin stretch-card">
+             
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 d-flex grid-margin stretch-card">
+                <div class="card">
 
-    function boardInsert(){
-	  	var formdata = $('#frm').serialize(); 
-	    // 직렬화 : form 태그 안에 있는 input, textarea 등의 name값이 달려있는 태그들의 값을 가져와서 직렬화하는 함수
-	    //확인 console.log(formdata)
-	    
- 		 $.ajax({
-			 url : '${cpath}/boardInsert.do',
-			 data : formdata,
-			 type : 'post',
-			 
-			 //성공하면 loadList 함수 수행
-			 success:loadList,
-			 
-			 error : function(){
-				 alert('실패!');
-			 }
-		 }) 
-		 
-		 
-		 // 초기화 버튼을 한 번 클릭
-		 $('.close').trigger('click');
-	  	
-	  	//insertview div 태그를 다시 닫아주기
-	  	 $('#insertview').slideUp(); //slideUp, Down은 div 태그에만 해당
-		 
-		 
-	 }
-    
-    
-    
+                </div>
+              </div>
+              <div class="col-lg-8 d-flex grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex flex-wrap justify-content-between">
+                      <h4 class="card-title mb-3">Project status</h4>
+                    </div>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="d-flex">
+                                <img class="img-sm rounded-circle mb-md-0 mr-2" src="resources/images/faces/face30.png" alt="profile image">
+                                <div>
+                                  <div> Company</div>
+                                  <div class="font-weight-bold mt-1">volkswagen</div>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              Budget
+                              <div class="font-weight-bold  mt-1">$2322 </div>
+                            </td>
+                            <td>
+                              Status
+                              <div class="font-weight-bold text-success  mt-1">88% </div>
+                            </td>
+                            <td>
+                              Deadline
+                              <div class="font-weight-bold  mt-1">07 Nov 2019</div>
+                            </td>
+                            <td>
+                              <button type="button" class="btn btn-sm btn-secondary">edit actions</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex">
+                                <img class="img-sm rounded-circle mb-md-0 mr-2" src="resources/images/faces/face31.png" alt="profile image">
+                                <div>
+                                  <div> Company</div>
+                                  <div class="font-weight-bold  mt-1">Land Rover</div>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              Budget
+                              <div class="font-weight-bold  mt-1">$12022  </div>
+                            </td>
+                            <td>
+                              Status
+                              <div class="font-weight-bold text-success  mt-1">70% </div>
+                            </td>
+                            <td>
+                              Deadline
+                              <div class="font-weight-bold  mt-1">08 Nov 2019</div>
+                            </td>
+                            <td>
+                              <button type="button" class="btn btn-sm btn-secondary">edit actions</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex">
+                                <img class="img-sm rounded-circle mb-md-0 mr-2" src="resources/images/faces/face32.png" alt="profile image">
+                                <div>
+                                  <div> Company</div>
+                                  <div class="font-weight-bold  mt-1">Bentley </div>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              Budget
+                              <div class="font-weight-bold  mt-1">$8,725</div>
+                            </td>
+                            <td>
+                              Status
+                              <div class="font-weight-bold text-success  mt-1">87% </div>
+                            </td>
+                            <td>
+                              Deadline
+                              <div class="font-weight-bold  mt-1">11 Jun 2019</div>
+                            </td>
+                            <td>
+                              <button type="button" class="btn btn-sm btn-secondary">edit actions</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex">
+                                <img class="img-sm rounded-circle mb-md-0 mr-2" src="resources/images/faces/face33.png" alt="profile image">
+                                <div>
+                                  <div> Company</div>
+                                  <div class="font-weight-bold  mt-1">Morgan </div>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              Budget
+                              <div class="font-weight-bold  mt-1">$5,220 </div>
+                            </td>
+                            <td>
+                              Status
+                              <div class="font-weight-bold text-success  mt-1">65% </div>
+                            </td>
+                            <td>
+                              Deadline
+                              <div class="font-weight-bold  mt-1">26 Oct 2019</div>
+                            </td>
+                            <td>
+                              <button type="button" class="btn btn-sm btn-secondary">edit actions</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex">
+                                <img class="img-sm rounded-circle mb-md-0 mr-2" src="resources/images/faces/face34.png" alt="profile image">
+                                <div>
+                                  <div> Company</div>
+                                  <div class="font-weight-bold  mt-1">volkswagen</div>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              Budget
+                              <div class="font-weight-bold  mt-1">$2322 </div>
+                            </td>
+                            <td>
+                              Status
+                              <div class="font-weight-bold text-success mt-1">88% </div>
+                            </td>
+                            <td>
+                              Deadline
+                              <div class="font-weight-bold  mt-1">07 Nov 2019</div>
+                            </td>
+                            <td>
+                              <button type="button" class="btn btn-sm btn-secondary">edit actions</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+         
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- base:js -->
+    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="resources/js/off-canvas.js"></script>
+    <script src="resources/js/hoverable-collapse.js"></script>
+    <script src="resources/js/template.js"></script>
+    <script src="resources/js/settings.js"></script>
+    <script src="resources/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <script src="resources/vendors/progressbar.js/progressbar.min.js"></script>
+    <script src="resources/vendors/chart.js/Chart.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- Custom js for this page-->
+    <script src="resources/js/dashboard.js"></script>
+    <!-- End custom js for this page-->
 
-    function boardDelete(idx){
-   	 $.ajax({
-		 url : '${cpath}/boardDelete.do',
-		 data: {'idx':idx},
-		 type : 'get', //들고갈 데이터 없으므로 get
-		 
-		 success:loadList,
-		 
-		 //실패했을 때 실행할 함수
-		 error : function(){
-			 alert('실패!');
-		 }
-	 })
-    }
-    
-    
-    function viewContent(idx){
-    	if($('#vc'+idx).css('display') == 'none'){
-    		$('#vc'+idx).css('display', 'table-row')
-    	}else{
-    		$('#vc'+idx).css('display', 'none')
-    	}
-    }
-    
-    
-    
-    function boardUpdate(idx){
-    	//그냥 ID만 부여해서 가져오면 하나만 들고와짐
-    	
-    	//컨텐츠는 클릭했을 때 값을 꺼내오게 만듦
- 	  	
-    	//$('') 태그 선택자!!!
-    	
-    	//방식 1 : 이미 게시글이 구분되어 있으므로 자손선택자로 선택해서 가져오기
-    	//방식 2 : var con = 달러('textarea[name="con'+idx+'"]').val(); 
-    	var contents= $('#vc'+idx+' textarea').val();
 
-    	//그냥 textarea라고 이름을 주면 게시글 수만큼 많기 때문에 구분이 불가 -> 각각의 게시물에 name을 부여할 수 있도록 뒤에 idx 붙여서 이름 주기
-    	
-    	
-	  	console.log(idx) //위에서 board.idx로 넣은 값 가져옴
-	  	
-       	 $.ajax({
-    		 url : '${cpath}/boardUpdateAjax.do',
-    		 data: {'idx':idx, 'contents':contents},
-    		 type : 'get', //들고갈 데이터 없으므로 get
-    		 
-    		 success:loadList,
-    		 
-    		 //실패했을 때 실행할 함수
-    		 error : function(){
-    			 alert('실패!');
-    		 }
-    	 }) 
-    }
-</script>
 
 </body>
 </html>
