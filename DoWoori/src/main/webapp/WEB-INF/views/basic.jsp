@@ -230,26 +230,29 @@
           </li>
   
           <li class="nav-item">
-            <a class="nav-link" href="document.jsp">
+            <a class="nav-link" href="${cpath}/document.do">
               <i class="typcn typcn-film menu-icon"></i>
               <span class="menu-title">기안문 제출 현황</span>
             </a>
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="company.jsp">
+            <a class="nav-link" href="${cpath}/company.do">
               <i class="typcn typcn-chart-pie-outline menu-icon"></i>
               <span class="menu-title">회사 정보</span>
             </a>
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="approve.jsp">
+            <a class="nav-link" href="${cpath}/approve.do">
               <i class="typcn typcn-th-small-outline menu-icon"></i>
               <span class="menu-title">결재 대기 현황</span>
             </a>
           </li>
          
+         
+         
+         <!-- 추후 로그인은 첫페이지에!!! -->
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <i class="typcn typcn-user-add-outline menu-icon"></i>
