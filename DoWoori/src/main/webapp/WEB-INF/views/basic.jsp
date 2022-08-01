@@ -29,21 +29,13 @@
 
 </head>
 <body>
-	<div class="row" id="proBanner">
-      <div class="col-12">
-        <span class="d-flex align-items-center purchase-popup">
-          <p>Get tons of UI components, Plugins, multiple layouts, 20+ sample pages, and more!</p>
-          <a href="https://www.bootstrapdash.com/product/celestial-admin-template/?utm_source=organic&utm_medium=banner&utm_campaign=free-preview" target="_blank" class="btn download-button purchase-button ml-auto">Upgrade To Pro</a>
-          <i class="typcn typcn-delete-outline" id="bannerClose"></i>
-        </span>
-      </div>
-    </div>
+
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="basic.jsp"><img src="resources/images/logo.svg" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="basic.jsp"><img src="resources/images/logo-mini.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="${cpath}/"><img src="resources/images/logo.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="${cpath}/"><img src="resources/images/logo-mini.svg" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center d-none d-lg-flex" type="button" data-toggle="minimize">
             <span class="typcn typcn-th-menu"></span>
           </button>
@@ -231,28 +223,28 @@
             <p class="sidebar-menu-title">Menu</p>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="basic.jsp">
+            <a class="nav-link" href="${cpath}/">
               <i class="typcn typcn-device-desktop menu-icon"></i>
               <span class="menu-title">마이페이지<span class="badge badge-primary ml-3">New</span></span>
             </a>
           </li>
   
           <li class="nav-item">
-            <a class="nav-link" href="resources/pages/forms/basic_elements.html">
+            <a class="nav-link" href="document.jsp">
               <i class="typcn typcn-film menu-icon"></i>
               <span class="menu-title">기안문 제출 현황</span>
             </a>
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="resources/pages/charts/chartjs.html">
+            <a class="nav-link" href="company.jsp">
               <i class="typcn typcn-chart-pie-outline menu-icon"></i>
               <span class="menu-title">회사 정보</span>
             </a>
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="resources/pages/tables/basic-table.html">
+            <a class="nav-link" href="approve.jsp">
               <i class="typcn typcn-th-small-outline menu-icon"></i>
               <span class="menu-title">결재 대기 현황</span>
             </a>
