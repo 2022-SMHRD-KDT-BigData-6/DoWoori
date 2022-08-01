@@ -8,15 +8,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>CelestialUI Admin</title>
   <!-- base:css -->
-  <link rel="stylesheet" href="../../vendors/typicons.font/font/typicons.css">
-  <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="resources/vendors/typicons.font/font/typicons.css">
+  <link rel="stylesheet" href="resources/vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="resources/css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="../../images/favicon.png" />
+  <link rel="shortcut icon" href="resources/images/favicon.png" />
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -28,7 +28,7 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
-                <img src="../../images/logo.svg" alt="logo">
+                <img src="resources/images/logo.svg" alt="logo">
               </div>
               <h4>안녕하세요!</h4>
               <h6 class="font-weight-light">로그인을 해주세요.</h6>
@@ -40,7 +40,7 @@
                   <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">로그인</a>
+                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="resources/index.html">로그인</a>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="form-check">
@@ -65,14 +65,14 @@
   </div>
   <!-- container-scroller -->
   <!-- base:js -->
-  <script src="../../vendors/js/vendor.bundle.base.js"></script>
+  <script src="resources/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- inject:js -->
-  <script src="../../js/off-canvas.js"></script>
-  <script src="../../js/hoverable-collapse.js"></script>
-  <script src="../../js/template.js"></script>
-  <script src="../../js/settings.js"></script>
-  <script src="../../js/todolist.js"></script>
+  <script src="resources/js/off-canvas.js"></script>
+  <script src="resources/js/hoverable-collapse.js"></script>
+  <script src="resources/js/template.js"></script>
+  <script src="resources/js/settings.js"></script>
+  <script src="resources/js/todolist.js"></script>
   <!-- endinject -->
 </body>
 </html>

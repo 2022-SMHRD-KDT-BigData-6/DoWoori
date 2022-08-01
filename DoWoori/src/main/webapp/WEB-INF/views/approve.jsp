@@ -8,13 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>CelestialUI Admin</title>
   <!-- base:css -->
-  <link rel="stylesheet" href="../../vendors/typicons.font/font/typicons.css">
-  <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="resources/vendors/typicons.font/font/typicons.css">
+  <link rel="stylesheet" href="resources/vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="resources/css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="../../images/favicon.png" />
+  <link rel="shortcut icon" href="resources/images/favicon.png" />
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -23,8 +23,8 @@
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="${cpath}/"><img src="../../images/logo.svg" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="${cpath}/"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="${cpath}/"><img src="resources/images/logo.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="${cpath}/"><img src="resources/images/logo-mini.svg" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center d-none d-lg-flex" type="button" data-toggle="minimize">
             <span class="typcn typcn-th-menu"></span>
           </button>
@@ -41,7 +41,7 @@
                 <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="../../images/faces/face4.jpg" alt="image" class="profile-pic">
+                    <img src="resources/images/faces/face4.jpg" alt="image" class="profile-pic">
                   </div>
                   <div class="preview-item-content flex-grow">
                     <h6 class="preview-subject ellipsis font-weight-normal">David Grey
@@ -53,7 +53,7 @@
                 </a>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="../../images/faces/face2.jpg" alt="image" class="profile-pic">
+                    <img src="resources/images/faces/face2.jpg" alt="image" class="profile-pic">
                   </div>
                   <div class="preview-item-content flex-grow">
                     <h6 class="preview-subject ellipsis font-weight-normal">Tim Cook
@@ -65,7 +65,7 @@
                 </a>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="../../images/faces/face3.jpg" alt="image" class="profile-pic">
+                    <img src="resources/images/faces/face3.jpg" alt="image" class="profile-pic">
                   </div>
                   <div class="preview-item-content flex-grow">
                     <h6 class="preview-subject ellipsis font-weight-normal"> Johnson
@@ -182,7 +182,7 @@
           <li class="nav-item">
             <div class="d-flex sidebar-profile">
               <div class="sidebar-profile-image">
-                <img src="../../images/faces/face29.png" alt="image">
+                <img src="resources/images/faces/face29.png" alt="image">
                 <span class="sidebar-status-indicator"></span>
               </div>
               <div class="sidebar-profile-name">
@@ -241,8 +241,8 @@
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
+                <li class="nav-item"> <a class="nav-link" href="resources/pages/samples/login.html"> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href="resources/pages/samples/register.html"> Register </a></li>
               </ul>
             </div>
           </li>
@@ -442,11 +442,11 @@
   <!-- Plugin js for this page-->
   <!-- End plugin js for this page-->
   <!-- inject:js -->
-  <script src="../../js/off-canvas.js"></script>
-  <script src="../../js/hoverable-collapse.js"></script>
-  <script src="../../js/template.js"></script>
-  <script src="../../js/settings.js"></script>
-  <script src="../../js/todolist.js"></script>
+  <script src="resources/js/off-canvas.js"></script>
+  <script src="resources/js/hoverable-collapse.js"></script>
+  <script src="resources/js/template.js"></script>
+  <script src="resources/js/settings.js"></script>
+  <script src="resources/js/todolist.js"></script>
   <!-- endinject -->
   <!-- plugin js for this page -->
   <!-- End plugin js for this page -->
