@@ -3,6 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!-- 프로젝트의 contextpath 값을 동적으로 가져오는 방법  / 모든 페이지에 있어야 함-->
 <c:set var = "cpath" value="${pageContext.request.contextPath}"/>
+
+<!-- 프로젝트 내 다른 파일을 한 페이지에 뜨도록 포함시키는 방법, ""안에는 파일경로! -->
+<%@include file="../views/include/chat.jsp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -171,7 +175,7 @@
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_settings-panel.html -->
         <div class="theme-setting-wrapper">
-          <div id="settings-trigger"><i class="typcn typcn-cog-outline"></i></div>
+
           <div id="theme-settings" class="settings-panel">
             <i class="settings-close typcn typcn-delete-outline"></i>
             <p class="settings-heading">SIDEBAR SKINS</p>
