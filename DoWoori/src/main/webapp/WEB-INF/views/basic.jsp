@@ -444,7 +444,7 @@
     </div>
     <!-- container-scroller -->
     <!-- base:js -->
-    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <script src="resources/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page-->
     <!-- End plugin js for this page-->
