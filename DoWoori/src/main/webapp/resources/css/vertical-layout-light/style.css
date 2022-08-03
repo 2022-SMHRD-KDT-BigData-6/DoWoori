@@ -4,118 +4,24 @@
   Project:	CelestialUI Admin
   Version:	1.0.0
 -------------------------------------------------------------------*/
-/*-------------------------------------------------------------------
-  ===== Table of Contents =====
+/*--font--------------------------*/
 
-  * Bootstrap functions
-  * Template variables
-  * SCSS Compass Functions
-  * Boostrap Main SCSS
-  * Template mixins
-    + Animation Mixins
-    + Badge Mixins
-    + Button Mixins
-    + Miscellaneous Mixins
-    + BlockQuote Mixins
-    + Cards Mixins
-    + Color Functions Mixins
-    + Tooltips
-    + popovers
-  * Core Styles
-    + Reset Styles
-    + Fonts
-    + Functions
-    + Backgrounds
-    + Sidebar
-    + Navbar
-    + Typography
-    + Miscellaneous
-    + Footer
-    + Layouts
-    + Utilities
-    + Demo styles
-  * Components
-    + Accordions
-    + Badges
-    + Bootstrap Alerts
-    + Boostrap Progress
-    + Buttons
-    + Breadcrumbs
-    + Cards
-    + Checkboxes and Radios
-    + Dropdowns
-    + Forms
-    + Google maps
-    + Icons
-    + Loaders
-    + Lists
-    + Modals
-    + Pagination
-    + Popover
-    + Portfolio
-    + Preview
-    + Tables
-    + Tabs
-    + Timeline
-    + Todo List
-    + Tooltips
-    + User Profile
-    + Pricing table
-    + Settings Panel
-  * Email
-    + Mail Sidebar
-    + Mail List Container
-    + Message Content
-  * Plugin Overrides
-    + Ace Editor
-    + Avgrund Popup
-    + Bootstrap Tour
-    + Chartist
-    + CodeMirror
-    + Colcade
-    + Colorpicker
-    + Context Menu
-    + Data Tables
-    + Datepicker
-    + Dropify
-    + Dropzone
-    + Flot chart
-    + Full Calendar
-    + Google Charts
-    + Icheck
-    + Jquery File Upload
-    + Js-grid
-    + Jvectormap
-    + Light Gallery
-    + Listify
-    + No-ui-slider
-    + Owl-carousel
-    + Progressbar-js
-    + Pws-tabs
-    + Quill Editor
-    + Rating
-    + Select2
-    + Summernote Editor
-    + SweetAlert
-    + Switchery
-    + Tags
-    + TinyMCE Editor
-    + Toast
-    + Typeahead
-    + Wysi Editor
-    + X-editable
-    + Wizard
-  * Landing screens
-    + Auth
-  * Horizontal Menu
-    + Horizontal
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------*/
-/* === Import Bootstrap functions and variables === */
-/*-------------------------------------------------------------------*/
-/* === Import template variables === */
-/*-------------------------------------------------------------------*/
-/* === SCSS Compass Functions === */
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
+
+body, h1, h2, h3, h4, h5, h6, input, textarea, select {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
 @-moz-keyframes flash {
   0% {
     opacity: 1;
@@ -8698,7 +8604,7 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -8895,7 +8801,7 @@ select,
 optgroup,
 textarea {
   margin: 0;
-  font-family: inherit;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: inherit;
   line-height: inherit;
 }
@@ -18515,45 +18421,7 @@ input:focus {
   outline: none;
 }
 
-@font-face {
-  font-family: 'Roboto';
-  src: url("../../fonts/Roboto/Roboto-Light.eot");
-  src: url("../../fonts/Roboto/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto/Roboto-Light.woff2") format("woff2"), url("../../fonts/Roboto/Roboto-Light.woff") format("woff"), url("../../fonts/Roboto/Roboto-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
 
-@font-face {
-  font-family: 'Roboto';
-  src: url("../../fonts/Roboto/Roboto-Bold.eot");
-  src: url("../../fonts/Roboto/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto/Roboto-Bold.woff2") format("woff2"), url("../../fonts/Roboto/Roboto-Bold.woff") format("woff"), url("../../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Roboto';
-  src: url("../../fonts/Roboto/Roboto-Medium.eot");
-  src: url("../../fonts/Roboto/Roboto-Medium.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto/Roboto-Medium.woff2") format("woff2"), url("../../fonts/Roboto/Roboto-Medium.woff") format("woff"), url("../../fonts/Roboto/Roboto-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Roboto';
-  src: url("../../fonts/Roboto/Roboto-Regular.eot");
-  src: url("../../fonts/Roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto/Roboto-Regular.woff2") format("woff2"), url("../../fonts/Roboto/Roboto-Regular.woff") format("woff"), url("../../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Roboto';
-  src: url("../../fonts/Roboto/Roboto-Black.eot");
-  src: url("../../fonts/Roboto/Roboto-Black.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto/Roboto-Black.woff2") format("woff2"), url("../../fonts/Roboto/Roboto-Black.woff") format("woff"), url("../../fonts/Roboto/Roboto-Black.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-}
 
 .bg-twitter {
   background: #2caae1;
@@ -18630,7 +18498,7 @@ input:focus {
 /* Typography */
 body {
   font-size: 0.875rem;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: initial;
   line-height: normal;
   -webkit-font-smoothing: antialiased;
@@ -18884,7 +18752,7 @@ pre {
 code {
   padding: 5px;
   color: #ff0000;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 300;
   font-size: 0.875rem;
   border-radius: 4px;
@@ -18951,7 +18819,7 @@ code {
   -webkit-transition: all 0.25s ease;
   -ms-transition: all 0.25s ease;
   font-size: calc(0.875rem - 0.05rem);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
 }
 
@@ -20281,7 +20149,7 @@ code {
   transition-duration: 0s;
   -webkit-transition-duration: 250ms;
   transition-duration: 250ms;
-  font-family: typicons;
+  font-family: 'Noto Sans KR', sans-serif;
   opacity: 0;
   filter: alpha(opacity=0);
   -webkit-transform: scale(0);
@@ -21471,7 +21339,7 @@ dl li {
 .list-ticked li:before,
 .list-arrow li:before,
 .list-star li:before {
-  font-family: "typicons";
+  font-family: 'Noto Sans KR', sans-serif;
   margin-left: -1.5rem;
   width: 1.5rem;
   margin-right: .5rem;
@@ -21663,7 +21531,7 @@ dl li {
 }
 
 .preview-list .preview-item .preview-item-content p .content-category {
-  font-family: 'source-sans-pro-semibold', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   padding-right: 15px;
   border-right: 1px solid #e8eff9;
 }
@@ -22633,7 +22501,7 @@ body.avgrund-active {
   border-radius: 3px;
   padding: 6px;
   font-size: .625rem;
-  font-family: inherit;
+  font-family: 'Noto Sans KR', sans-serif;
   line-height: 1;
 }
 
@@ -22747,7 +22615,7 @@ body.avgrund-active {
 .wysi-editor textarea {
   height: 280px;
   border: 1px solid #e8eff9;
-  font-family: inherit;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 1rem;
 }
 
@@ -23121,7 +22989,7 @@ body.avgrund-active {
 .sidebar {
   min-height: calc(100vh - 64px);
   background: #1b1b29;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 300;
   padding: 0;
   width: 255px;
@@ -23288,7 +23156,7 @@ body.avgrund-active {
 
 .sidebar .nav .nav-item .nav-link i.menu-arrow:before {
   content: "\e049";
-  font-family: "typicons";
+  font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   display: block;
   font-size: 1rem;
@@ -24651,7 +24519,7 @@ body.avgrund-active {
 .settings-panel .settings-heading {
   padding: 16px 0 13px 35px;
   font-size: 0.875rem;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 500;
   line-height: 1;
   color: rgba(0, 0, 0, 0.9);
@@ -24846,7 +24714,7 @@ body.avgrund-active {
 }
 
 .settings-panel .events p {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
 }
 

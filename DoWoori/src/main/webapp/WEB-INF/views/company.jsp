@@ -214,7 +214,7 @@
          <li class="nav-item">
             <a class="nav-link" href="${cpath}/">
               <i class="typcn typcn-device-desktop menu-icon"></i>
-              <span class="menu-title">마이페이지<span class="badge badge-primary ml-3">New</span></span>
+              <span class="menu-title">마이페이지</span>
             </a>
           </li>
   

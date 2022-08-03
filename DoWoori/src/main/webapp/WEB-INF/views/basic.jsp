@@ -10,29 +10,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<!-- Required meta tags -->
+	<!-- 캘린더 템플릿 -->
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CelestialUI Admin</title>
-    <!-- base:css -->
-    <link rel="stylesheet" href="resources/vendors/typicons.font/font/typicons.css">
-    <link rel="stylesheet" href="resources/vendors/css/vendor.bundle.base.css">
-    <!-- endinject --> 
-    <!-- plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="resources/css/vertical-layout-light/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="resources/images/favicon.png" />
-<title>index</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="resources/fonts/icomoon/style.css">
+  
+    <link href='resources/fullcalendar/packages/core/main.css' rel='stylesheet' />
+    <link href='resources/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
+    
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="resources/css/style.css">
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- base:css -->
+  <link rel="stylesheet" href="resources/vendors/typicons.font/font/typicons.css">
+  <link rel="stylesheet" href="resources/vendors/css/vendor.bundle.base.css">
+  <!-- endinject --> 
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="resources/vendors/select2/select2.min.css">
+  <link rel="stylesheet" href="resources/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="resources/css/vertical-layout-light/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="resources/images/favicon.png" />
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
 
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
-      <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
           <a class="navbar-brand brand-logo" href="${cpath}/"><img src="resources/images/logo.svg" alt="logo"/></a>
           <a class="navbar-brand brand-logo-mini" href="${cpath}/"><img src="resources/images/logo-mini.svg" alt="logo"/></a>
@@ -41,20 +63,14 @@
           </button>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-
           <ul class="navbar-nav navbar-nav-right">
-            <li class="nav-item d-none d-lg-flex  mr-2">
-              <a class="nav-link" href="#">
-                Help
-              </a>
-            </li>
             <li class="nav-item dropdown d-flex">
               <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
                 <i class="typcn typcn-message-typing"></i>
                 <span class="count bg-success">2</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
+                <p class="mb-0 font-weight-normal float-left dropdown-header">메세지</p>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
                     <img src="resources/images/faces/face4.jpg" alt="image" class="profile-pic">
@@ -99,7 +115,7 @@
                 <span class="count bg-danger">2</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+                <p class="mb-0 font-weight-normal float-left dropdown-header">알림</p>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-success">
@@ -151,7 +167,7 @@
                 <i class="typcn typcn-cog text-primary"></i>
                 설정
                 </a>
-                <a class="dropdown-item">
+                <a class="dropdown-item" href="${cpath}/login.do">
                 <i class="typcn typcn-power text-primary"></i>
                 로그아웃
                 </a>
@@ -225,7 +241,7 @@
           <li class="nav-item">
             <a class="nav-link" href="${cpath}/">
               <i class="typcn typcn-device-desktop menu-icon"></i>
-              <span class="menu-title">마이페이지<span class="badge badge-primary ml-3">New</span></span>
+              <span class="menu-title">마이페이지</span>
             </a>
           </li>
   
@@ -280,8 +296,8 @@
             </div>
             <div class="row">
               <div class="col-lg-4 d-flex grid-margin stretch-card">
-                <div class="card">
-
+                <div class="content">
+					<div id='calendar'></div>
                 </div>
               </div>
               <div class="col-lg-8 d-flex grid-margin stretch-card">
@@ -463,7 +479,88 @@
     <script src="resources/js/dashboard.js"></script>
     <!-- End custom js for this page-->
 
+    <!-- 캘린더 스크립트 -->
+    <script src="resources/js/jquery-3.3.1.min.js"></script>
+    <script src="resources/js/popper.min.js"></script>
+    <script src="resources/js/bootstrap.min.js"></script>
 
+    <script src='resources/fullcalendar/packages/core/main.js'></script>
+    <script src='resources/fullcalendar/packages/interaction/main.js'></script>
+    <script src='resources/fullcalendar/packages/daygrid/main.js'></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      plugins: [ 'interaction', 'dayGrid' ],
+      defaultDate: '2022-08-12',
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+        {
+          title: '미팅',
+          start: '2022-08-15'
+        },
+        {
+          title: 'Long Event',
+          start: '2020-02-07',
+          end: '2020-02-10'
+        },
+        {
+          groupId: 999,
+          title: 'Repeating Event',
+          start: '2020-02-09T16:00:00'
+        },
+        {
+          groupId: 999,
+          title: 'Repeating Event',
+          start: '2020-02-16T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2020-02-11',
+          end: '2020-02-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2020-02-12T10:30:00',
+          end: '2020-02-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2020-02-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2020-02-12T14:30:00'
+        },
+        {
+          title: 'Happy Hour',
+          start: '2020-02-12T17:30:00'
+        },
+        {
+          title: 'Dinner',
+          start: '2020-02-12T20:00:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2020-02-13T07:00:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2020-02-28'
+        }
+      ]
+    });
+
+    calendar.render();
+  });
+
+    </script>
+
+    <script src="resources/js/main.js"></script>
 
 </body>
 </html>

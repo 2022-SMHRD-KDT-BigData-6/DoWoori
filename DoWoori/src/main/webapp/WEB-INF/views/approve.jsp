@@ -9,10 +9,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>approve</title>
+
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>CelestialUI Admin</title>
+  
   <!-- base:css -->
   <link rel="stylesheet" href="resources/vendors/typicons.font/font/typicons.css">
   <link rel="stylesheet" href="resources/vendors/css/vendor.bundle.base.css">
@@ -21,8 +23,6 @@
   <link rel="stylesheet" href="resources/css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="resources/images/favicon.png" />
-<meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
  <div class="container-scroller">
@@ -215,7 +215,7 @@
          <li class="nav-item">
             <a class="nav-link" href="${cpath}/">
               <i class="typcn typcn-device-desktop menu-icon"></i>
-              <span class="menu-title">마이페이지<span class="badge badge-primary ml-3">New</span></span>
+              <span class="menu-title">마이페이지</span>
             </a>
           </li>
   
@@ -445,7 +445,7 @@
   </div>
   <!-- container-scroller -->
   <!-- base:js -->
-  <script src="../../vendors/js/vendor.bundle.base.js"></script>
+  <script src="resources/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
   <!-- End plugin js for this page-->
