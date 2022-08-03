@@ -30,9 +30,9 @@
 	    
 	    <!-- property : setter 채우는 방식 -->
 	    <property name="driverClassName" value="com.mysql.jdbc.Driver"/> <!-- 드라이버 클래스 이름 -->
-	    <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/mysql"/><!-- url 필드 이름 -->
-	    <property name="username" value="root"/> <!-- user 이름 -->
-	    <property name="password" value="12345"/> <!-- 패스워드 -->
+	    <property name="jdbcUrl" value="jdbc:mysql://project-db-stu.ddns.net:3307/help"/><!-- url 필드 이름 -->
+	    <property name="username" value="help"/> <!-- user 이름 -->
+	    <property name="password" value="help"/> <!-- 패스워드 -->
 	</bean>
 	
 	
