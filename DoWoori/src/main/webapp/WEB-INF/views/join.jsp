@@ -64,10 +64,10 @@
                   </div>
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="${cpath}/">가입하기</a>
+                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="${cpath}/login.do">가입하기</a>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                  이미 계정이 있습니까? <a href="login.jsp" class="text-primary">로그인</a>
+                  이미 계정이 있습니까? <a href="${cpath}/login.do" class="text-primary">로그인</a>
                 </div>
               </form>
             </div>

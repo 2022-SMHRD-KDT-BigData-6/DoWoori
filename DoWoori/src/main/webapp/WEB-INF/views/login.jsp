@@ -44,7 +44,7 @@
                   <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="resources/index.html">로그인</a>
+                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="${cpath}/basic.do">로그인</a>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="form-check">
@@ -56,7 +56,7 @@
                   
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                   <a href="register.html" class="text-primary">회원가입</a>
+                   <a href="${cpath}/join.do" class="text-primary">회원가입</a>
                 </div>
               </form>
             </div>
