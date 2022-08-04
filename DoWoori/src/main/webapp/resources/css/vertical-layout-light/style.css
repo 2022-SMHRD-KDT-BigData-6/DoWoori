@@ -1,10 +1,6 @@
-/*------------------------------------------------------------------
- [Master Stylesheet]
+/* 메인 CSS */
 
-  Project:	CelestialUI Admin
-  Version:	1.0.0
--------------------------------------------------------------------*/
-/*--font--------------------------*/
+/*/////////폰트//////////*/
 
 @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');}
 
@@ -10892,14 +10888,14 @@ fieldset:disabled a.btn {
 
 .btn-secondary {
   color: #fff;
-  background-color: #392ccd;
-  border-color: #392ccd;
+  background-color: #4868b1;
+  border-color: #4868b1;
 }
 
 .btn-secondary:hover {
   color: #fff;
-  background-color: #3025ae;
-  border-color: #2d23a3;
+  background-color: #3d5794;
+  border-color: #3d5794;
 }
 
 .btn-secondary:focus, .btn-secondary.focus {
@@ -19952,7 +19948,7 @@ code {
   color: #000000;
   margin-bottom: 1.5rem;
   text-transform: capitalize;
-  font-size: 1.125rem;
+  font-size: 1.3rem;
   font-weight: 600;
 }
 
@@ -21607,7 +21603,9 @@ dl li {
 }
 
 .table td {
-  font-size: 0.875rem;
+  font-size: 0.93rem;
+  line-height: 1.7rem;
+  font-weight: 400;
 }
 
 .table td img {
@@ -23032,14 +23030,14 @@ body.avgrund-active {
 }
 
 .sidebar .sidebar-profile .sidebar-profile-name .sidebar-name {
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: bolder;
   margin-bottom: 0;
   color: #ffffff;
 }
 
 .sidebar .sidebar-profile .sidebar-profile-name .sidebar-designation {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   margin-bottom: 0;
   color: #7e7e7e;
 }
@@ -23047,6 +23045,8 @@ body.avgrund-active {
 .sidebar .sidebar-menu-title {
   color: #7e7e7e;
   padding: 0.75rem 1.75rem 0 1.75rem;
+  font-weight: 400;
+  
 }
 
 .sidebar .sidebar-legend {
@@ -23171,10 +23171,11 @@ body.avgrund-active {
 .sidebar .nav .nav-item .nav-link .menu-title {
   color: inherit;
   display: inline-block;
-  font-size: 0.875rem;
-  line-height: 1;
+  font-size: 1rem;
+  line-height: 2;
   vertical-align: middle;
-  font-weight: bold;
+  font-weight: bolder;
+  
 }
 
 .sidebar .nav .nav-item .nav-link .badge {

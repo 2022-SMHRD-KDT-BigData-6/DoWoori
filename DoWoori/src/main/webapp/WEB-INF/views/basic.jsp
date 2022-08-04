@@ -15,19 +15,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
-
-    
     <link rel="stylesheet" href="resources/fonts/icomoon/style.css">
-  
     <link href='resources/fullcalendar/packages/core/main.css' rel='stylesheet' />
     <link href='resources/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
     
-    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="resources/css/bootstrap.min.css">
-    
     <!-- Style -->
     <link rel="stylesheet" href="resources/css/style.css">
 
@@ -35,23 +29,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- base:css -->
   <link rel="stylesheet" href="resources/vendors/typicons.font/font/typicons.css">
   <link rel="stylesheet" href="resources/vendors/css/vendor.bundle.base.css">
-  <!-- endinject --> 
-  <!-- plugin css for this page -->
   <link rel="stylesheet" href="resources/vendors/select2/select2.min.css">
   <link rel="stylesheet" href="resources/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
   <link rel="stylesheet" href="resources/css/vertical-layout-light/style.css">
-  <!-- endinject -->
   <link rel="shortcut icon" href="resources/images/favicon.png" />
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
 
+<body>
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -288,7 +276,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex flex-wrap justify-content-between">
-                      <h4 class="card-title mb-3">Project status</h4>
+                      <h4 class="card-title mb-3">기안문 제출 현황</h4>
                     </div>
                     <div class="table-responsive">
                       <table class="table">
@@ -315,9 +303,6 @@
                               Deadline
                               <div class="font-weight-bold  mt-1">07 Nov 2019</div>
                             </td>
-                            <td>
-                              <button type="button" class="btn btn-sm btn-secondary">edit actions</button>
-                            </td>
                           </tr>
                           <tr>
                             <td>
@@ -340,9 +325,6 @@
                             <td>
                               Deadline
                               <div class="font-weight-bold  mt-1">08 Nov 2019</div>
-                            </td>
-                            <td>
-                              <button type="button" class="btn btn-sm btn-secondary">edit actions</button>
                             </td>
                           </tr>
                           <tr>
@@ -367,9 +349,6 @@
                               Deadline
                               <div class="font-weight-bold  mt-1">11 Jun 2019</div>
                             </td>
-                            <td>
-                              <button type="button" class="btn btn-sm btn-secondary">edit actions</button>
-                            </td>
                           </tr>
                           <tr>
                             <td>
@@ -393,9 +372,6 @@
                               Deadline
                               <div class="font-weight-bold  mt-1">26 Oct 2019</div>
                             </td>
-                            <td>
-                              <button type="button" class="btn btn-sm btn-secondary">edit actions</button>
-                            </td>
                           </tr>
                           <tr>
                             <td>
@@ -418,9 +394,6 @@
                             <td>
                               Deadline
                               <div class="font-weight-bold  mt-1">07 Nov 2019</div>
-                            </td>
-                            <td>
-                              <button type="button" class="btn btn-sm btn-secondary">edit actions</button>
                             </td>
                           </tr>
                         </tbody>
@@ -487,11 +460,6 @@
           start: '2022-08-15'
         },
         {
-          title: 'Long Event',
-          start: '2020-02-07',
-          end: '2020-02-10'
-        },
-        {
           groupId: 999,
           title: 'Repeating Event',
           start: '2020-02-09T16:00:00'
@@ -520,21 +488,9 @@
           start: '2020-02-12T14:30:00'
         },
         {
-          title: 'Happy Hour',
-          start: '2020-02-12T17:30:00'
-        },
-        {
-          title: 'Dinner',
-          start: '2020-02-12T20:00:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2020-02-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
+          title: '마감일',
           url: 'http://google.com/',
-          start: '2020-02-28'
+          start: '2022-08-26'
         }
       ]
     });
@@ -542,7 +498,7 @@
     calendar.render();
   });
 
-    </script>
+    	</script>
 
     <script src="resources/js/main.js"></script>
 

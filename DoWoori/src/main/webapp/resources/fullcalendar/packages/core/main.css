@@ -261,12 +261,12 @@ temporary rendered events).
   font-size: 0.85em;
   line-height: 1.4;
   border-radius: 3px;
-  border: 1px solid #f67280;
+  border: 1px solid #999;
 }
 
 .fc-event,
 .fc-event-dot {
-  background-color: #f67280;
+  background-color: #999;
   /* default BACKGROUND color */
 }
 
@@ -717,8 +717,8 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 /* "primary" coloring */
 .fc-button-primary {
   color: #fff;
-  background-color: #f67280;
-  border-color: #f67280;
+  background-color: #4a7ead;
+  border-color: #4a7ead;
 }
 
 .fc-button-primary:hover {
@@ -736,8 +736,8 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 
 .fc-button-primary:disabled {
   color: #fff;
-  background-color: #f67280;
-  border-color: #f67280;
+  background-color: #4a7ead;
+  border-color: #4a7ead;
 }
 
 .fc-button-primary:not(:disabled):active,
