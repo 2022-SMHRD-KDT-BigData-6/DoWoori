@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!-- 프로젝트의 contextpath 값을 동적으로 가져오는 방법  / 모든 페이지에 있어야 함-->
 <c:set var = "cpath" value="${pageContext.request.contextPath}"/>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,29 +35,26 @@
               </div>
               <h4>안녕하세요!</h4>
               <h6 class="font-weight-light">로그인을 해주세요.</h6>
-              <form class="pt-3">
+              
+              
+              <form class="pt-3" action="${cpath}/login.do">
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="ID">
+                  <input type="text" class="form-control form-control-lg" name="id" placeholder="아이디">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                  <input type="password" class="form-control form-control-lg" name="pw" placeholder="비밀번호">
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="${cpath}/basic.do">로그인</a>
-                </div>
-                <div class="my-2 d-flex justify-content-between align-items-center">
-                  <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      로그인 상태 유지
-                    </label>
-                  </div>
-                  
+                  <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">로그인</button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
                    <a href="${cpath}/join.do" class="text-primary">회원가입</a>
                 </div>
               </form>
+
+            
+            
+            
             </div>
           </div>
         </div>

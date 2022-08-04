@@ -213,7 +213,7 @@
             <p class="sidebar-menu-title">menu</p>
           </li>
          <li class="nav-item">
-            <a class="nav-link" href="${cpath}/">
+            <a class="nav-link" href="${cpath}/basic.do">
               <i class="typcn typcn-device-desktop menu-icon"></i>
               <span class="menu-title">마이페이지</span>
             </a>
@@ -239,21 +239,7 @@
               <span class="menu-title">결재 대기 현황</span>
             </a>
           </li>
-
-
-<!-- 추후 로그인은 첫페이지에!!! -->
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="typcn typcn-user-add-outline menu-icon"></i>
-              <span class="menu-title">로그인</span>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="resources/pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="resources/pages/samples/register.html"> Register </a></li>
-              </ul>
-            </div>
-          </li>
+          </ul>
 
 
   
