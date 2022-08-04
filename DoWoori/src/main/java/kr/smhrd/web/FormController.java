@@ -54,9 +54,8 @@ public class FormController {
 	}
 	
 	@RequestMapping(value = "/join.do", method = RequestMethod.POST) 
-	public String signup(UserVO vo) {
+	public void signup(UserVO vo) {
 		service.join(vo);
-		return "redirect:/login.do";
 	}
 
 	@RequestMapping("/document.do")

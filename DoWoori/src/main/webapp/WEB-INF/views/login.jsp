@@ -37,7 +37,7 @@
               <h6 class="font-weight-light">로그인을 해주세요.</h6>
               
               
-              <form class="pt-3" action="${cpath}/login.do">
+              <form class="pt-3" action="${cpath}/login.do" id="frm" method="post">
                 <div class="form-group">
                   <input type="text" class="form-control form-control-lg" name="id" placeholder="아이디">
                 </div>
@@ -45,7 +45,7 @@
                   <input type="password" class="form-control form-control-lg" name="pw" placeholder="비밀번호">
                 </div>
                 <div class="mt-3">
-                  <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">로그인</button>
+                  <button type="submit" id="login" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">로그인</button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
                    <a href="${cpath}/join.do" class="text-primary">회원가입</a>
@@ -74,5 +74,35 @@
   <script src="resources/js/settings.js"></script>
   <script src="resources/js/todolist.js"></script>
   <!-- endinject -->
+  
+ <!--  <script type="text/javascript">
+  
+	$('button#login').on('click', function() {
+		let id = $('input[name=id]').val();
+		let pw = $('input[name=pw]').val();
+		$.ajax({
+			url : '${cpath}/login.do',
+			type : 'POST',
+			data : {
+				'id' : id,
+				'pw' : pw,
+			},
+			dataType : 'text',
+			success : function(login) {
+				if (!login) {
+					alert('아이디 또는 비밀번호를 잘못 입력했습니다. 입력하신 내용을 다시 확인해주세요.')
+				} else {
+					location.replace('basic.do');
+				}
+			},
+			error : function() {
+				alert('연결 실패')
+			}
+		});
+	});
+  
+  
+  
+  </script> -->
 </body>
 </html>

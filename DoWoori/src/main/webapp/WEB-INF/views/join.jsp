@@ -38,7 +38,7 @@
               <h6 class="font-weight-light"></h6>
              
              
-              <form class="pt-3" method="post" action="${cpath}/join.do">
+              <form class="pt-3" method="post" action="${cpath}/join.do" id="frm">
                 <div class="form-group">
                   <input type="text" class="form-control form-control-lg" name="id" placeholder="사원ID">
                 </div>
@@ -72,24 +72,15 @@
                 <div class="form-group">
                   <input type="text" class="form-control form-control-lg" name="position" placeholder="직책">
                 </div>
-   
-<!--                 <div class="mb-4">
-                  <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      모든 약관에 동의합니다.
-                    </label>
-                  </div>
-                </div> -->
                 
                 
                 <div class="mt-3">
-                   <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">가입하기</button>
+                   <button type="button" id="join" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">가입하기</button>
                 </div>
                 
                 
                 <div class="text-center mt-4 font-weight-light">
-                  이미 계정이 있습니까? <a href="${cpath}/login.do" class="text-primary">로그인</a>
+                  이미 아이디가 있으신가요? <a href="${cpath}/login.do" class="text-primary">로그인</a>
                 </div>
                 
               </form>
@@ -117,5 +108,34 @@
   <script src="resources/js/settings.js"></script>
   <script src="resources/js/todolist.js"></script>
   <!-- endinject -->
+  
+  	<script type="text/javascript">
+  		$('button#join').on('click', function(){
+  		  	var formdata = $('#frm').serialize(); 
+  			
+  			$.ajax({
+  				url : '${cpath}/join.do',
+  				type: 'post',
+  				data: formdata,
+
+  				
+  				success: function(){
+  						alert('회원가입 성공! 로그인 해주세요');
+						location.replace('login.do');
+  					
+  				},
+  				error : function(){
+  					alert('id가 중복되었거나 입력형식이 잘못되었습니다. 다시 입력해주세요');
+					$("#frm")[0].reset();
+  				}
+  				
+  				
+  				
+  			});
+  			
+  		});
+  	
+  	</script>
+  
 </body>
 </html>
