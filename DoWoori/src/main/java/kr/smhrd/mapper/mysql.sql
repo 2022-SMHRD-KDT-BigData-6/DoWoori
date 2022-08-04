@@ -74,3 +74,5 @@ insert into userInfo(id, pw, name, userNum, deptNum, spot, position) values ('ma
 select * from userInfo;
 select * from deptInfo;
 select * from formInfo;
+
+delete from userInfo;

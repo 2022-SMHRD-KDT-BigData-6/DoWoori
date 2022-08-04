@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +20,7 @@
               window.WebChat.default(
               {
                 initPayload: '/greet',
-                customData: { language: "en" },
+                customData: { language: "ko" },
                 socketUrl: "http://localhost:5005", //rasa core
                 // add other props here
               },
@@ -30,6 +30,5 @@
           t.insertBefore(e, t.firstChild);
       })();
       </script>
-
 </body>
-</html> 
+</html>
