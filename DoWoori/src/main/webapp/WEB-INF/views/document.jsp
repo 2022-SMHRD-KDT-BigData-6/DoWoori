@@ -221,7 +221,7 @@
           </li>
   
           <li class="nav-item">
-            <a class="nav-link" href="${cpath}/document.do">
+            <a class="nav-link" href="${cpath}/document.do?userId=${uvo.id}">
               <i class="typcn typcn-film menu-icon"></i>
               <span class="menu-title">기안문 제출 현황</span>
             </a>
@@ -262,34 +262,31 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Bordered table</h4>
-                  <p class="card-description">
-                    Add class <code>.table-bordered</code>
-                  </p>
+                  <h4 class="card-title">기안문 제출 현황</h4>
                   <div class="table-responsive pt-3">
                   <!--@@@@ 승인목록 수정하기 @@@@ -->
                     <table class="table table-bordered">
-                      <thead>
+
                         <tr>
-                          <th>번호</th>
                           <th>유형</th>
                           <th>시작일자</th>
                           <th>종료일자</th>
                           <th>진행구분</th>     
-                          <th>제출일자</th>              
+                          <th>제출일자</th>     
+                          <th></th>          
                         </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="heading">
-                          <td>${fvo.formNum}</td>
-                          <td>2</td>
-                          <td>3</td>
-                          <td>4</td>
-                          <td>3</td>
-                          <td>5</td>
+
+                      <c:forEach var = "vo" items="${list}">
+                        <tr>
+                          <td>${vo.docuType}</td>
+                          <td>${vo.startDate}</td>
+                          <td>${vo.endDate}</td>
+                          <td>${vo.division}</td>
+                          <td>${vo.indate}</td>
+                          <td><button class="btn btn-success">상세보기</button></td>
                         </tr>
-                  
-                      </tbody>
+                      </c:forEach>
+
                     </table>
                   </div>
                 </div>

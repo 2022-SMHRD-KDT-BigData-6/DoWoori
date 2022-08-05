@@ -27,13 +27,11 @@ public class FormService {
 	}
 
 
-	
-//	  public List<BoardVO> boardListAjax() {
-//		List<BoardVO> list = mapper.boardList();
-//		
-//		return list;
-//	}
-//
+
+	public List<FormVO> formList(String userId) {
+		List<FormVO> list = mapper.formList(userId);
+		return list;
+	}
 
 
 }

@@ -216,7 +216,7 @@
           </li>
   
           <li class="nav-item">
-            <a class="nav-link" href="${cpath}/document.do">
+            <a class="nav-link" href="${cpath}/document.do?userId=${uvo.id}">
               <i class="typcn typcn-film menu-icon"></i>
               <span class="menu-title">기안문 제출 현황</span>
             </a>

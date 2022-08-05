@@ -85,7 +85,10 @@ public class FormController {
 	}
 	
 	@RequestMapping("/document.do")
-	public String document() {
+	public String document(String userId, Model model) {
+		List<FormVO> list = service.formList(userId);
+		model.addAttribute("list", list);
+		
 		return "document";
 	}
 
