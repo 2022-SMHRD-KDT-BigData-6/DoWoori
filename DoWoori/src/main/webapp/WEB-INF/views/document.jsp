@@ -256,79 +256,46 @@
             <div class="col-md-6 grid-margin stretch-card">
 
             </div>
-            <div class="col-md-6 grid-margin stretch-card">
+
+
+<!--  -->
+            <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Basic input groups</h4>
+                  <h4 class="card-title">Bordered table</h4>
                   <p class="card-description">
-                    Basic bootstrap input groups
+                    Add class <code>.table-bordered</code>
                   </p>
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">@</span>
-                      </div>
-                      <input type="text" class="form-control" placeholder="Username" aria-label="Username">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text bg-primary text-white">$</span>
-                      </div>
-                      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                      <div class="input-group-append">
-                        <span class="input-group-text">.00</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">$</span>
-                      </div>
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">0.00</span>
-                      </div>
-                      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username">
-                      <div class="input-group-append">
-                        <button class="btn btn-sm btn-primary" type="button">Search</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#">Action</a>
-                          <a class="dropdown-item" href="#">Another action</a>
-                          <a class="dropdown-item" href="#">Something else here</a>
-                          <div role="separator" class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
-                      </div>
-                      <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Find in facebook" aria-label="Recipient's username">
-                      <div class="input-group-append">
-                        <button class="btn btn-sm btn-facebook" type="button">
-                          <i class="typcn typcn-social-facebook"></i>
-                        </button>
-                      </div>
-                    </div>
+                  <div class="table-responsive pt-3">
+                  <!--@@@@ 승인목록 수정하기 @@@@ -->
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>번호</th>
+                          <th>유형</th>
+                          <th>시작일자</th>
+                          <th>종료일자</th>
+                          <th>진행구분</th>     
+                          <th>제출일자</th>              
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="heading">
+                          <td>${fvo.formNum}</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>3</td>
+                          <td>5</td>
+                        </tr>
+                  
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
             </div>
+<!--  -->
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -540,6 +507,8 @@
 	  		window.location.replace("${cpath}/")
 	  	}
 	  }
+	  
+	  
   </script>
 </body>
 </html>

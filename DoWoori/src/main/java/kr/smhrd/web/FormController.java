@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mysql.fabric.Response;
 
+import kr.smhrd.model.FormVO;
 import kr.smhrd.model.UserVO;
 import kr.smhrd.service.FormService;
 
@@ -72,10 +73,6 @@ public class FormController {
 		service.join(vo);
 	}
 
-	@RequestMapping("/document.do")
-	public String document() {
-		return "document";
-	}
 	
 	@RequestMapping("/company.do")
 	public String company() {
@@ -86,7 +83,14 @@ public class FormController {
 	public String approve() {
 		return "approve";
 	}
+	
+	@RequestMapping("/document.do")
+	public String document() {
+		return "document";
+	}
 
+	
+	
 	
 
 }

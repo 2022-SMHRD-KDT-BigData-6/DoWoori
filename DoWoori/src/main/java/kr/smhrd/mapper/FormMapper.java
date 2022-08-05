@@ -6,13 +6,15 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import kr.smhrd.model.FormVO;
 import kr.smhrd.model.UserVO;
 
-public interface UserMapper {
+public interface FormMapper {
 
 	@Select("select * from userInfo where id=#{id} and pw=#{pw}")
 	public UserVO login(UserVO vo);
 
 	public void join(UserVO vo);
+
 }
 

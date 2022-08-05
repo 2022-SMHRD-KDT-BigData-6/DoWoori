@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import kr.smhrd.mapper.UserMapper;
+import kr.smhrd.mapper.FormMapper;
+import kr.smhrd.model.FormVO;
 import kr.smhrd.model.UserVO;
 
 //비즈니스 레이어임을 알려주는 어노테이션
@@ -14,7 +15,7 @@ import kr.smhrd.model.UserVO;
 public class FormService {
 	
 	@Autowired
-	private UserMapper mapper;
+	private FormMapper mapper;
 
 	public UserVO login(UserVO vo) {
 		UserVO uvo = mapper.login(vo);
@@ -24,6 +25,8 @@ public class FormService {
 	public void join(UserVO vo) {
 		mapper.join(vo);
 	}
+
+
 	
 //	  public List<BoardVO> boardListAjax() {
 //		List<BoardVO> list = mapper.boardList();

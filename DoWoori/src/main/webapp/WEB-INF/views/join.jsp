@@ -121,7 +121,7 @@
   				
   				success: function(){
   						alert('회원가입 성공! 로그인 해주세요');
-						location.replace('login.do');
+						location.replace('${cpath}/');
   					
   				},
   				error : function(){

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="kr.smhrd.mapper.UserMapper">
+<mapper namespace="kr.smhrd.mapper.FormMapper">
 
     <insert id="join" parameterType="kr.smhrd.model.UserVO">
         insert into userInfo(id, pw, name, userNum, deptNum, spot, position) 
-        values (#{id}, #{pw}, #{name}, #{userNum}, #{deptNum}, #{spot}, #{position});
+        values (#{id}, #{pw}, #{name}, #{userNum}, #{deptNum}, #{spot}, #{position})
     </insert>
+    
 </mapper>
 
 
