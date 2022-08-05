@@ -135,7 +135,7 @@
 					</a>
 						<div class="dropdown-menu dropdown-menu-right navbar-dropdown"
 							aria-labelledby="profileDropdown">
-							<a class="dropdown-item" href="${cpath}/logout.do"> <i
+							<a class="dropdown-item" href="#" onclick="location.replace('${cpath}/logout.do')"> <i
 								class="typcn typcn-power text-primary" ></i> 로그아웃
 							</a>
 						</div>
