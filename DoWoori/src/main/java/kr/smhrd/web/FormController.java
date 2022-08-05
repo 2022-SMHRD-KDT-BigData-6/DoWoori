@@ -48,6 +48,12 @@ public class FormController {
 		
 	}
 	
+	@RequestMapping("/logout.do")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+	}
+	
 	@RequestMapping(value = "/join.do", method = RequestMethod.GET) 
 	public String join() {
 		return "join";

@@ -130,16 +130,15 @@
 						class="nav-link dropdown-toggle  pl-0 pr-0" href="#"
 						data-toggle="dropdown" id="profileDropdown"> <i
 							class="typcn typcn-user-outline mr-0"></i> <span
-							class="nav-profile-name">Evan Morales</span>
+							class="nav-profile-name">${uvo.name}</span>
 					</a>
 						<div class="dropdown-menu dropdown-menu-right navbar-dropdown"
 							aria-labelledby="profileDropdown">
-							<a class="dropdown-item"> <i
-								class="typcn typcn-cog text-primary"></i> Settings
-							</a> <a class="dropdown-item"> <i
-								class="typcn typcn-power text-primary"></i> Logout
+							<a class="dropdown-item" href="${cpath}/logout.do"> <i
+								class="typcn typcn-power text-primary" ></i> 로그아웃
 							</a>
-						</div></li>
+						</div>
+					</li>
 				</ul>
 				<button
 					class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
@@ -189,8 +188,8 @@
 								<span class="sidebar-status-indicator"></span>
 							</div>
 							<div class="sidebar-profile-name">
-								<p class="sidebar-name">김연이</p>
-								<p class="sidebar-designation">사원</p>
+								<p class="sidebar-name">${uvo.name}</p>
+								<p class="sidebar-designation">${uvo.spot}</p>
 							</div>
 						</div>
 						<div class="nav-search">
@@ -258,10 +257,12 @@
 													<td>
 														<div class="d-flex">
 															<div>
-																▪ 자율 출퇴근제(8~11시 사이 자율출근, 시간 자유롭게 선택 가능)<br> ▪ 자율 자택
-																근무제(향후 변동 될 수 있음)<br> ▪ 자유로운 휴가 사용(연차/반차)<br>
-																▪ 점심식대(1만원/인) 및 저녁식대(야근시)를 제공<br> ▪ 다양한 종류의 간식과 음료를
-																상시/무한 제공<br> ▪ 최신 장비 지급 + 3년 경과 시 개인 소유로 전환 가능<br>
+																▪ 자율 출퇴근제(8~11시 사이 자율출근, 시간 자유롭게 선택 가능)<br> 
+																▪ 자율 자택 근무제(향후 변동 될 수 있음)<br> 
+																▪ 자유로운 휴가 사용(연차/반차)<br>
+																▪ 점심식대(1만원/인) 및 저녁식대(야근시)를 제공<br> 
+																▪ 다양한 종류의 간식과 음료를 상시/무한 제공<br> 
+																▪ 최신 장비 지급 + 3년 경과 시 개인 소유로 전환 가능<br>
 															</div>
 														</div>
 													</td>
