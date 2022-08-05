@@ -137,7 +137,7 @@
                 <span class="nav-profile-name">${uvo.name}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                <a class="dropdown-item" href="${cpath}/logout.do">
+                <a class="dropdown-item" onclick="CheckSession()">
                 <i class="typcn typcn-power text-primary"></i>
                		 로그아웃
                 </a>
@@ -437,10 +437,14 @@
   <script src="resources/js/template.js"></script>
   <script src="resources/js/settings.js"></script>
   <script src="resources/js/todolist.js"></script>
-  <!-- endinject -->
-  <!-- plugin js for this page -->
-  <!-- End plugin js for this page -->
-  <!-- Custom js for this page-->
-  <!-- End custom js for this page-->
+  <script type="text/javascript">
+	  function CheckSession(){
+	  	if(sessionStorage.getItem("loginKey") == null){
+	  		window.location.replace("${cpath}/")
+	  	}
+	  }
+  
+  </script>
+
 </body>
 </html>

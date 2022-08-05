@@ -75,34 +75,33 @@
   <script src="resources/js/todolist.js"></script>
   <!-- endinject -->
   
- <!--  <script type="text/javascript">
+<script type="text/javascript">
   
 	$('button#login').on('click', function() {
-		let id = $('input[name=id]').val();
-		let pw = $('input[name=pw]').val();
+
+		 var formdata = $('#frm').serialize(); 
+		 
 		$.ajax({
 			url : '${cpath}/login.do',
-			type : 'POST',
-			data : {
-				'id' : id,
-				'pw' : pw,
-			},
-			dataType : 'text',
-			success : function(login) {
-				if (!login) {
-					alert('아이디 또는 비밀번호를 잘못 입력했습니다. 입력하신 내용을 다시 확인해주세요.')
-				} else {
-					location.replace('basic.do');
+			type : 'post',
+			data :formdata,
+			success:function(data){
+	
+				if(data == 'loginFail'){
+					alert('로그인 실패')
+					window.location.replace('${cpath}/')
+				}else{
+					window.location.replace('${cpath}/basic.do')
 				}
 			},
-			error : function() {
-				alert('연결 실패')
+			error:function(){
+				alert('에러')
 			}
 		});
 	});
   
   
   
-  </script> -->
+  </script>
 </body>
 </html>

@@ -151,11 +151,7 @@
                 <span class="nav-profile-name">${uvo.name}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                <a class="dropdown-item">
-                <i class="typcn typcn-cog text-primary"></i>
-                설정
-                </a>
-                <a class="dropdown-item">
+                <a class="dropdown-item" onclick="CheckSession()">
                 <i class="typcn typcn-power text-primary"></i>
                 로그아웃
                 </a>
@@ -434,6 +430,13 @@
     <script src='resources/fullcalendar/packages/daygrid/main.js'></script>
 
     <script>
+    
+    function CheckSession(){
+    	if(sessionStorage.getItem("loginKey") == null){
+    		window.location.replace("${cpath}/")
+    	}
+    }
+    
       document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 

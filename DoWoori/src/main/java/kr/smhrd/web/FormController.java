@@ -1,9 +1,11 @@
 package kr.smhrd.web;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.mysql.fabric.Response;
 
 import kr.smhrd.model.UserVO;
 import kr.smhrd.service.FormService;
@@ -37,15 +41,19 @@ public class FormController {
 	}
 	
 	@RequestMapping("/login.do")
-	public String signin(UserVO vo, HttpSession session) {
+	public void signin(UserVO vo, HttpSession session, HttpServletResponse response) {
 		UserVO uvo = service.login(vo);
-		if(uvo == null) {			
-			return "login";
+		
+		if(uvo == null) {
+	    	try {
+	    		response.getWriter().write("loginFail");
+	    	}catch(IOException e){
+	    		e.printStackTrace();
+	    	}
 		}else {
 			session.setAttribute("uvo", uvo);
-			return "redirect:/basic.do";
 		}
-		
+
 	}
 	
 	@RequestMapping("/logout.do")

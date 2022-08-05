@@ -142,7 +142,7 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
 
-							<a class="dropdown-item" href="${cpath}/logout.do"> <i
+							<a class="dropdown-item" onclick="CheckSession()"> <i
 								class="typcn typcn-power text-primary" ></i> 로그아웃
 							</a>
               </div>
@@ -534,5 +534,12 @@
   <script src="resources/js/typeahead.js"></script>
   <script src="resources/js/select2.js"></script>
   <!-- End custom js for this page-->
+  <script type="text/javascript">
+	  function CheckSession(){
+	  	if(sessionStorage.getItem("loginKey") == null){
+	  		window.location.replace("${cpath}/")
+	  	}
+	  }
+  </script>
 </body>
 </html>
