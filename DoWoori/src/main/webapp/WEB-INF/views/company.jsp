@@ -18,6 +18,7 @@
 	<link rel="shortcut icon" href="resources/images/favicon.png" />
 	<meta charset="UTF-8">
 </head>
+
 <body>
 	<div class="container-scroller">
 		<!-- partial:resources/partials/_navbar.html -->
@@ -286,5 +287,8 @@
 	<script src="resources/js/todolist.js"></script>
 	<script src="resources/vendors/chart.js/Chart.min.js"></script>
 	<script src="resources/js/chart.js"></script>
+	<script type="text/javascript">
+
+	</script>
 </body>
 </html>
