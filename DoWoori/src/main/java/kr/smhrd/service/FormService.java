@@ -28,15 +28,18 @@ public class FormService {
 
 
 
-	public List<FormVO> formList(String userId) {
-		List<FormVO> list = mapper.formList(userId);
-		return list;
-	}
 
-	public List<FormVO> formContentAjax() {
-		List<FormVO> contents = mapper.formContent();
+	public List<FormVO> formContentAjax(String userId) {
+		List<FormVO> contents = mapper.formContent(userId);
 		return contents;
 	}
+
+
+
+	/*
+	 * public List<FormVO> formContentAjax(String userId) { List<FormVO> contents =
+	 * mapper.formContent(); return contents; }
+	 */
 
 
 }

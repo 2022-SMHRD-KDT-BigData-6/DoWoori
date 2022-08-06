@@ -3,6 +3,7 @@ package kr.smhrd.web;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,13 +16,21 @@ public class FormRESTController {
 	@Autowired
 	private FormService service;
 	
-	
 	@RequestMapping("/formContentAjax.do")
-	public List<FormVO> formContentAjax(){
-		List<FormVO> contents = service.formContentAjax();
-		
+	public List<FormVO> formContentAjax(String userId, Model model) {
+
+		List<FormVO> contents = service.formContentAjax(userId);
+		model.addAttribute("list", contents);
+
 		return contents;
 	}
+	
+	/*
+	 * @RequestMapping("/formContentAjax.do") public List<FormVO>
+	 * formContentAjax(String userId, Model model){ List<FormVO> contents =
+	 * service.formContentAjax(userId); model.addAttribute("list", contents); return
+	 * contents; }
+	 */
 //	@RequestMapping("/boardListAjax.do")
 //	  public List<FormVO> boardListAjax() {
 //		List<FormVO> list = service.boardListAjax();

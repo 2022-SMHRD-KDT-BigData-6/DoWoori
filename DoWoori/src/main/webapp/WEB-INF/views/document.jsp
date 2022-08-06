@@ -235,28 +235,18 @@
                 <div class="card-body">
                   <h4 class="card-title">기안문 제출 현황</h4>
                   <div class="table-responsive pt-3">
-                  <!--@@@@ 승인목록 수정하기 @@@@ -->
+
                     <table class="table table-bordered">
 
-                        <tr>
+                        <tr class="lists">
                           <th>유형</th>
                           <th>시작일자</th>
                           <th>종료일자</th>
+                          <th>시간구분</th> 
                           <th>진행구분</th>     
                           <th>제출일자</th>     
                           <th></th>          
                         </tr>
-
-                      <c:forEach var = "vo" items="${list}">
-                        <tr>
-                          <td>${vo.docuType}</td>
-                          <td>${vo.startDate}</td>
-                          <td>${vo.endDate}</td>
-                          <td>${vo.division}</td>
-                          <td>${vo.indate}</td>
-                          <td><button class="btn btn-success" onclick="location.href='${cpath}/docuContent.do';">상세보기</button></td>
-                        </tr>
-                      </c:forEach>
 
                     </table>
                   </div>
@@ -476,7 +466,100 @@
 	  	}
 	  }
 	  
+	  $(document).ready(function(){
+		   loadContents('${uvo.id}');
+	  })
 	  
+	  function loadContents(userId){
+		  $.ajax({
+			  url : '${cpath}/formContentAjax.do',
+			  data : {'userId':userId},
+			  type : 'get',
+			  dataType : 'json',
+			  success:contentView,			  
+			  error : function(){
+				  alert('실패!');
+			  }
+		  })
+		  
+		  
+	  }
+	  
+	  
+	  
+	  function contentView(data){
+		  var flist = "";
+		  console.log(data)
+		  
+
+		  
+		  $.each(data, function(index, con){
+			  console.log(data)
+			  
+			  if(con.utime !== null){
+				  var time = con.utime;
+			  }else{
+				  var time = "종일";
+			  }
+			  
+			  flist += "<tr>"
+			  flist += "<td>"+con.docuType+"</td>"
+              flist += "<td>"+con.startDate+"</td>"
+              flist += "<td>"+con.endDate+"</td>"
+
+              flist += "<td>"+time+"</td>"
+              flist += "<td>"+con.division+"</td>"
+              flist += "<td>"+con.indate+"</td>"
+			  flist += "<td><button class='btn btn-success' onclick='docuContent("+con.formNum+")'>상세보기</button></td></tr>"
+ 
+				  
+ 			  //버튼 누르면 펼쳐지는 부분
+			  
+			  
+			  flist += "<tr class='innerContent' id='vc"+con.formNum+"' style='display:none'>"
+			  flist += "<td colspan = '7'>"
+					
+				    flist += "&nbsp<label for='admin' id='admin'><h5>승인자 : </h5></label>&nbsp"
+				  		/* 텍스트에 맞춰지면 좋겠당 */
+/* 				    flist += "<input type='text' value='"+admin+"' disabled><br><br>" //이름으로 가져오기 */
+					
+				    //시작일
+				    flist += "&nbsp<label for='admin'><h5>시작일자 : </h5></label>&nbsp"
+					flist += "<input type='date' value='"+con.startDate+"'>&emsp;&emsp;"
+					
+					//종료일
+					flist += "<label for='admin'><h5>종료일자 : </h5></label>&nbsp;"
+					flist += "<input type='date' value='"+con.endDate+"'><br><br>"
+				    
+					//시간구분
+					flist += "&nbsp<label for='admin'><h5>시간구분 : </h5></label>&nbsp"
+				  		/* 텍스트에 맞춰지면 좋겠당 */
+				    flist += "<input type='text' value='"+time+"' disabled><br><br>"
+					
+					//사유
+					flist += "&nbsp<label for='comment'><h5>사유</h5></label>"
+			  		flist += "<textarea id='comment' rows='7' name='con"+con.formNum+"' class='form-control'>"+con.reason+"</textarea>"
+			  		flist += "<br>" 
+			 		
+			  		//닫기버튼
+			  		flist += "&nbsp<button class = 'btn-warning btn btn-sm' onclick='docuContent("+con.formNum+")'>닫기</button>"
+			  	flist += "</td>"
+			  flist += "</tr>" 
+
+		  })
+		  
+		$('.lists').after(flist);
+
+	  }
+	  
+	  function docuContent(formNum){
+		  if($('#vc'+formNum).css('display') == 'none'){
+			  $('#vc'+formNum).css('display', 'table-row')
+		  }else{
+			  $('#vc'+formNum).css('display', 'none')
+		  }
+		  
+	  }
   </script>
 </body>
 </html>
