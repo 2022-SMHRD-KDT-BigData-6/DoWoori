@@ -15,6 +15,13 @@ public class FormRESTController {
 	@Autowired
 	private FormService service;
 	
+	
+	@RequestMapping("/formContentAjax.do")
+	public List<FormVO> formContentAjax(){
+		List<FormVO> contents = service.formContentAjax();
+		
+		return contents;
+	}
 //	@RequestMapping("/boardListAjax.do")
 //	  public List<FormVO> boardListAjax() {
 //		List<FormVO> list = service.boardListAjax();

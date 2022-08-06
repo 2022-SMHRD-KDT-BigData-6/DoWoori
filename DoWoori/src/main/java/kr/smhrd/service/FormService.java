@@ -33,5 +33,10 @@ public class FormService {
 		return list;
 	}
 
+	public List<FormVO> formContentAjax() {
+		List<FormVO> contents = mapper.formContent();
+		return contents;
+	}
+
 
 }

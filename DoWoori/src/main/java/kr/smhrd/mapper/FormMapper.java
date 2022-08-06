@@ -19,5 +19,7 @@ public interface FormMapper {
 	@Select("select * from formInfo where userId=#{userId}")
 	public List<FormVO> formList(String userId);
 
+	public List<FormVO> formContent();
+
 }
 
