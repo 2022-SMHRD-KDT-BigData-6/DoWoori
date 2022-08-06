@@ -26,17 +26,13 @@
 <body>
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
-      <div class="content-wrapper d-flex align-items-center auth px-0">
+      <div class="content-wrapper d-flex align-items-center auth px-0 logincolor" style="background-image: url(resources/images/loginbg.jpg); background-position: 50% -25px;">
         <div class="row w-100 mx-0">
           <div class="col-lg-4 mx-auto">
-            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-              <div class="brand-logo">
-                <img src="resources/images/logo.svg" alt="logo">
-              </div>
+            <div class="auth-form-light text-center py-5 px-4 px-sm-5">
               
-              <h4>회원가입</h4>
-              <h6 class="font-weight-light"></h6>
-             
+             <h4>직원만 가입이 가능합니다.</h4>
+             <h5>Only for Employee</h5>
              
               <form class="pt-3" method="post" action="${cpath}/join.do" id="frm">
                 <div class="form-group">
@@ -80,7 +76,7 @@
                 
                 
                 <div class="text-center mt-4 font-weight-light">
-                  이미 아이디가 있으신가요? <a href="${cpath}/login.do" class="text-primary">로그인</a>
+                  이미 아이디가 있으신가요? <a href="${cpath}/" class="text-primary">로그인</a>
                 </div>
                 
               </form>

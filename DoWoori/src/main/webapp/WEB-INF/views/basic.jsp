@@ -10,9 +10,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>basic</title>
+
 	<!-- 캘린더 템플릿 -->
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
@@ -20,23 +20,19 @@
     <link href='resources/fullcalendar/packages/core/main.css' rel='stylesheet' />
     <link href='resources/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
     
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="resources/css/bootstrap.min.css">
-    <!-- Style -->
     <link rel="stylesheet" href="resources/css/style.css">
 
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link rel="stylesheet" href="resources/vendors/typicons.font/font/typicons.css">
-  <link rel="stylesheet" href="resources/vendors/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href="resources/vendors/select2/select2.min.css">
-  <link rel="stylesheet" href="resources/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
-  <link rel="stylesheet" href="resources/css/vertical-layout-light/style.css">
-  <link rel="shortcut icon" href="resources/images/favicon.png" />
+   <!-- 기본 -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="stylesheet" href="resources/vendors/typicons.font/font/typicons.css">
+   <link rel="stylesheet" href="resources/vendors/css/vendor.bundle.base.css">
+   <link rel="stylesheet" href="resources/vendors/select2/select2.min.css">
+   <link rel="stylesheet" href="resources/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+   <link rel="stylesheet" href="resources/css/vertical-layout-light/style.css">
+   <link rel="shortcut icon" href="resources/images/favicon.png" />
 <meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 
 <body>
@@ -44,8 +40,8 @@
       <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="${cpath}/"><img src="resources/images/logo.svg" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="${cpath}/"><img src="resources/images/logo-mini.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="${cpath}/basic.do"><img src="resources/images/logob.png" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="${cpath}/basic.do"><img src="resources/images/logo-mini.svg" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center d-none d-lg-flex" type="button" data-toggle="minimize">
             <span class="typcn typcn-th-menu"></span>
           </button>
@@ -165,34 +161,6 @@
       </nav>
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
-        <!-- partial:partials/_settings-panel.html -->
-        <div class="theme-setting-wrapper">
-
-          <div id="theme-settings" class="settings-panel">
-            <i class="settings-close typcn typcn-delete-outline"></i>
-            <p class="settings-heading">SIDEBAR SKINS</p>
-            <div class="sidebar-bg-options" id="sidebar-light-theme">
-              <div class="img-ss rounded-circle bg-light border mr-3"></div>
-              Light
-            </div>
-            <div class="sidebar-bg-options selected" id="sidebar-dark-theme">
-              <div class="img-ss rounded-circle bg-dark border mr-3"></div>
-              Dark
-            </div>
-            <p class="settings-heading mt-2">HEADER SKINS</p>
-            <div class="color-tiles mx-0 px-4">
-              <div class="tiles success"></div>
-              <div class="tiles warning"></div>
-              <div class="tiles danger"></div>
-              <div class="tiles primary"></div>
-              <div class="tiles info"></div>
-              <div class="tiles dark"></div>
-              <div class="tiles default border"></div>
-            </div>
-          </div>
-        </div>
-        <!-- partial -->
-        <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
@@ -255,7 +223,7 @@
       </nav>
         <!-- partial -->
         <div class="main-panel">
-          <div class="content-wrapper">
+          <div class="content-wrapper main">
 
             <div class="row">
               <div class="col-lg-12 d-flex grid-margin stretch-card">
@@ -451,32 +419,9 @@
           start: '2022-08-15'
         },
         {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2020-02-09T16:00:00'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2020-02-16T16:00:00'
-        },
-        {
-          title: 'Conference',
-          start: '2020-02-11',
-          end: '2020-02-13'
-        },
-        {
-          title: 'Meeting',
-          start: '2020-02-12T10:30:00',
-          end: '2020-02-12T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: '2020-02-12T12:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: '2020-02-12T14:30:00'
+          title: '출장',
+          start: '2022-08-24',
+          end: '2022-08-25'
         },
         {
           title: '마감일',

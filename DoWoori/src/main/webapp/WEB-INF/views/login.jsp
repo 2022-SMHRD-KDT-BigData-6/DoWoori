@@ -26,15 +26,13 @@
 <body>
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
-      <div class="content-wrapper d-flex align-items-center auth px-0">
+      <div class="content-wrapper d-flex align-items-center auth px-0 logincolor" style="background-image: url(resources/images/loginbg.jpg); background-position: 50% -25px;">
         <div class="row w-100 mx-0">
           <div class="col-lg-4 mx-auto">
-            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-              <div class="brand-logo">
-                <img src="resources/images/logo.svg" alt="logo">
-              </div>
-              <h4>안녕하세요!</h4>
-              <h6 class="font-weight-light">로그인을 해주세요.</h6>
+            <div class="auth-form-light text-center py-5 px-4 px-sm-5">
+              <h1>Login</h1>
+              <h4>이곳은 직원 전용 페이지입니다.</h4>
+              <h5>Only for Employee</h5>
               
               
               <form class="pt-3" action="${cpath}/login.do" id="frm" method="post">

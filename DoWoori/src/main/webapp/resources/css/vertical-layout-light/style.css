@@ -10853,15 +10853,15 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #f2125e;
-  border-color: #f2125e;
+  color: #ffffff;
+  background-color: #4d7baf;
+ 
 }
 
 .btn-primary:hover {
-  color: #fff;
-  background-color: #d20c4f;
-  border-color: #c60b4a;
+  color:  #ffffff;
+  background-color: #3f648d;
+  
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -18007,11 +18007,11 @@ button.bg-dark:focus,
 }
 
 .text-primary, .list-wrapper .completed .remove {
-  color: #f2125e !important;
+  color: #4d7baf !important;
 }
 
 a.text-primary:hover, .list-wrapper .completed a.remove:hover, a.text-primary:focus, .list-wrapper .completed a.remove:focus {
-  color: #ae0a41 !important;
+  color: #0d2744 !important;
 }
 
 .text-secondary, .list-wrapper .remove {
@@ -18514,6 +18514,8 @@ p {
 
 h1, .h1 {
   font-size: 1.875rem;
+  font-weight: bold;
+  line-height: 2;
 }
 
 h2, .h2 {
@@ -18526,10 +18528,12 @@ h3, .h3 {
 
 h4, .h4 {
   font-size: 1rem;
+  font-weight: 400;
 }
 
 h5, .h5 {
   font-size: 0.875rem;
+  font-weight: 400;
 }
 
 h6, .h6 {
@@ -22769,6 +22773,7 @@ body.avgrund-active {
 
 .auth .auth-form-light {
   background: #ffffff;
+  border-radius: 20px;
 }
 
 .auth .auth-form-light select {
@@ -22846,6 +22851,8 @@ body.avgrund-active {
 .auth form .auth-form-btn {
   height: 50px;
   line-height: 1.5;
+  border-radius: 50px;
+  
 }
 
 .auth form .auth-link {
@@ -22970,11 +22977,41 @@ body.avgrund-active {
 }
 
 .content-wrapper {
-  background: #e8eff9;
-  padding: 1.875rem 1.875rem 0 1.875rem;
   width: 100%;
   -webkit-flex-grow: 1;
   flex-grow: 1;
+  /*수정한거*/
+  background: #e8eff9;
+  /*padding: 1.875rem 1.875rem 0 1.875rem;*/
+  
+}
+
+.main{
+	width: 100%;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  /*수정한거*/
+  background: #e8eff9;
+  padding: 1.875rem 1.875rem 0 1.875rem;
+}
+
+/*로그인 */
+.logincolor{
+	position: absolute;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+
+.logincolor:before {
+	content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #343a40c4;
+    opacity: .9;
+    border-bottom-right-radius: 0px;
+  
 }
 
 @media (max-width: 767px) {
