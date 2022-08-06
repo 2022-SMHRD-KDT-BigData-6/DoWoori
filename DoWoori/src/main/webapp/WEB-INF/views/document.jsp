@@ -283,7 +283,7 @@
                           <td>${vo.endDate}</td>
                           <td>${vo.division}</td>
                           <td>${vo.indate}</td>
-                          <td><button class="btn btn-success">상세보기</button></td>
+                          <td><button class="btn btn-success" onclick="location.href='${cpath}/docuContent.do';">상세보기</button></td>
                         </tr>
                       </c:forEach>
 
