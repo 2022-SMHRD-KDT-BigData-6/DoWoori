@@ -20,5 +20,7 @@ public interface FormMapper {
 	@Select("select * from formInfo where userId=#{userId}")
 	public List<FormVO> formContent(String userId);
 
+	public List<UserVO> adminAjax(int deptNum);
+
 }
 

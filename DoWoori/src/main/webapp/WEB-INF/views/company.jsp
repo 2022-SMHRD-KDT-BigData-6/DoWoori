@@ -184,7 +184,7 @@
 							class="menu-title">마이페이지</span>
 					</a></li>
 
-					<li class="nav-item"><a class="nav-link" href="${cpath}/document.do?userId=${uvo.id}"> <i
+					<li class="nav-item"><a class="nav-link" href="${cpath}/document.do?userId=${uvo.id}&deptNum=${uvo.deptNum}"> <i
 							class="typcn typcn-film menu-icon"></i> <span class="menu-title">기안문
 								제출 현황</span>
 					</a></li>
