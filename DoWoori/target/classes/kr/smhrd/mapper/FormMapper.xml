@@ -7,7 +7,9 @@
         values (#{id}, #{pw}, #{name}, #{userNum}, #{deptNum}, #{spot}, #{position})
     </insert>
     
-    
+    <select id="adminAjax" resultType="kr.smhrd.model.UserVO">
+        select * from userInfo u where deptNum=#{deptNum} and position='팀장'
+    </select>   
 </mapper>
 
 

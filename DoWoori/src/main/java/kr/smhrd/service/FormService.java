@@ -34,6 +34,11 @@ public class FormService {
 		return contents;
 	}
 
+	public List<UserVO> adminAjax(int deptNum) {
+		List<UserVO> avo = mapper.adminAjax(deptNum);
+		return avo;
+	}
+
 
 
 	/*

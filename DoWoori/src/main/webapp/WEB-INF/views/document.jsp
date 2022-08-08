@@ -192,7 +192,7 @@
           </li>
   
           <li class="nav-item">
-            <a class="nav-link" href="${cpath}/document.do?userId=${uvo.id}">
+            <a class="nav-link" href="${cpath}/document.do?userId=${uvo.id}&deptNum=${uvo.deptNum}">
               <i class="typcn typcn-film menu-icon"></i>
               <span class="menu-title">기안문 제출 현황</span>
             </a>
@@ -291,6 +291,7 @@
 	  
 	  $(document).ready(function(){
 		   loadContents('${uvo.id}');
+		   loadAdmin('${uvo.deptNum}');
 	  })
 	  
 	  function loadContents(userId){
@@ -308,16 +309,40 @@
 		  
 	  }
 	  
+	  function loadAdmin(deptNum){
+		  $.ajax({
+			  url : '${cpath}/adminAjax.do',
+			  data : {'deptNum':deptNum},
+			  type : 'get',
+			  dataType : 'json',
+			  success:adminView,			  
+			  error : function(){
+				  alert('실패!!');
+			  }
+		  })
+	  } 
 	  
+	  var admin = "";
 	  
+	  function adminView(data){
+		  var alist = "";
+		  console.log(data["name"]);
+  		  $.each(data, function(index, ad){
+  	 		  console.log(ad);
+			  alist += "&nbsp<input type='text' value='"+ad.name+"' disabled><br><br>"
+		  })
+
+		  $('#admin').after(alist);
+		  
+	  }
+	  
+
 	  function contentView(data){
 		  var flist = "";
-		  console.log(data)
 		  
 
 		  
 		  $.each(data, function(index, con){
-			  console.log(data)
 			  
 			  if(con.utime !== null){
 				  var time = con.utime;
@@ -327,16 +352,16 @@
 			  
 			  flist += "<tr>"
 			  flist += "<td>"+con.docuType+"</td>"
-              flist += "<td>"+con.startDate+"</td>"
-              flist += "<td>"+con.endDate+"</td>"
+             flist += "<td>"+con.startDate+"</td>"
+             flist += "<td>"+con.endDate+"</td>"
 
-              flist += "<td>"+time+"</td>"
-              flist += "<td>"+con.division+"</td>"
-              flist += "<td>"+con.indate+"</td>"
+             flist += "<td>"+time+"</td>"
+             flist += "<td>"+con.division+"</td>"
+             flist += "<td>"+con.indate+"</td>"
 			  flist += "<td><button class='btn btn-success' onclick='docuContent("+con.formNum+")'>상세보기</button></td></tr>"
- 
+
 				  
- 			  //버튼 누르면 펼쳐지는 부분
+			  //버튼 누르면 펼쳐지는 부분
 			  
 			  
 			  flist += "<tr class='innerContent text-left' id='vc"+con.formNum+"' style='display:none'>"
