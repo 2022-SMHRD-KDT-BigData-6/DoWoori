@@ -10922,14 +10922,14 @@ fieldset:disabled a.btn {
 
 .btn-success {
   color: #fff;
-  background-color: #17c964;
-  border-color: #17c964;
+  background-color: #4a7ead;
+  border-radius: 10px;
 }
 
 .btn-success:hover {
   color: #fff;
-  background-color: #13a753;
-  border-color: #129b4d;
+  background-color: #3f648d;
+
 }
 
 .btn-success:focus, .btn-success.focus {
@@ -10938,8 +10938,7 @@ fieldset:disabled a.btn {
 
 .btn-success.disabled, .btn-success:disabled {
   color: #fff;
-  background-color: #17c964;
-  border-color: #17c964;
+  background-color: #3f648d;
 }
 
 .btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active,
@@ -18491,9 +18490,9 @@ input:focus {
   background: linear-gradient(to right, #7d7979 0%, #000000 100%);
 }
 
-/* Typography */
+/* 기안문 제출 테이블 */
 body {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: initial;
   line-height: normal;
@@ -19952,7 +19951,7 @@ code {
   color: #000000;
   margin-bottom: 1.5rem;
   text-transform: capitalize;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 600;
 }
 
@@ -21607,7 +21606,7 @@ dl li {
 }
 
 .table td {
-  font-size: 0.93rem;
+  font-size: 0.97rem;
   line-height: 1.7rem;
   font-weight: 400;
 }

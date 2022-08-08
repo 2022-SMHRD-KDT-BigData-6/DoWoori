@@ -473,6 +473,7 @@ tr:first-child > td > .fc-day-grid-event {
   /* except for mirror skeleton */
 }
 
+
 .fc-day-grid-event .fc-content {
   /* force events to be one-line tall */
   white-space: nowrap;
@@ -838,23 +839,24 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 .fc-toolbar h2 {
   font-size: 1.75em;
   margin: 0;
+  font-weight: bolder;
 }
 
 /* View Structure
 --------------------------------------------------------------------------------------------------*/
-.fc-view-container {
+/*.fc-view-container {
   position: relative;
-}
+}*/
 
 /* undo twitter bootstrap's box-sizing rules. normalizes positioning techniques */
 /* don't do this for the toolbar because we'll want bootstrap to style those buttons as some pt */
-.fc-view-container *,
+/*.fc-view-container *,
 .fc-view-container *:before,
 .fc-view-container *:after {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-}
+}*/
 
 .fc-view,
 .fc-view > table {
@@ -1034,13 +1036,6 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
   /* Vertical Scroller & Containers
   --------------------------------------------------------------------------------------------------*/
   /* kill the scrollbars and allow natural height */
-  .fc-scroller,
-.fc-day-grid-container,
-.fc-time-grid-container {
-    /* */
-    overflow: visible !important;
-    height: auto !important;
-  }
 
   /* kill the horizontal border/padding used to compensate for scrollbars */
   .fc-row {

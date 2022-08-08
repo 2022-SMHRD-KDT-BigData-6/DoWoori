@@ -21,7 +21,6 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="resources/images/favicon.png" />
 <meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
   <div class="container-scroller">
