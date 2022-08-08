@@ -222,38 +222,16 @@
                   <div class="table-responsive pt-3">
                   <!--@@@@ 승인목록 수정하기 @@@@ -->
                     <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>번호</th>
+                        <tr class="lists">
                           <th>유형</th>
+                          <th>제출자</th>
                           <th>시작일자</th>
-                          <th>종료일자</th>
-                          <th>시간구분</th>        
-                          <th>사유</th>                     
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            1
-                          </td>
-                          <td>
-                            Herman Beck
-                          </td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>
-                            $ 77.99
-                          </td>
-                          <td>
-                            May 15, 2015
-                          </td>
-                        </tr>
-                  
-                      </tbody>
+                          <th>종료일자</th>      
+                          <th>진행구분</th>   
+                          <th>제출일자</th>          
+                          <th></th>           
+                        </tr>   
+        
                     </table>
                   </div>
                 </div>
@@ -287,6 +265,124 @@
 	  		window.location.replace("${cpath}/")
 	  	}
 	  }
+	  
+	     $(document).ready(function(){
+	         loadUser('${uvo.deptNum}');
+	         loadContents('${uvo.id}');
+
+	     })
+	     
+	     
+	     function loadContents(adminId){
+	        $.ajax({
+	           url : '${cpath}/approveAjax.do',
+	           data : {'adminId':adminId},
+	           type : 'get',
+	           dataType : 'json',
+	           success:contentView,           
+	           error : function(){
+	              alert('실패!');
+	           }
+	        })
+	     }
+	     
+	     
+	     
+	     
+	     function loadUser(deptNum){
+	        $.ajax({
+	           url : '${cpath}/userAjax.do',
+	           data : {'deptNum':deptNum},
+	           type : 'get',
+	           dataType : 'json',
+	           success: writerView,           
+	           error : function(){
+	              alert('실패!');
+	           }
+	        })
+	     }
+	     
+	     
+	     var dicWriter = {};
+	     var name = "";
+	     
+         var userName = "";
+
+  	     function writerView(data){
+  	    	 dicWriter = data;
+
+	      }
+  	     
+	     
+	     function contentView(data){
+	        var flist = "";
+
+	        $.each(data, function(index, con){
+
+	           if(con.utime !== null){
+	              var time = con.utime;
+	           }else{
+	              var time = "종일";
+	           }
+	           
+		 
+	           flist += "<tr>"
+	           flist += "<td id = 'info'>"+con.docuType+"</td>"
+	           flist += "<td>"
+	        	   $.each(dicWriter, function(ind, w){
+			           	if(w.id === con.userId){
+			           		flist += w.name
+			          	 }
+	        	   })
+	           flist+= "</td>"
+	               flist += "<td>"+con.startDate+"</td>"
+	               flist += "<td>"+con.endDate+"</td>"
+	               flist += "<td>"+con.division+"</td>"
+	               flist += "<td>"+con.indate+"</td>"
+	           flist += "<td><button class='btn btn-success' onclick='docuContent("+con.formNum+")'>상세보기</button></td></tr>"
+
+	              
+	           //버튼 누르면 펼쳐지는 부분
+	           
+	           
+	           flist += "<tr class='innerContent' id='vc"+con.formNum+"' style='display:none'>"
+	           flist += "<td colspan = '7'>"
+	                
+	               //시간구분
+	               flist += "&nbsp<label for='admin'><h5>시간구분 : </h5></label>&nbsp"
+	                    /* 텍스트에 맞춰지면 좋겠당 */
+	                flist += "<input type='text' value='"+time+"' disabled><br><br>"
+	               
+	               //사유
+	               flist += "&nbsp<label for='comment'><h5>사유</h5></label>"
+	                 flist += "<textarea readonly id='comment' rows='7' name='con"+con.formNum+"' class='form-control'>"+con.reason+"</textarea>"
+	                 flist += "<br>" 
+	                
+	                 
+	                 //승인, 반려버튼
+	                 flist += "&nbsp<button class = 'btn-info btn btn-sm' onclick='docuContent("+con.formNum+")' >승인</button>"
+	                 flist += "&nbsp<button class = 'btn-danger btn btn-sm' onclick='docuContent("+con.formNum+")'>반려</button>"
+	                 
+	              //닫기버튼
+	                 flist += "&nbsp<button class = 'btn-light btn btn-sm' onclick='docuContent("+con.formNum+")' style='float: right;'>닫기</button>"
+	              flist += "</td>"
+	           flist += "</tr>" 
+		        
+	        })
+	        
+	      $('.lists').after(flist);
+
+	     }
+	     
+
+	     function docuContent(formNum){
+	        if($('#vc'+formNum).css('display') == 'none'){
+	           $('#vc'+formNum).css('display', 'table-row')
+	        }else{
+	           $('#vc'+formNum).css('display', 'none')
+	        }
+	        
+	     }
   
   </script>
 

@@ -22,5 +22,11 @@ public interface FormMapper {
 
 	public List<UserVO> adminAjax(int deptNum);
 
+	@Select("select * from formInfo where adminId=#{adminId}")
+	public List<FormVO> approveAjax(String adminId);
+
+	@Select("select * from userInfo where deptNum=#{deptNum}")
+	public List<UserVO> userAjax(int deptNum);
+
 }
 

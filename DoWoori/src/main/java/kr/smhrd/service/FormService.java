@@ -39,6 +39,18 @@ public class FormService {
 		return avo;
 	}
 
+	public List<FormVO> approveAjax(String adminId) {
+		List<FormVO> contents = mapper.approveAjax(adminId);
+		return contents;
+	}
+
+
+	public List<UserVO> userAjax(int deptNum) {
+		List<UserVO> uvo = mapper.userAjax(deptNum);
+		return uvo;
+	}
+
+
 
 
 	/*
