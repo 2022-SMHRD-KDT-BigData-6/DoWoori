@@ -210,14 +210,14 @@
               <span class="menu-title">회사 정보</span>
             </a>
           </li>
-          
-          <li class="nav-item">
-            <a class="nav-link" href="${cpath}/approve.do">
-              <i class="typcn typcn-th-small-outline menu-icon"></i>
-              <span class="menu-title">결재 대기 현황</span>
-            </a>
-          </li>    
-      
+          <c:if test="${uvo.position eq '팀장'}">
+	          <li class="nav-item">
+	            <a class="nav-link" href="${cpath}/approve.do">
+	              <i class="typcn typcn-th-small-outline menu-icon"></i>
+	              <span class="menu-title">결재 대기 현황</span>
+	            </a>
+	          </li>    
+         </c:if>
         </ul>
        
       </nav>

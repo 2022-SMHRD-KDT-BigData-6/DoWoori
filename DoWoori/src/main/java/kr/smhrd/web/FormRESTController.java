@@ -34,4 +34,19 @@ public class FormRESTController {
 		 return avo; 
 	 }
 
+	 @RequestMapping("/approveAjax.do")
+	 public List<FormVO> approveAjax(String adminId, Model model){
+			List<FormVO> contents = service.approveAjax(adminId);
+			model.addAttribute("list", contents);
+
+			return contents;
+	 }
+	 
+	 
+	 @RequestMapping("/userAjax.do")
+	 public List<UserVO> userAjax(int deptNum, Model model){
+		 List<UserVO> uvo = service.userAjax(deptNum);
+		 model.addAttribute("uvo", uvo);
+		 return uvo;
+	 }
 }

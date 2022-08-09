@@ -205,12 +205,14 @@
             </a>
           </li>
           
-          <li class="nav-item">
-            <a class="nav-link" href="${cpath}/approve.do">
-              <i class="typcn typcn-th-small-outline menu-icon"></i>
-              <span class="menu-title">결재 대기 현황</span>
-            </a>
-          </li>
+          <c:if test="${uvo.position eq '팀장'}">
+	          <li class="nav-item">
+	            <a class="nav-link" href="${cpath}/approve.do">
+	              <i class="typcn typcn-th-small-outline menu-icon"></i>
+	              <span class="menu-title">결재 대기 현황</span>
+	            </a>
+	          </li>    
+         </c:if>
 
 
         </ul>
@@ -389,8 +391,13 @@
 			  		flist += "<textarea id='comment' rows='7' name='con"+con.formNum+"' class='form-control'>"+con.reason+"</textarea>"
 			  		flist += "<br>" 
 			 		
-			  		//닫기버튼
+			  		//수정, 닫기버튼
+			  		if(con.division === '신청'){
+			  		  flist += "&nbsp<button class = 'btn-success btn btn-sm' onclick=''>수정</button>"
+			  		}
+			  		
 			  		flist += "&nbsp<button class = 'btn-warning btn btn-sm' onclick='docuContent("+con.formNum+")'>닫기</button>"
+			  		
 			  	flist += "</td>"
 			  flist += "</tr>" 
 
