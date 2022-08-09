@@ -35,5 +35,11 @@ public interface FormMapper {
 	@Update("update formInfo set startDate=#{startDate}, endDate=#{endDate}, reason=#{reason}  where formNum=#{formNum}")
 	public void formUpdate(FormVO vo);
 
+	@Update("update formInfo set division='승인' where formNum=#{formNum}")
+	public void apprForm(FormVO vo);
+
+	@Update("update formInfo set division='반려' where formNum=#{formNum}")
+	public void compForm(FormVO vo);
+
 }
 

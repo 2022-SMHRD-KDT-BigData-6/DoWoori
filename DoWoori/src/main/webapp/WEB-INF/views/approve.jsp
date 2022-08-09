@@ -217,12 +217,8 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Bordered table</h4>
-                  <p class="card-description">
-                    Add class <code>.table-bordered</code>
-                  </p>
+                  <h4 class="card-title">결재 대기 현황</h4>
                   <div class="table-responsive pt-3">
-                  <!--@@@@ 승인목록 수정하기 @@@@ -->
                     <table class="table table-bordered">
                         <tr class="lists">
                           <th>유형</th>
@@ -362,9 +358,10 @@
 	                
 	                 
 	                 //승인, 반려버튼
-	                 flist += "&nbsp<button class = 'btn-info btn btn-sm' onclick='docuContent("+con.formNum+")' >승인</button>"
-	                 flist += "&nbsp<button class = 'btn-danger btn btn-sm' onclick='docuContent("+con.formNum+")'>반려</button>"
-	                 
+	                 if(con.division === '신청'){
+		                 flist += "&nbsp<button class = 'btn-info btn btn-sm' onclick='apprForm("+con.formNum+")' >승인</button>"
+		                 flist += "&nbsp<button class = 'btn-danger btn btn-sm' onclick='compForm("+con.formNum+")'>반려</button>"
+	                 }
 	              //닫기버튼
 	                 flist += "&nbsp<button class = 'btn-light btn btn-sm' onclick='docuContent("+con.formNum+")' style='float: right;'>닫기</button>"
 	              flist += "</td>"
@@ -385,6 +382,42 @@
 	           $('#vc'+formNum).css('display', 'none')
 	        }
 	        
+	     }
+	     
+	     // 한 번 새로고침 하는 함수
+		 function LoadOnce()
+		 {
+		  window.location.reload();
+		 }
+	     
+	     function apprForm(formNum){
+		        $.ajax({
+			           url : '${cpath}/apprForm.do',
+			           data : {'formNum':formNum},
+			           type : 'get',
+			           dataType : 'json',
+			           success: function(){
+			        	   alert('승인처리 완료');
+			           },           
+			           error : function(){
+			              alert('실패!');
+			           }
+			        })
+	     }
+	     
+	     function compForm(formNum){
+		        $.ajax({
+			           url : '${cpath}/compForm.do',
+			           data : {'formNum':formNum},
+			           type : 'get',
+			           dataType : 'json',
+			           success: function(){
+			        	   alert('반려처리 완료');
+			           },           
+			           error : function(){
+			              alert('실패!');
+			           }
+			        })
 	     }
   
   </script>

@@ -62,6 +62,16 @@ public class FormService {
 		
 	}
 
+	public void apprForm(FormVO vo) {
+		mapper.apprForm(vo);
+		
+	}
+
+	public void compForm(FormVO vo) {
+		mapper.compForm(vo);
+		
+	}
+
 
 
 }

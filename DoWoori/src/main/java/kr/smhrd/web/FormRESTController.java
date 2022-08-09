@@ -60,4 +60,14 @@ public class FormRESTController {
 	public void formUpdate(FormVO vo) {
 		service.formUpdate(vo);
 	}
+	
+	@RequestMapping("/apprForm.do")
+	public void apprForm(FormVO vo) {
+		service.apprForm(vo);
+	}
+	
+	@RequestMapping("/compForm.do")
+	public void compForm(FormVO vo) {
+		service.compForm(vo);
+	}
 }
