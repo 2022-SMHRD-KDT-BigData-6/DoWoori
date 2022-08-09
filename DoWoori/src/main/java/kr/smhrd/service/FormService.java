@@ -50,13 +50,18 @@ public class FormService {
 		return uvo;
 	}
 
+	public void formDelete(int formNum) {
+		mapper.formDelete(formNum);
+		
+	}
 
 
 
-	/*
-	 * public List<FormVO> formContentAjax(String userId) { List<FormVO> contents =
-	 * mapper.formContent(); return contents; }
-	 */
+	public void formUpdate(FormVO vo) {
+		mapper.formUpdate(vo);
+		
+	}
+
 
 
 }

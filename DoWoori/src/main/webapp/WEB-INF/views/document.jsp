@@ -324,18 +324,11 @@
 		  })
 	  } 
 	  
-	  var admin = "";
+	  var admin = {};
+	  
 	  
 	  function adminView(data){
-		  var alist = "";
-		  console.log(data["name"]);
-  		  $.each(data, function(index, ad){
-  	 		  console.log(ad);
-			  alist += "&nbsp<input type='text' value='"+ad.name+"' disabled><br><br>"
-		  })
-
-		  $('#admin').after(alist);
-		  
+  		  admin = data;
 	  }
 	  
 
@@ -345,7 +338,8 @@
 
 		  
 		  $.each(data, function(index, con){
-			  
+
+	
 			  if(con.utime !== null){
 				  var time = con.utime;
 			  }else{
@@ -356,11 +350,11 @@
 			  flist += "<td>"+con.docuType+"</td>"
              flist += "<td>"+con.startDate+"</td>"
              flist += "<td>"+con.endDate+"</td>"
-
+  
              flist += "<td>"+time+"</td>"
              flist += "<td>"+con.division+"</td>"
              flist += "<td>"+con.indate+"</td>"
-			  flist += "<td><button class='btn btn-success' onclick='docuContent("+con.formNum+")'>상세보기</button></td></tr>"
+			  flist += "<td><button class='btn btn-success' onclick='docuContent("+con.formNum+");'>상세보기</button></td></tr>"
 
 				  
 			  //버튼 누르면 펼쳐지는 부분
@@ -369,17 +363,23 @@
 			  flist += "<tr class='innerContent text-left' id='vc"+con.formNum+"' style='display:none'>"
 			  flist += "<td colspan = '7'>"
 					
-/*				    flist += "&nbsp<label for='admin' id='admin'><h5>승인자 : </h5></label>&nbsp"*/
-				  		/* 텍스트에 맞춰지면 좋겠당 */
-/* 				    flist += "<input type='text' value='"+admin+"' disabled><br><br>" //이름으로 가져오기 */
+				    flist += "&nbsp<label for='admin' id='admin'><h5>승인자 : </h5></label>&nbsp"
+						  $.each(admin, function(index, ad){
+							  
+							  if(con.adminId === ad.id){
+								  flist += "&nbsp<input type='text' value='"+ad.name+"' disabled><br><br>"
+							  }
+							  
+
+						  })
 					
 				    //시작일
 				    flist += "&nbsp<label for='admin'><h5>시작일자 : </h5></label>&nbsp"
-					flist += "<input type='date' value='"+con.startDate+"' class='text-center'>&emsp;&emsp;"
+					flist += "<input type='date' id='start' value='"+con.startDate+"' class='text-center'>&emsp;&emsp;"
 					
 					//종료일
 					flist += "<label for='admin'><h5>종료일자 : </h5></label>&nbsp;"
-					flist += "<input type='date' value='"+con.endDate+"' class='text-center'><br><br>"
+					flist += "<input type='date' id='end' value='"+con.endDate+"' class='text-center'><br><br>"
 				    
 					//시간구분
 					flist += "&nbsp<label for='admin'><h5>시간구분 : </h5></label>&nbsp"
@@ -393,10 +393,11 @@
 			 		
 			  		//수정, 닫기버튼
 			  		if(con.division === '신청'){
-			  		  flist += "&nbsp<button class = 'btn-success btn btn-sm' onclick=''>수정</button>"
+			  		  flist += "&nbsp<button class = 'btn-success btn btn-sm' onclick='javascript:formUpdate("+con.formNum+")'>수정</button>"
 			  		}
 			  		
-			  		flist += "&nbsp<button class = 'btn-warning btn btn-sm' onclick='docuContent("+con.formNum+")'>닫기</button>"
+			  		flist += "&nbsp<button class = 'btn-warning btn btn-sm' onclick='formDelete("+con.formNum+");'>삭제</button>"
+			  		flist += "&nbsp<button class = 'btn-warning btn btn-sm' onclick='docuContent("+con.formNum+")' style='float: right';>닫기</button>"
 			  		
 			  	flist += "</td>"
 			  flist += "</tr>" 
@@ -413,6 +414,46 @@
 		  }else{
 			  $('#vc'+formNum).css('display', 'none')
 		  }
+		  
+	  }
+	  
+	  function formDelete(formNum){
+		  $.ajax({
+			url : '${cpath}/formDelete.do',
+			data : {'formNum':formNum},
+			type : 'get',
+			
+			success : LoadOnce,
+			error : function(){
+				alert('수정실패!');
+			}
+			
+		  })
+		  
+	  }
+	  
+	  function LoadOnce()
+	  {
+	  window.location.reload();
+	  }
+	  
+	  function formUpdate(formNum){
+		  
+		  var startDate = $('#vc'+formNum+' #start').val();
+		  var endDate = $('#vc'+formNum+' #end').val();
+		  var reason= $('#vc'+formNum+' textarea').val();
+		  
+		  $.ajax({
+	    		 url : '${cpath}/formUpdate.do',
+	    		 data: {'formNum':formNum, 'reason':reason, 'startDate':startDate, 'endDate':endDate},
+	    		 type : 'get', 
+	    		 
+	    		 success:LoadOnce,
+	    		 
+	    		 error : function(){
+	    			 alert('실패!');
+	    		 }
+		  })
 		  
 	  }
   </script>

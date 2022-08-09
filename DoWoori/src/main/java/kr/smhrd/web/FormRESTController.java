@@ -49,4 +49,15 @@ public class FormRESTController {
 		 model.addAttribute("uvo", uvo);
 		 return uvo;
 	 }
+	 
+	 
+	@RequestMapping("/formDelete.do")
+	public void formDelete(int formNum) {
+		service.formDelete(formNum);
+	}
+	
+	@RequestMapping("/formUpdate.do")
+	public void formUpdate(FormVO vo) {
+		service.formUpdate(vo);
+	}
 }

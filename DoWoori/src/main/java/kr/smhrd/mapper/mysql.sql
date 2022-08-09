@@ -83,6 +83,9 @@ insert into userInfo(id, pw, name, userNum, deptNum, spot, position) values ('ma
 insert into formInfo(docuType, userId, startdate, enddate, reason, division, adminId) 
 values ('연차', 'asdf', '2022-07-06', '2022-07-10', '개인사정ㅇㅇ', '신청', 'master1');
 
+insert into formInfo(docuType, userId, startdate, enddate, utime, reason, division, adminId) 
+values ('반차', 'asdf', '2022-07-06', '2022-07-10', '오전', '병원', '신청', 'master1');
+
 insert into formInfo(docuType, userId, startdate, enddate, reason, division, adminId) 
 values ('연차', 'bbb', '2022-07-08', '2022-07-10', '개인사정ㅁㅁ', '신청', 'master2');
 
@@ -92,7 +95,7 @@ values ('반차', 'bbb', '2022-07-09', '2022-07-9', '오전', '병원', '신청'
 insert into formInfo(docuType, userId, startdate, enddate, reason, division, adminId) 
 values ('연차', 'ccc', '2022-09-02', '2022-09-04', '병가', '신청', 'master3');
 
-
+update formInfo set startDate='2022-09-02', endDate='2022-09-14', reason='이유'  where formNum=6
 select (docuType, startdate, enddate, division, indate) from formInfo;
 
 delete from userInfo;

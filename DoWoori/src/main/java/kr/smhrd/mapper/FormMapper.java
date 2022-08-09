@@ -28,5 +28,12 @@ public interface FormMapper {
 	@Select("select * from userInfo where deptNum=#{deptNum}")
 	public List<UserVO> userAjax(int deptNum);
 
+	@Delete("delete from formInfo where formNum=#{formNum}")
+	public void formDelete(int formNum);
+
+
+	@Update("update formInfo set startDate=#{startDate}, endDate=#{endDate}, reason=#{reason}  where formNum=#{formNum}")
+	public void formUpdate(FormVO vo);
+
 }
 
