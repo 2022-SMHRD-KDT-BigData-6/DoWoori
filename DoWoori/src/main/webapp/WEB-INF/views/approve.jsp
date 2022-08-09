@@ -226,12 +226,12 @@
                     <table class="table table-bordered">
                         <tr class="lists">
                           <th>유형</th>
-                          <th>제출자</th>
+                           <th>유형</th>
                           <th>시작일자</th>
                           <th>종료일자</th>      
                           <th>진행구분</th>   
                           <th>제출일자</th>          
-                          <th></th>           
+                          <th></th>         
                         </tr>   
         
                     </table>
@@ -269,10 +269,11 @@
 	  }
 	  
 	     $(document).ready(function(){
-	         loadUser('${uvo.deptNum}');
-	         loadContents('${uvo.id}');
 
+	         loadContents('${uvo.id}');
+	         loadUser('${uvo.deptNum}');
 	     })
+
 	     
 	     function loadContents(adminId){
 	        $.ajax({
@@ -287,8 +288,6 @@
 	        })
 	     }
 	     
-	    
-	     
 	     function loadUser(deptNum){
 	        $.ajax({
 	           url : '${cpath}/userAjax.do',
@@ -302,7 +301,7 @@
 	        })
 	     }
 	     
-	     
+	     var dicContent={};
 	     var dicWriter = {};
 	     var name = "";
 	     
@@ -314,6 +313,7 @@
 	      }
   	     
 	     
+
 	     function contentView(data){
 	        var flist = "";
 
@@ -324,17 +324,16 @@
 	           }else{
 	              var time = "종일";
 	           }
+        	   
+	           $.each(dicWriter, function(ind, w){
+		           	if(w.id === con.userId){
+		           		userName = w.name;
+		          	 }
+       	  		})
 	           
 		 
 	           flist += "<tr>"
 	           flist += "<td id = 'info'>"+con.docuType+"</td>"
-	           flist += "<td>"
-	        	   $.each(dicWriter, function(ind, w){
-			           	if(w.id === con.userId){
-			           		flist += w.name
-			          	 }
-	        	   })
-	           flist+= "</td>"
 	               flist += "<td>"+con.startDate+"</td>"
 	               flist += "<td>"+con.endDate+"</td>"
 	               flist += "<td>"+con.division+"</td>"
@@ -347,7 +346,10 @@
 	           
 	           flist += "<tr class='innerContent' id='vc"+con.formNum+"' style='display:none'>"
 	           flist += "<td colspan = '7'>"
-	                
+	               //제출자명
+	               flist += "&nbsp<label for='admin'><h5>제출자 : </h5></label>&nbsp"
+	               flist += "<input type='text' value='"+userName+"' disabled><br><br>"
+	             
 	               //시간구분
 	               flist += "&nbsp<label for='admin'><h5>시간구분 : </h5></label>&nbsp"
 	                    /* 텍스트에 맞춰지면 좋겠당 */
@@ -378,6 +380,7 @@
 	     function docuContent(formNum){
 	        if($('#vc'+formNum).css('display') == 'none'){
 	           $('#vc'+formNum).css('display', 'table-row')
+
 	        }else{
 	           $('#vc'+formNum).css('display', 'none')
 	        }
