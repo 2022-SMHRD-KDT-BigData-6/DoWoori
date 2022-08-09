@@ -166,7 +166,7 @@
           <li class="nav-item">
             <div class="d-flex sidebar-profile">
               <div class="sidebar-profile-image">
-                <img src="resources/images/faces/face29.png" alt="image">
+                <img src="resources/images/faces/face21.jpg" alt="image">
                 <span class="sidebar-status-indicator"></span>
               </div>
               <div class="sidebar-profile-name">
@@ -230,13 +230,13 @@
              
               </div>
             </div>
-            <div class="row">
-              <div class="col-lg-4 d-flex grid-margin stretch-card">
+            <div class="row cal">
+              <div class="col-lg-5 d-flex grid-margin stretch-card">
                 <div class="content">
 					<div id='calendar'></div>
                 </div>
               </div>
-              <div class="col-lg-8 d-flex grid-margin stretch-card">
+              <div class="col-lg-6 d-flex grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex flex-wrap justify-content-between">
@@ -248,7 +248,6 @@
                           <tr>
                             <td>
                               <div class="d-flex">
-                                <img class="img-sm rounded-circle mb-md-0 mr-2" src="resources/images/faces/face30.png" alt="profile image">
                                 <div>
                                   <div> Company</div>
                                   <div class="font-weight-bold mt-1">volkswagen</div>
@@ -271,7 +270,6 @@
                           <tr>
                             <td>
                               <div class="d-flex">
-                                <img class="img-sm rounded-circle mb-md-0 mr-2" src="resources/images/faces/face31.png" alt="profile image">
                                 <div>
                                   <div> Company</div>
                                   <div class="font-weight-bold  mt-1">Land Rover</div>
@@ -294,7 +292,6 @@
                           <tr>
                             <td>
                               <div class="d-flex">
-                                <img class="img-sm rounded-circle mb-md-0 mr-2" src="resources/images/faces/face32.png" alt="profile image">
                                 <div>
                                   <div> Company</div>
                                   <div class="font-weight-bold  mt-1">Bentley </div>
@@ -317,7 +314,6 @@
                           <tr>
                             <td>
                               <div class="d-flex">
-                                <img class="img-sm rounded-circle mb-md-0 mr-2" src="resources/images/faces/face33.png" alt="profile image">
                                 <div>
                                   <div> Company</div>
                                   <div class="font-weight-bold  mt-1">Morgan </div>
@@ -340,7 +336,6 @@
                           <tr>
                             <td>
                               <div class="d-flex">
-                                <img class="img-sm rounded-circle mb-md-0 mr-2" src="resources/images/faces/face34.png" alt="profile image">
                                 <div>
                                   <div> Company</div>
                                   <div class="font-weight-bold  mt-1">volkswagen</div>

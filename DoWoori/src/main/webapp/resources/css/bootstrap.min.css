@@ -7991,13 +7991,6 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover
 	user-select: none !important
 }
 
-.overflow-auto {
-	overflow: auto !important
-}
-
-.overflow-hidden {
-	overflow: hidden !important
-}
 
 .position-static {
 	position: static !important
