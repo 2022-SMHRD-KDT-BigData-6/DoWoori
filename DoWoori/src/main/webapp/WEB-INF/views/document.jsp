@@ -424,7 +424,7 @@
 			data : {'formNum':formNum},
 			type : 'get',
 			
-			success : LoadOnce,
+			success : loadOnce,
 			error : function(){
 				alert('수정실패!');
 			}
@@ -433,7 +433,7 @@
 		  
 	  }
 	  
-	  function LoadOnce()
+	  function loadOnce()
 	  {
 	  window.location.reload();
 	  }
@@ -449,7 +449,7 @@
 	    		 data: {'formNum':formNum, 'reason':reason, 'startDate':startDate, 'endDate':endDate},
 	    		 type : 'get', 
 	    		 
-	    		 success:LoadOnce,
+	    		 success:loadOnce,
 	    		 
 	    		 error : function(){
 	    			 alert('실패!');

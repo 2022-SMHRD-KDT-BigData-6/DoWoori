@@ -358,8 +358,8 @@
 	                 
 	                 //승인, 반려버튼
 	                 if(con.division === '신청'){
-		                 flist += "&nbsp<button class = 'btn-info btn btn-sm' onclick='apprForm("+con.formNum+")' >승인</button>"
-		                 flist += "&nbsp<button class = 'btn-danger btn btn-sm' onclick='compForm("+con.formNum+")'>반려</button>"
+		                 flist += "&nbsp<button type='button' class = 'btn-info btn btn-sm' onclick='apprForm("+con.formNum+")' >승인</button>"
+		                 flist += "&nbsp<button type='button' class = 'btn-danger btn btn-sm' onclick='compForm("+con.formNum+")'>반려</button>"
 	                 }
 	              //닫기버튼
 	                 flist += "&nbsp<button class = 'btn-light btn btn-sm' onclick='docuContent("+con.formNum+")' style='float: right;'>닫기</button>"
@@ -384,19 +384,21 @@
 	     }
 	     
 	     // 한 번 새로고침 하는 함수
-		 function LoadOnce()
+		 function loadOnce()
 		 {
 		  window.location.reload();
 		 }
 	     
+	     //help : DB에 잘 반영되었는데 실패 뜨는 문제
 	     function apprForm(formNum){
 		        $.ajax({
 			           url : '${cpath}/apprForm.do',
 			           data : {'formNum':formNum},
 			           type : 'get',
-			           dataType : 'json',
+			           dataType : 'text',
 			           success: function(){
 			        	   alert('승인처리 완료');
+			        	   loadOnce();
 			           },           
 			           error : function(){
 			              alert('실패!');
@@ -409,9 +411,10 @@
 			           url : '${cpath}/compForm.do',
 			           data : {'formNum':formNum},
 			           type : 'get',
-			           dataType : 'json',
+			           dataType : 'text',
 			           success: function(){
 			        	   alert('반려처리 완료');
+			        	   loadOnce();
 			           },           
 			           error : function(){
 			              alert('실패!');

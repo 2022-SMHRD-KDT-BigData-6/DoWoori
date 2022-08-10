@@ -98,4 +98,4 @@ values ('연차', 'ccc', '2022-09-02', '2022-09-04', '병가', '신청', 'master
 update formInfo set startDate='2022-09-02', endDate='2022-09-14', reason='이유'  where formNum=6
 select (docuType, startdate, enddate, division, indate) from formInfo;
 
-delete from userInfo;
+delete from formInfo;
