@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!-- 프로젝트의 contextpath 값을 동적으로 가져오는 방법  / 모든 페이지에 있어야 함-->
 <c:set var = "cpath" value="${pageContext.request.contextPath}"/>
@@ -12,7 +12,7 @@
 <head>
 <title>basic</title>
 
-	<!-- 캘린더 템플릿 -->
+   <!-- 캘린더 템플릿 -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
@@ -211,12 +211,12 @@
             </a>
           </li>
           <c:if test="${uvo.position eq '팀장'}">
-	          <li class="nav-item">
-	            <a class="nav-link" href="${cpath}/approve.do">
-	              <i class="typcn typcn-th-small-outline menu-icon"></i>
-	              <span class="menu-title">결재 대기 현황</span>
-	            </a>
-	          </li>    
+             <li class="nav-item">
+               <a class="nav-link" href="${cpath}/approve.do">
+                 <i class="typcn typcn-th-small-outline menu-icon"></i>
+                 <span class="menu-title">결재 대기 현황</span>
+               </a>
+             </li>    
          </c:if>
         </ul>
        
@@ -233,130 +233,29 @@
             <div class="row cal">
               <div class="col-lg-5 d-flex grid-margin stretch-card">
                 <div class="content">
-					<div id='calendar'></div>
+               <div id='calendar'></div>
                 </div>
               </div>
+              
               <div class="col-lg-6 d-flex grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex flex-wrap justify-content-between">
-                      <h4 class="card-title mb-3">기안문 제출 현황</h4>
+                   
+                         <!-- 임의로 넣었는데 버튼 위치 조정 해주세용 -->
+                      <h4 class="card-title mb-3">기안문 제출 현황   <button class="btn btn-primary btn-sm" onclick="location.href='${cpath}/document.do'">GO →</button></h4>
+                      
                     </div>
                     <div class="table-responsive">
                       <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="d-flex">
-                                <div>
-                                  <div> Company</div>
-                                  <div class="font-weight-bold mt-1">volkswagen</div>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              Budget
-                              <div class="font-weight-bold  mt-1">$2322 </div>
-                            </td>
-                            <td>
-                              Status
-                              <div class="font-weight-bold text-success  mt-1">88% </div>
-                            </td>
-                            <td>
-                              Deadline
-                              <div class="font-weight-bold  mt-1">07 Nov 2019</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex">
-                                <div>
-                                  <div> Company</div>
-                                  <div class="font-weight-bold  mt-1">Land Rover</div>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              Budget
-                              <div class="font-weight-bold  mt-1">$12022  </div>
-                            </td>
-                            <td>
-                              Status
-                              <div class="font-weight-bold text-success  mt-1">70% </div>
-                            </td>
-                            <td>
-                              Deadline
-                              <div class="font-weight-bold  mt-1">08 Nov 2019</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex">
-                                <div>
-                                  <div> Company</div>
-                                  <div class="font-weight-bold  mt-1">Bentley </div>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              Budget
-                              <div class="font-weight-bold  mt-1">$8,725</div>
-                            </td>
-                            <td>
-                              Status
-                              <div class="font-weight-bold text-success  mt-1">87% </div>
-                            </td>
-                            <td>
-                              Deadline
-                              <div class="font-weight-bold  mt-1">11 Jun 2019</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex">
-                                <div>
-                                  <div> Company</div>
-                                  <div class="font-weight-bold  mt-1">Morgan </div>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              Budget
-                              <div class="font-weight-bold  mt-1">$5,220 </div>
-                            </td>
-                            <td>
-                              Status
-                              <div class="font-weight-bold text-success  mt-1">65% </div>
-                            </td>
-                            <td>
-                              Deadline
-                              <div class="font-weight-bold  mt-1">26 Oct 2019</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex">
-                                <div>
-                                  <div> Company</div>
-                                  <div class="font-weight-bold  mt-1">volkswagen</div>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              Budget
-                              <div class="font-weight-bold  mt-1">$2322 </div>
-                            </td>
-                            <td>
-                              Status
-                              <div class="font-weight-bold text-success mt-1">88% </div>
-                            </td>
-                            <td>
-                              Deadline
-                              <div class="font-weight-bold  mt-1">07 Nov 2019</div>
-                            </td>
-                          </tr>
-                        </tbody>
+                         <tr class="lists">
+                          <th>번호</th>
+                          <th>유형</th>
+                          <th>제출일자</th>  
+                          <th>진행구분</th>     
+                        </tr>
                       </table>
+                      
                     </div>
                   </div>
                 </div>
@@ -374,6 +273,8 @@
       </div>
       <!-- page-body-wrapper ends -->
     </div>
+    
+</body>
     <script src="resources/vendors/js/vendor.bundle.base.js"></script>
     <script src="resources/js/off-canvas.js"></script>
     <script src="resources/js/hoverable-collapse.js"></script>
@@ -395,45 +296,95 @@
     <script>
     
     function CheckSession(){
-    	if(sessionStorage.getItem("loginKey") == null){
-    		window.location.replace("${cpath}/")
-    	}
+       if(sessionStorage.getItem("loginKey") == null){
+          window.location.replace("${cpath}/")
+       }
     }
     
+    
+    //캘린더
       document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
+       var calendarEl = document.getElementById('calendar');
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      plugins: [ 'interaction', 'dayGrid' ],
-      defaultDate: '2022-08-12',
-      editable: true,
-      eventLimit: true, // allow "more" link when too many events
-      events: [
-        {
-          title: '미팅',
-          start: '2022-08-15'
-        },
-        {
-          title: '출장',
-          start: '2022-08-24',
-          end: '2022-08-25'
-        },
-        {
-          title: '마감일',
-          url: 'http://google.com/',
-          start: '2022-08-26'
-        }
-      ]
-    });
+       var calendar = new FullCalendar.Calendar(calendarEl, {
+         plugins: [ 'interaction', 'dayGrid' ],
+         defaultDate: '2022-08-12',
+         editable: true,
+         eventLimit: true, // allow "more" link when too many events
+         events: [
+           {
+             title: '미팅',
+             start: '2022-08-15'
+           },
+           {
+             title: '출장',
+             start: '2022-08-24',
+             end: '2022-08-25'
+           },
+           {
+             title: '마감일',
+             url: 'http://google.com/',
+             start: '2022-08-26'
+           }
+         ]
+       });
 
-    calendar.render();
+       calendar.render();
   });
       
-      console.log("${uvo.name}")
+      
+      
+      
+      
+      // 기안문 제출 목록 구현
+       $(document).ready(function(){
+         loadContents('${uvo.id}');
+     })
+     
+     //DB에서 기안문 제출 목록 가져오는 함수
+     function loadContents(userId){
+        $.ajax({
+           url : '${cpath}/formContentAjax.do',
+           data : {'userId':userId},
+           type : 'get',
+           dataType : 'json',
+           success:contentView,           
+           error : function(){
+              alert('실패!');
+           }
+        })
+        
+        
+     }
+     
 
-    	</script>
+
+
+      // 기안문 목록 로드하는 함수
+     function contentView(data){
+        var flist = "";
+        var num = 1;
+        
+        $.each(data, function(index, con){
+
+          flist += "<tr>"
+          flist += "<td>"+num+"</td>"
+          flist += "<td>"+con.docuType+"</td>"
+          flist += "<td>"+con.indate+"</td>"
+          
+          /*강조하고 싶어영  */
+          flist += "<td>"+con.division+"</td>"
+		  num += 1;
+        })
+        
+      $('.lists').after(flist);
+
+     }
+     
+
+    </script>
 
     <script src="resources/js/main.js"></script>
 
-</body>
+
 </html>
