@@ -240,26 +240,49 @@
               <div class="col-lg-6 d-flex grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <div class="d-flex flex-wrap justify-content-between">
-                   
-                         <!-- 임의로 넣었는데 버튼 위치 조정 해주세용 -->
-                      <h4 class="card-title mb-3">기안문 제출 현황   <button class="btn btn-primary btn-sm" onclick="location.href='${cpath}/document.do'">GO →</button></h4>
-                      
-                    </div>
-                    <div class="table-responsive">
-                      <table class="table">
-                         <tr class="lists">
-                          <th>번호</th>
-                          <th>유형</th>
-                          <th>제출일자</th>  
-                          <th>진행구분</th>     
-                        </tr>
-                      </table>
-                      
-                    </div>
+                  
+                    <!-- 관리자 로그인 시 나오는 화면 -->
+                  	<c:if test="${uvo.position eq '팀장'}">
+                  		<div class="d-flex flex-wrap justify-content-between">
+	                         <!-- 임의로 넣었는데 버튼 위치 조정 해주세용 -->
+	                      <h4 class="card-title mb-3">결재 현황 목록  <button class="btn btn-primary btn-sm" onclick="location.href='${cpath}/approve.do'">GO →</button></h4>                     
+	                    </div>
+	                    <div class="table-responsive">
+	                      <table class="table">
+	                         <tr class="lists">
+	                          <th>번호</th>
+	                          <th>유형</th>
+<!-- 	                          <th>제출자</th> -->
+	                          <th>제출일자</th>  
+	                          <th>진행구분</th>     
+	                        </tr>
+	                      </table>
+	                    </div>
+                  	</c:if>
+                  	
+                  	
+                  	<!-- 일반 사원 로그인 시 나오는 화면 -->
+                  	<c:if test="${uvo.position ne '팀장'}">
+	                    <div class="d-flex flex-wrap justify-content-between">
+	                         <!-- 임의로 넣었는데 버튼 위치 조정 해주세용 -->
+	                      <h4 class="card-title mb-3">기안문 제출 현황   <button class="btn btn-primary btn-sm" onclick="location.href='${cpath}/document.do'">GO →</button></h4>                     
+	                    </div>
+	                    <div class="table-responsive">
+	                      <table class="table">
+	                         <tr class="lists">
+	                          <th>번호</th>
+	                          <th>유형</th>
+	                          <th>제출일자</th>  
+	                          <th>진행구분</th>     
+	                        </tr>
+	                      </table>
+	                    </div>
+                    </c:if>
+                    
                   </div>
                 </div>
               </div>
+              
             </div>
           </div>
           <!-- content-wrapper ends -->
@@ -335,12 +358,24 @@
       
       
       
-      
-      // 기안문 제출 목록 구현
+
+
+      // 팀장이 로그인 했을때와 아닐 때 로드하는 함수 구분
        $(document).ready(function(){
-         loadContents('${uvo.id}');
+         
+         if('${uvo.position}' === '팀장'){
+             loadAdmin('${uvo.id}');
+/*              loadUser('${uvo.deptNum}'); */
+         }else{
+        	 loadContents('${uvo.id}');
+         }
+
      })
+
      
+     
+//-----------기안문 목록 로드 (일반사원 로그인 시)------------
+
      //DB에서 기안문 제출 목록 가져오는 함수
      function loadContents(userId){
         $.ajax({
@@ -357,10 +392,7 @@
         
      }
      
-
-
-
-      // 기안문 목록 로드하는 함수
+	//기안문 목록 출력
      function contentView(data){
         var flist = "";
         var num = 1;
@@ -382,6 +414,84 @@
      }
      
 
+     
+
+//-----------승인현황 목록 로드 (결재자 로그인 시)------------
+
+	 //결재자에게 할당된 승인목록 DB에서 가져오는 함수
+     function loadAdmin(adminId){
+        $.ajax({
+           url : '${cpath}/approveAjax.do',
+           data : {'adminId':adminId},
+           type : 'get',
+           dataType : 'json',
+           success:adminView,           
+           error : function(){
+              alert('실패!');
+           }
+        })
+     }
+     
+/*      //제출자 이름 가져오는 함수
+     function loadUser(deptNum){
+        $.ajax({
+           url : '${cpath}/userAjax.do',
+           data : {'deptNum':deptNum},
+           type : 'get',
+           dataType : 'json',
+           success: writerView,           
+           error : function(){
+              alert('실패!');
+           }
+        })
+     } */
+     
+
+     var dicWriter = {};
+     var userName = "";
+
+/*      // 제출자 정보 변수에 담는 함수
+	 function writerView(data){
+	    	 dicWriter = data;
+      } */
+	     
+     
+
+     function adminView(data){
+        var flist = "";
+	    var num = 1;
+        
+	    $.each(data, function(index, con){
+
+           if(con.utime !== null){
+              var time = con.utime;
+           }else{
+              var time = "종일";
+           }
+    	   
+/*            // 제출자 id 일치하면 제출자 이름 로드
+           $.each(dicWriter, function(ind, w){
+	           	if(w.id === con.userId){
+	           		userName = w.name;
+	          	 }
+   	  		}) */
+                  
+           flist += "<tr>"
+               flist += "<td>"+num+"</td>"
+           	   flist += "<td id = 'info'>"+con.docuType+"</td>"
+               flist += "<td>"+con.division+"</td>"
+/*                flist += "<td>"+userName+"</td>" */
+               flist += "<td>"+con.indate+"</td>"
+           flist += "</tr>"
+	        num += 1;
+        })
+        
+      $('.lists').after(flist);
+
+     }
+     
+        
+     
     </script>
 
     <script src="resources/js/main.js"></script>

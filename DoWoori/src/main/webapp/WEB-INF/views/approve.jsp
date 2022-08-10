@@ -222,7 +222,6 @@
                     <table class="table table-bordered">
                         <tr class="lists">
                           <th>유형</th>
-                           <th>유형</th>
                           <th>시작일자</th>
                           <th>종료일자</th>      
                           <th>진행구분</th>   
