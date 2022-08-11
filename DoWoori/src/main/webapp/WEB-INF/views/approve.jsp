@@ -179,25 +179,25 @@
               <span class="menu-title">마이페이지</span>
             </a>
           </li>
-  
-          <li class="nav-item">
-            <a class="nav-link" href="${cpath}/document.do?userId=${uvo.id}&deptNum=${uvo.deptNum}">
-              <i class="typcn typcn-film menu-icon"></i>
-              <span class="menu-title">기안문 제출 현황</span>
-            </a>
-          </li>
-          
+            
           <li class="nav-item">
             <a class="nav-link" href="${cpath}/company.do">
               <i class="typcn typcn-chart-pie-outline menu-icon"></i>
               <span class="menu-title">회사 정보</span>
             </a>
           </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" href="${cpath}/document.do?userId=${uvo.id}&deptNum=${uvo.deptNum}">
+              <i class="typcn typcn-pen menu-icon"></i>
+              <span class="menu-title">기안문 제출 현황</span>
+            </a>
+          </li>
           
           <c:if test="${uvo.position eq '팀장'}">
 	          <li class="nav-item">
 	            <a class="nav-link" href="${cpath}/approve.do">
-	              <i class="typcn typcn-th-small-outline menu-icon"></i>
+	              <i class="typcn typcn-clipboard menu-icon"></i>
 	              <span class="menu-title">결재 대기 현황</span>
 	            </a>
 	          </li>
@@ -219,8 +219,8 @@
                 <div class="card-body">
                   <h4 class="card-title">결재 대기 현황</h4>
                   <div class="table-responsive pt-3">
-                    <table class="table table-bordered">
-                        <tr class="lists">
+                    <table class="table table-bordered text-center">
+                        <tr class="lists ">
                           <th>유형</th>
                           <th>시작일자</th>
                           <th>종료일자</th>      
@@ -236,21 +236,10 @@
             </div>
           </div>
         </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:../../partials/_footer.html -->
-        <!-- partial -->
       </div>
-      <!-- main-panel ends -->
     </div>
-    <!-- page-body-wrapper ends -->
   </div>
-  <!-- container-scroller -->
-  <!-- base:js -->
   <script src="resources/vendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page-->
-  <!-- End plugin js for this page-->
-  <!-- inject:js -->
   <script src="resources/js/off-canvas.js"></script>
   <script src="resources/js/hoverable-collapse.js"></script>
   <script src="resources/js/template.js"></script>
@@ -339,16 +328,16 @@
 	           //버튼 누르면 펼쳐지는 부분
 	           
 	           
-	           flist += "<tr class='innerContent' id='vc"+con.formNum+"' style='display:none'>"
+	           flist += "<tr class='innerContent text-left' id='vc"+con.formNum+"' style='display:none'>"
 	           flist += "<td colspan = '7'>"
 	               //제출자명
 	               flist += "&nbsp<label for='admin'><h5>제출자 : </h5></label>&nbsp"
-	               flist += "<input type='text' value='"+userName+"' disabled><br><br>"
+	               flist += "<input type='text' value='"+userName+"' disabled size='1' class='text-center'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
 	             
 	               //시간구분
 	               flist += "&nbsp<label for='admin'><h5>시간구분 : </h5></label>&nbsp"
 	                    /* 텍스트에 맞춰지면 좋겠당 */
-	                flist += "<input type='text' value='"+time+"' disabled><br><br>"
+	                flist += "<input type='text' value='"+time+"' disabled size='1' class='text-center'><br><br>"
 	               
 	               //사유
 	               flist += "&nbsp<label for='comment'><h5>사유</h5></label>"
@@ -423,6 +412,5 @@
 	     }
   
   </script>
-
 </body>
 </html>

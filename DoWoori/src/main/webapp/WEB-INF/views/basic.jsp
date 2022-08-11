@@ -93,54 +93,6 @@
                 </a>
               </div>
             </li>
-            <li class="nav-item dropdown  d-flex">
-              <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
-                <i class="typcn typcn-bell mr-0"></i>
-                <span class="count bg-danger">2</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                <p class="mb-0 font-weight-normal float-left dropdown-header">알림</p>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-success">
-                      <i class="typcn typcn-info-large mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">Application Error</h6>
-                    <p class="font-weight-light small-text mb-0">
-                      Just now
-                    </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-warning">
-                      <i class="typcn typcn-cog mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">Settings</h6>
-                    <p class="font-weight-light small-text mb-0">
-                      Private message
-                    </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-info">
-                      <i class="typcn typcn-user-outline mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">New user registration</h6>
-                    <p class="font-weight-light small-text mb-0">
-                      2 days ago
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </li>
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle  pl-0 pr-0" href="#" data-toggle="dropdown" id="profileDropdown">
                 <i class="typcn typcn-user-outline mr-0"></i>
@@ -196,24 +148,24 @@
               <span class="menu-title">마이페이지</span>
             </a>
           </li>
-  
-          <li class="nav-item">
-            <a class="nav-link" href="${cpath}/document.do?userId=${uvo.id}&deptNum=${uvo.deptNum}">
-              <i class="typcn typcn-film menu-icon"></i>
-              <span class="menu-title">기안문 제출 현황</span>
-            </a>
-          </li>
-          
+            
           <li class="nav-item">
             <a class="nav-link" href="${cpath}/company.do">
               <i class="typcn typcn-chart-pie-outline menu-icon"></i>
               <span class="menu-title">회사 정보</span>
             </a>
           </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" href="${cpath}/document.do?userId=${uvo.id}&deptNum=${uvo.deptNum}">
+              <i class="typcn typcn-pen menu-icon"></i>
+              <span class="menu-title">기안문 제출 현황</span>
+            </a>
+          </li>
           <c:if test="${uvo.position eq '팀장'}">
              <li class="nav-item">
                <a class="nav-link" href="${cpath}/approve.do">
-                 <i class="typcn typcn-th-small-outline menu-icon"></i>
+                 <i class="typcn typcn-clipboard menu-icon"></i>
                  <span class="menu-title">결재 대기 현황</span>
                </a>
              </li>    
@@ -232,7 +184,7 @@
             </div>
             <div class="row cal">
               <div class="col-lg-5 d-flex grid-margin stretch-card">
-                <div class="content">
+                <div class="card">
                <div id='calendar'></div>
                 </div>
               </div>
@@ -278,23 +230,14 @@
 	                      </table>
 	                    </div>
                     </c:if>
-                    
                   </div>
                 </div>
               </div>
               
             </div>
           </div>
-          <!-- content-wrapper ends -->
-          <!-- partial:partials/_footer.html -->
-          <footer class="footer">
-         
-          </footer>
-          <!-- partial -->
         </div>
-        <!-- main-panel ends -->
       </div>
-      <!-- page-body-wrapper ends -->
     </div>
     
 </body>
@@ -490,11 +433,6 @@
 
      }
      
-        
-     
     </script>
-
     <script src="resources/js/main.js"></script>
-
-
 </html>

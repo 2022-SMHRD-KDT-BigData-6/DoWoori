@@ -717,15 +717,14 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 
 /* "primary" coloring */
 .fc-button-primary {
-  color: #fff;
-  background-color: #4a7ead;
-  border-color: #4a7ead;
+  color: #454a67;
+  /*background-color: #4a7ead;
+  border-color: #4a7ead;*/
 }
 
 .fc-button-primary:hover {
   color: #fff;
-  background-color: #f67280;
-  border-color: #f67280;
+  background-color: #8aabcaa3;
 }
 
 
@@ -838,7 +837,7 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 
 .fc-toolbar h2 {
   font-size: 1.75em;
-  margin: 0;
+  margin: 26px;
   font-weight: bolder;
 }
 
