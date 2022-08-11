@@ -235,12 +235,16 @@
                           <th>유형</th>
                           <th>시작일자</th>
                           <th>종료일자</th>
-                          <th>시간구분</th> 
-                          <th>진행구분</th>     
-                          <th>제출일자</th>     
+                          <th>시간구분</th>
+                          <th>결재자</th> 
+                          <th>진행구분</th>       
                           <th></th>          
                         </tr>
-
+						<tr>
+							<td colspan="7">
+								<button onclick ="location.href='${cpath}/formInsert.do'" class="btn-success btn btn-sm">기안문 작성</button>
+							</td>	
+						</tr>
                     </table>
                   </div>
                 </div>
@@ -264,14 +268,13 @@
   <script src="resources/js/typeahead.js"></script>
   <script src="resources/js/select2.js"></script>
   <script type="text/javascript">
-	  function CheckSession(){
+  function CheckSession(){
 	  	if(sessionStorage.getItem("loginKey") == null){
 	  		window.location.replace("${cpath}/")
 	  	}
 	  }
 	  
 	  $(document).ready(function(){
-		   loadContents('${uvo.id}');
 		   loadAdmin('${uvo.deptNum}');
 	  })
 	  
@@ -307,51 +310,49 @@
 	  
 	  
 	  function adminView(data){
-  		  admin = data;
+		  admin = data;
+		  loadContents('${uvo.id}');
 	  }
 	  
 
 	  function contentView(data){
 		  var flist = "";
-		  
 
-		  
-		  $.each(data, function(index, con){
-
-	
-			  if(con.utime !== null){
-				  var time = con.utime;
+		  $.each(data, function(index, con){			  
+			  console.log(con.utime);
+			  if(con.utime === null){
+				  var time = '종일';
 			  }else{
-				  var time = "종일";
+				  var time = con.utime;
 			  }
-			  
-			  flist += "<tr>"
-			  flist += "<td>"+con.docuType+"</td>"
-             flist += "<td>"+con.startDate+"</td>"
-             flist += "<td>"+con.endDate+"</td>"
-  
-             flist += "<td>"+time+"</td>"
-             flist += "<td>"+con.division+"</td>"
-             flist += "<td>"+con.indate+"</td>"
+				  
+
+		     flist += "<tr>"
+		     	flist += "<td>"+con.docuType+"</td>"
+	           	flist += "<td>"+con.startDate+"</td>"
+	           	flist += "<td>"+con.endDate+"</td>"
+	           	flist += "<td>"+time+"</td>"
+			  $.each(admin, function(index, ad){
+				  
+				  if(con.adminId === ad.id){
+					flist += "<td>"+ad.name+"</td>"
+				  }
+
+			  })
+           flist += "<td>"+con.division+"</td>"
 			  flist += "<td><button class='btn btn-success' onclick='docuContent("+con.formNum+");'>상세보기</button></td></tr>"
 
 				  
-			  //버튼 누르면 펼쳐지는 부분
+
 			  
-			  
+			  //버튼 누르면 펼쳐지는 부분			  
 			  flist += "<tr class='innerContent text-left' id='vc"+con.formNum+"' style='display:none'>"
 			  flist += "<td colspan = '7'>"
 					
-				    flist += "&nbsp<label for='admin' id='admin'><h5>승인자 : </h5></label>&nbsp"
-						  $.each(admin, function(index, ad){
-							  
-							  if(con.adminId === ad.id){
-								  flist += "&nbsp<input type='text' value='"+ad.name+"' disabled size='1' class='text-center'><br><br>"
-							  }
-							  
-
-						  })
-					
+			  		
+				    flist += "&nbsp<label for='admin' id='admin'><h5>제출일자 : </h5></label>&nbsp"
+			        flist += "&nbsp<input type='text' value='"+con.indate+"' disabled><br><br>"
+			        
 				    //시작일
 				    flist += "&nbsp<label for='admin'><h5>시작일자 : </h5></label>&nbsp"
 					flist += "<input type='date' id='start' value='"+con.startDate+"' class='text-center'>&emsp;&emsp;"
@@ -362,8 +363,21 @@
 				    
 					//시간구분
 					flist += "&nbsp<label for='admin'><h5>시간구분 : </h5></label>&nbsp"
-				  		/* 텍스트에 맞춰지면 좋겠당 */
-				    flist += "<input type='text' value='"+time+"' disabled size='1' class='text-center'><br><br>"
+				  	if(con.utime === null){
+				  		flist += "<input type='text' value='"+time+"' size='1' disabled class='text-center'><br><br>"
+		                  	
+				  	}else if(con.utime !== null){
+				  		flist += "<select class='form-control form-control-lg' id='utime'>"
+		                    flist += "<option>"+time+"</option>"
+		                    
+		                    if(time === '오전'){
+		                    	flist += "<option value='오후'>오후</option>"
+		                    }else if(time === '오후'){
+		                    	flist += "<option value='오전'>오전</option>"
+		                    }
+		                   
+		                    flist +=  "</select><br>"
+				  	}
 					
 					//사유
 					flist += "&nbsp<label for='comment'><h5>사유</h5></label>"
@@ -419,13 +433,14 @@
 	  
 	  function formUpdate(formNum){
 		  
+		  var utime = $('#vc'+formNum+' #utime').val();
 		  var startDate = $('#vc'+formNum+' #start').val();
 		  var endDate = $('#vc'+formNum+' #end').val();
 		  var reason= $('#vc'+formNum+' textarea').val();
 		  
 		  $.ajax({
 	    		 url : '${cpath}/formUpdate.do',
-	    		 data: {'formNum':formNum, 'reason':reason, 'startDate':startDate, 'endDate':endDate},
+	    		 data: {'formNum':formNum, 'utime':utime, 'reason':reason, 'startDate':startDate, 'endDate':endDate},
 	    		 type : 'get', 
 	    		 
 	    		 success:loadOnce,

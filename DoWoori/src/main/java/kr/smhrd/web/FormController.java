@@ -89,6 +89,16 @@ public class FormController {
 		return "document";
 	}
 
+	@RequestMapping(value = "/formInsert.do", method=RequestMethod.GET)
+	public String formInsert() {
+		return "formInsert";
+	}
+	
+	@RequestMapping(value = "/formInsert.do", method=RequestMethod.POST)
+	public String formInsert(FormVO vo) {
+		service.formInsert(vo);
+		return "redirect:/document.do";
+	}
 	
 	
 	

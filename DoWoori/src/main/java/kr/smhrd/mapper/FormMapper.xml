@@ -10,6 +10,11 @@
     <select id="adminAjax" resultType="kr.smhrd.model.UserVO">
         select * from userInfo u where deptNum=#{deptNum} and position='팀장'
     </select>   
+    
+    <insert id="formInsert" parameterType="kr.smhrd.model.FormVO">
+        insert into formInfo(docuType, userId, startDate, endDate, utime, reason, adminId) 
+		values (#{docuType}, #{userId}, #{startDate}, #{endDate}, #{utime}, #{reason}, #{adminId})
+    </insert>
 </mapper>
 
 

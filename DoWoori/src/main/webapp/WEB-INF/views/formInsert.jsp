@@ -251,7 +251,7 @@
 		               <div class="form-group">
 		                  <label class="control-label col-sm-2" for="userId">작성자 ID:</label>
 		                  <div class="col-sm-10">
-		                     <input type="text" class="form-control" id="userId" name="userId" value='${uvo.id}' disabled>
+		                     <input type="text" class="form-control" id="userId" name="userId" value="${uvo.id}" disabled>
 		                  </div>
 		               </div>
 		               <div class="form-group">
@@ -341,9 +341,6 @@
 	  	}
 	  }
 	  
-	  $(document).ready(function(){
-
-	  })
 	  
 
   </script>

@@ -72,6 +72,10 @@ public class FormService {
 		
 	}
 
+	public void formInsert(FormVO vo) {
+		mapper.formInsert(vo);
+		
+	}
 
 
 }
