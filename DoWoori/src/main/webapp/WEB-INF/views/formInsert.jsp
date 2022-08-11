@@ -249,9 +249,8 @@
 		                  </div>
 		               </div>
 		               <div class="form-group">
-		                  <label class="control-label col-sm-2" for="userId">작성자 ID:</label>
 		                  <div class="col-sm-10">
-		                     <input type="text" class="form-control" id="userId" name="userId" value="${uvo.id}" disabled>
+		                     <input type="hidden" class="form-control" id="userId" name="userId" value="${uvo.id}">
 		                  </div>
 		               </div>
 		               <div class="form-group">
@@ -289,9 +288,8 @@
 		               
 		               <!-- 결재자 ID 가져오는 방법? -->
 		              <div class="form-group"  style="display:none">
-		                  <label class="control-label col-sm-2" for="adminId">결재자 ID:</label>
 		                  <div class="col-sm-10"> 
-		                     <input type="text" class="form-control" id="adminId" name="adminId" value='결재자' disabled>		                     
+		                     <input type="hidden" class="form-control" id="adminId" name="adminId" value='master1'>		                     
 		                  </div>
 		               </div>
 		               
