@@ -10,13 +10,17 @@
 <html>
 <head>
 <title>company</title>
-	<!-- Required meta tags -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="resources/vendors/typicons.font/font/typicons.css">
-	<link rel="stylesheet"  href="resources/vendors/css/vendor.bundle.base.css">
-	<link rel="stylesheet" href="resources/css/vertical-layout-light/style.css">
-	<link rel="shortcut icon" href="resources/images/favicon.png" />
-	<meta charset="UTF-8">
+<!-- Required meta tags -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="resources/vendors/typicons.font/font/typicons.css">
+<link rel="stylesheet"
+	href="resources/vendors/css/vendor.bundle.base.css">
+<link rel="stylesheet"
+	href="resources/css/vertical-layout-light/style.css">
+<link rel="shortcut icon" href="resources/images/favicon.png" />
+<meta charset="UTF-8">
 </head>
 
 <body>
@@ -136,10 +140,9 @@
 						<div class="dropdown-menu dropdown-menu-right navbar-dropdown"
 							aria-labelledby="profileDropdown">
 							<a class="dropdown-item" onclick="CheckSession()"> <i
-								class="typcn typcn-power text-primary" ></i> 로그아웃
+								class="typcn typcn-power text-primary"></i> 로그아웃
 							</a>
-						</div>
-					</li>
+						</div></li>
 				</ul>
 				<button
 					class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
@@ -184,10 +187,6 @@
 							class="menu-title">마이페이지</span>
 					</a></li>
 
-					<li class="nav-item"><a class="nav-link" href="${cpath}/document.do?userId=${uvo.id}&deptNum=${uvo.deptNum}"> <i
-							class="typcn typcn-film menu-icon"></i> <span class="menu-title">기안문
-								제출 현황</span>
-					</a></li>
 
 					<li class="nav-item"><a class="nav-link"
 						href="${cpath}/company.do"> <i
@@ -195,14 +194,19 @@
 							class="menu-title">회사 정보</span>
 					</a></li>
 
-		          <c:if test="${uvo.position eq '팀장'}">
-			          <li class="nav-item">
-			            <a class="nav-link" href="${cpath}/approve.do">
-			              <i class="typcn typcn-th-small-outline menu-icon"></i>
-			              <span class="menu-title">결재 대기 현황</span>
-			            </a>
-			          </li>    
-		         </c:if>
+					<li class="nav-item"><a class="nav-link"
+						href="${cpath}/document.do?userId=${uvo.id}&deptNum=${uvo.deptNum}">
+							<i class="typcn typcn-pen menu-icon"></i> <span
+							class="menu-title">기안문 제출 현황</span>
+					</a></li>
+
+					<c:if test="${uvo.position eq '팀장'}">
+						<li class="nav-item"><a class="nav-link"
+							href="${cpath}/approve.do"> <i
+								class="typcn typcn-clipboard menu-icon"></i> <span
+								class="menu-title">결재 대기 현황</span>
+						</a></li>
+					</c:if>
 				</ul>
 
 			</nav>
@@ -231,12 +235,10 @@
 													<td>
 														<div class="d-flex">
 															<div>
-																▪ 자율 출퇴근제(8~11시 사이 자율출근, 시간 자유롭게 선택 가능)<br> 
-																▪ 자율 자택 근무제(향후 변동 될 수 있음)<br> 
-																▪ 자유로운 휴가 사용(연차/반차)<br>
-																▪ 점심식대(1만원/인) 및 저녁식대(야근시)를 제공<br> 
-																▪ 다양한 종류의 간식과 음료를 상시/무한 제공<br> 
-																▪ 최신 장비 지급 + 3년 경과 시 개인 소유로 전환 가능<br>
+																▪ 자율 출퇴근제(8~11시 사이 자율출근, 시간 자유롭게 선택 가능)<br> ▪ 자율 자택
+																근무제(향후 변동 될 수 있음)<br> ▪ 자유로운 휴가 사용(연차/반차)<br>
+																▪ 점심식대(1만원/인) 및 저녁식대(야근시)를 제공<br> ▪ 다양한 종류의 간식과 음료를
+																상시/무한 제공<br> ▪ 최신 장비 지급 + 3년 경과 시 개인 소유로 전환 가능<br>
 															</div>
 														</div>
 													</td>
@@ -261,11 +263,11 @@
 	<script src="resources/vendors/chart.js/Chart.min.js"></script>
 	<script src="resources/js/chart.js"></script>
 	<script type="text/javascript">
-	    function CheckSession(){
-	    	if(sessionStorage.getItem("loginKey") == null){
-	    		window.location.replace("${cpath}/")
-	    	}
-	    }
+		function CheckSession() {
+			if (sessionStorage.getItem("loginKey") == null) {
+				window.location.replace("${cpath}/")
+			}
+		}
 	</script>
 </body>
 </html>

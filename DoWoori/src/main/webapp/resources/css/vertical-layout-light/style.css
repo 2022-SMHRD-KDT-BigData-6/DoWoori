@@ -23261,7 +23261,7 @@ body.avgrund-active {
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item > .nav-link {
-  margin: 0;
+  margin: 3px;
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item:hover > .nav-link {
@@ -23596,7 +23596,7 @@ body.avgrund-active {
 
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link {
   color: #001737;
-  font-size: 0.875rem;
+  font-size: 0.97rem;
   font-style: normal;
   padding: 1.2rem 1.2rem;
   font-weight: 300;

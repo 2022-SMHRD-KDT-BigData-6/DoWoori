@@ -13,17 +13,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>CelestialUI Admin</title>
-  <!-- base:css -->
   <link rel="stylesheet" href="resources/vendors/typicons.font/font/typicons.css">
   <link rel="stylesheet" href="resources/vendors/css/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- plugin css for this page -->
   <link rel="stylesheet" href="resources/vendors/select2/select2.min.css">
   <link rel="stylesheet" href="resources/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
   <link rel="stylesheet" href="resources/css/vertical-layout-light/style.css">
-  <!-- endinject -->
   <link rel="shortcut icon" href="resources/images/favicon.png" />
 <meta charset="UTF-8">
 <title>document</title>
@@ -190,33 +184,30 @@
               <span class="menu-title">마이페이지</span>
             </a>
           </li>
-  
-          <li class="nav-item">
-            <a class="nav-link" href="${cpath}/document.do?userId=${uvo.id}&deptNum=${uvo.deptNum}">
-              <i class="typcn typcn-film menu-icon"></i>
-              <span class="menu-title">기안문 제출 현황</span>
-            </a>
-          </li>
-          
+            
           <li class="nav-item">
             <a class="nav-link" href="${cpath}/company.do">
               <i class="typcn typcn-chart-pie-outline menu-icon"></i>
               <span class="menu-title">회사 정보</span>
             </a>
           </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" href="${cpath}/document.do?userId=${uvo.id}&deptNum=${uvo.deptNum}">
+              <i class="typcn typcn-pen menu-icon"></i>
+              <span class="menu-title">기안문 제출 현황</span>
+            </a>
+          </li>
           
           <c:if test="${uvo.position eq '팀장'}">
 	          <li class="nav-item">
 	            <a class="nav-link" href="${cpath}/approve.do">
-	              <i class="typcn typcn-th-small-outline menu-icon"></i>
+	              <i class="typcn typcn-clipboard menu-icon"></i>
 	              <span class="menu-title">결재 대기 현황</span>
 	            </a>
 	          </li>    
          </c:if>
-
-
         </ul>
-
       </nav>
       
       <!-- partial -->
@@ -258,32 +249,20 @@
           </div>
         </div>
 
-        <!-- partial -->
       </div>
-      <!-- main-panel ends -->
     </div>
-    <!-- page-body-wrapper ends -->
   </div>
-  <!-- container-scroller -->
-  <!-- base:js -->
   <script src="resources/vendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- inject:js -->
   <script src="resources/js/off-canvas.js"></script>
   <script src="resources/js/hoverable-collapse.js"></script>
   <script src="resources/js/template.js"></script>
   <script src="resources/js/settings.js"></script>
   <script src="resources/js/todolist.js"></script>
-  <!-- endinject -->
-  <!-- plugin js for this page -->
   <script src="resources/vendors/typeahead.js/typeahead.bundle.min.js"></script>
   <script src="resources/vendors/select2/select2.min.js"></script>
-  <!-- End plugin js for this page -->
-  <!-- Custom js for this page-->
   <script src="resources/js/file-upload.js"></script>
   <script src="resources/js/typeahead.js"></script>
   <script src="resources/js/select2.js"></script>
-  <!-- End custom js for this page-->
   <script type="text/javascript">
 	  function CheckSession(){
 	  	if(sessionStorage.getItem("loginKey") == null){
@@ -367,7 +346,7 @@
 						  $.each(admin, function(index, ad){
 							  
 							  if(con.adminId === ad.id){
-								  flist += "&nbsp<input type='text' value='"+ad.name+"' disabled><br><br>"
+								  flist += "&nbsp<input type='text' value='"+ad.name+"' disabled size='1' class='text-center'><br><br>"
 							  }
 							  
 
