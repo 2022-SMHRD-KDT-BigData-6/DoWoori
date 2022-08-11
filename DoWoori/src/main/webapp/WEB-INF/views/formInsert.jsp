@@ -289,7 +289,15 @@
 		               <!-- 결재자 ID 가져오는 방법? -->
 		              <div class="form-group"  style="display:none">
 		                  <div class="col-sm-10"> 
-		                     <input type="hidden" class="form-control" id="adminId" name="adminId" value='master1'>		                     
+			                  <c:if test="${uvo.deptNum == '101'}">
+			                   	<input type="hidden" class="form-control" id="adminId" name="adminId" value='master1'>
+			                  </c:if>
+			                  <c:if test="${uvo.deptNum == '102'}">
+			                   	<input type="hidden" class="form-control" id="adminId" name="adminId" value='master2'>
+			                  </c:if>
+			                  <c:if test="${uvo.deptNum == '103'}">
+			                   	<input type="hidden" class="form-control" id="adminId" name="adminId" value='master3'>
+			                  </c:if>		                    		                     
 		                  </div>
 		               </div>
 		               
