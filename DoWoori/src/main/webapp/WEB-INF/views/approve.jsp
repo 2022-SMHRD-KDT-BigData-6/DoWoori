@@ -291,7 +291,7 @@
 	           flist += "<tr class='innerContent text-left' id='vc"+con.formNum+"' style='display:none'>"
 	           flist += "<td colspan = '7'>"
 	               //제출자명
-	               flist += "&nbsp&nbsp&nbsp<label for='admin'><h4>제출자 : </h4></label>&nbsp&nbsp&nbsp"
+	               flist += "&nbsp&nbsp&nbsp<label for='admin'><h4>제출자 : </h4></label>&nbsp&nbsp&nbsp&nbsp"
 	               flist += "<input type='text' value='"+userName+"' disabled size='2' class='text-center'><br><br>"
 	             
 	               //시간구분
