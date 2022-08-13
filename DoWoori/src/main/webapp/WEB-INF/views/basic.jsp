@@ -132,7 +132,7 @@
             </div>
             <div class="nav-search">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Type to search..." aria-label="search" aria-describedby="search">
+                <input type="text" class="form-control" placeholder="Google 검색" aria-label="search" aria-describedby="search">
                 <div class="input-group-append">
                   <span class="input-group-text" id="search">
                     <i class="typcn typcn-zoom"></i>
@@ -200,13 +200,13 @@
 	                      <h4 class="card-title mb-3">결재 현황 목록  <button class="btn btn-primary btn-sm" onclick="location.href='${cpath}/approve.do'">GO →</button></h4>                     
 	                    </div>
 	                    <div class="table-responsive">
-	                      <table class="table">
+	                      <table class="table text-center">
 	                         <tr class="lists">
 	                          <th>번호</th>
 	                          <th>유형</th>
 <!-- 	                          <th>제출자</th> -->
-	                          <th>제출일자</th>  
-	                          <th>진행구분</th>     
+	                          <th>진행구분</th>  
+	                          <th>제출일자</th>     
 	                        </tr>
 	                      </table>
 	                    </div>
@@ -220,12 +220,12 @@
 	                      <h4 class="card-title mb-3">기안문 제출 현황   <button class="btn btn-primary btn-sm" onclick="location.href='${cpath}/document.do'">GO →</button></h4>                     
 	                    </div>
 	                    <div class="table-responsive">
-	                      <table class="table">
+	                      <table class="table text-center">
 	                         <tr class="lists">
 	                          <th>번호</th>
 	                          <th>유형</th>
-	                          <th>제출일자</th>  
-	                          <th>진행구분</th>     
+	                          <th>진행구분</th>  
+	                          <th>제출일자</th>     
 	                        </tr>
 	                      </table>
 	                    </div>
@@ -298,9 +298,6 @@
        calendar.render();
   });
       
-      
-      
-      
 
 
       // 팀장이 로그인 했을때와 아닐 때 로드하는 함수 구분
@@ -345,10 +342,18 @@
           flist += "<tr>"
           flist += "<td>"+num+"</td>"
           flist += "<td>"+con.docuType+"</td>"
-          flist += "<td>"+con.indate+"</td>"
           
-          /*강조하고 싶어영  */
-          flist += "<td>"+con.division+"</td>"
+          if(con.division === '승인'){
+        	  flist += "<td class='app'>"+con.division+"</td>"
+        	  
+          }else if(con.division === '신청'){
+        	  flist += "<td class='appli'>"+con.division+"</td>"
+        	  
+          }else if(con.division === '반려'){
+        	  flist += "<td class='refuse'>"+con.division+"</td>"
+          }
+      
+          flist += "<td>"+con.indate+"</td>"
 		  num += 1;
         })
         
@@ -422,8 +427,18 @@
            flist += "<tr>"
                flist += "<td>"+num+"</td>"
            	   flist += "<td id = 'info'>"+con.docuType+"</td>"
-               flist += "<td>"+con.division+"</td>"
-/*                flist += "<td>"+userName+"</td>" */
+               
+           	   if(con.division === '승인'){
+             	  flist += "<td class='app'>"+con.division+"</td>"
+             	  
+               }else if(con.division === '신청'){
+             	  flist += "<td class='appli'>"+con.division+"</td>"
+             	  
+               }else if(con.division === '반려'){
+             	  flist += "<td class='refuse'>"+con.division+"</td>"
+               }
+           	   
+/*             flist += "<td>"+userName+"</td>" */
                flist += "<td>"+con.indate+"</td>"
            flist += "</tr>"
 	        num += 1;

@@ -81,54 +81,6 @@
                 </a>
               </div>
             </li>
-            <li class="nav-item dropdown  d-flex">
-              <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
-                <i class="typcn typcn-bell mr-0"></i>
-                <span class="count bg-danger">2</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-success">
-                      <i class="typcn typcn-info-large mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">Application Error</h6>
-                    <p class="font-weight-light small-text mb-0">
-                      Just now
-                    </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-warning">
-                      <i class="typcn typcn-cog mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">Settings</h6>
-                    <p class="font-weight-light small-text mb-0">
-                      Private message
-                    </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-info">
-                      <i class="typcn typcn-user-outline mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">New user registration</h6>
-                    <p class="font-weight-light small-text mb-0">
-                      2 days ago
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </li>
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle  pl-0 pr-0" href="#" data-toggle="dropdown" id="profileDropdown">
                 <i class="typcn typcn-user-outline mr-0"></i>
@@ -168,7 +120,7 @@
             </div>
             <div class="nav-search">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Type to search..." aria-label="search" aria-describedby="search">
+                <input type="text" class="form-control" placeholder="Google 검색" aria-label="search" aria-describedby="search">
                 <div class="input-group-append">
                   <span class="input-group-text" id="search">
                     <i class="typcn typcn-zoom"></i>
@@ -235,12 +187,16 @@
                           <th>유형</th>
                           <th>시작일자</th>
                           <th>종료일자</th>
-                          <th>시간구분</th> 
-                          <th>진행구분</th>     
-                          <th>제출일자</th>     
+                          <th>시간구분</th>
+                          <th>결재자</th> 
+                          <th>진행구분</th>       
                           <th></th>          
                         </tr>
-
+						<tr>
+							<td colspan="7">
+								<button onclick ="location.href='${cpath}/formInsert.do'" class="btn-success btn btn-sm">기안문 작성</button>
+							</td>	
+						</tr>
                     </table>
                   </div>
                 </div>
@@ -264,14 +220,13 @@
   <script src="resources/js/typeahead.js"></script>
   <script src="resources/js/select2.js"></script>
   <script type="text/javascript">
-	  function CheckSession(){
+  function CheckSession(){
 	  	if(sessionStorage.getItem("loginKey") == null){
 	  		window.location.replace("${cpath}/")
 	  	}
 	  }
 	  
 	  $(document).ready(function(){
-		   loadContents('${uvo.id}');
 		   loadAdmin('${uvo.deptNum}');
 	  })
 	  
@@ -307,66 +262,88 @@
 	  
 	  
 	  function adminView(data){
-  		  admin = data;
+		  admin = data;
+		  loadContents('${uvo.id}');
 	  }
 	  
 
 	  function contentView(data){
 		  var flist = "";
-		  
 
-		  
-		  $.each(data, function(index, con){
-
-	
-			  if(con.utime !== null){
-				  var time = con.utime;
+		  $.each(data, function(index, con){			  
+			  console.log(con.utime);
+			  if(con.utime === null){
+				  var time = '종일';
 			  }else{
-				  var time = "종일";
+				  var time = con.utime;
 			  }
+				  
+
+		     flist += "<tr>"
+		     	flist += "<td>"+con.docuType+"</td>"
+	           	flist += "<td>"+con.startDate+"</td>"
+	           	flist += "<td>"+con.endDate+"</td>"
+	           	flist += "<td>"+time+"</td>"
+			  $.each(admin, function(index, ad){
+				  
+				  if(con.adminId === ad.id){
+					flist += "<td>"+ad.name+"</td>"
+				  }
+
+			  })
 			  
-			  flist += "<tr>"
-			  flist += "<td>"+con.docuType+"</td>"
-             flist += "<td>"+con.startDate+"</td>"
-             flist += "<td>"+con.endDate+"</td>"
-  
-             flist += "<td>"+time+"</td>"
-             flist += "<td>"+con.division+"</td>"
-             flist += "<td>"+con.indate+"</td>"
+			  // 승인, 신청, 반려 색 
+          	   if(con.division === '승인'){
+	              	  flist += "<td class='app'>"+con.division+"</td>"
+	              	  
+	                }else if(con.division === '신청'){
+	              	  flist += "<td class='appli'>"+con.division+"</td>"
+	              	  
+	                }else if(con.division === '반려'){
+	              	  flist += "<td class='refuse'>"+con.division+"</td>"
+	                }
+	           	
 			  flist += "<td><button class='btn btn-success' onclick='docuContent("+con.formNum+");'>상세보기</button></td></tr>"
 
 				  
-			  //버튼 누르면 펼쳐지는 부분
+
 			  
-			  
+			  //버튼 누르면 펼쳐지는 부분			  
 			  flist += "<tr class='innerContent text-left' id='vc"+con.formNum+"' style='display:none'>"
 			  flist += "<td colspan = '7'>"
 					
-				    flist += "&nbsp<label for='admin' id='admin'><h5>승인자 : </h5></label>&nbsp"
-						  $.each(admin, function(index, ad){
-							  
-							  if(con.adminId === ad.id){
-								  flist += "&nbsp<input type='text' value='"+ad.name+"' disabled size='1' class='text-center'><br><br>"
-							  }
-							  
-
-						  })
-					
+			  		
+				    flist += "&nbsp<label for='admin' id='admin'><h4>제출일자 : </h4></label>&nbsp"
+			        flist += "&nbsp<input type='text' value='"+con.indate+"' disabled size='8' class='text-center'><br><br>"
+			        
 				    //시작일
-				    flist += "&nbsp<label for='admin'><h5>시작일자 : </h5></label>&nbsp"
+				    flist += "&nbsp<label for='admin'><h4>시작일자 : </h4></label>&nbsp"
 					flist += "<input type='date' id='start' value='"+con.startDate+"' class='text-center'>&emsp;&emsp;"
 					
 					//종료일
-					flist += "<label for='admin'><h5>종료일자 : </h5></label>&nbsp;"
+					flist += "<label for='admin'><h4>종료일자 : </h4></label>&nbsp;"
 					flist += "<input type='date' id='end' value='"+con.endDate+"' class='text-center'><br><br>"
 				    
 					//시간구분
-					flist += "&nbsp<label for='admin'><h5>시간구분 : </h5></label>&nbsp"
-				  		/* 텍스트에 맞춰지면 좋겠당 */
-				    flist += "<input type='text' value='"+time+"' disabled size='1' class='text-center'><br><br>"
+					flist += "&nbsp<label for='admin'><h4>시간구분 : </h4></label>&nbsp"
+				  	if(con.utime === null){
+				  		flist += "<input type='text' value='"+time+"' size='1' disabled class='text-center'><br><br>"
+		                  	
+				  	}else if(con.utime !== null){
+				  		flist += "<select class='form-control form-control-lg' id='utime'>"
+		                    flist += "<option>"+time+"</option>"
+		                    
+		                    if(time === '오전'){
+		                    	flist += "<option value='오후'>오후</option>"
+		                    }else if(time === '오후'){
+		                    	flist += "<option value='오전'>오전</option>"
+		                    }
+		                   
+		                    flist +=  "</select><br>"
+				  	}
 					
 					//사유
-					flist += "&nbsp<label for='comment'><h5>사유</h5></label>"
+					flist += "&nbsp<label for='comment'><h4>사유</h4></label>"
 			  		flist += "<textarea id='comment' rows='7' name='con"+con.formNum+"' class='form-control'>"+con.reason+"</textarea>"
 			  		flist += "<br>" 
 			 		
@@ -419,13 +396,14 @@
 	  
 	  function formUpdate(formNum){
 		  
+		  var utime = $('#vc'+formNum+' #utime').val();
 		  var startDate = $('#vc'+formNum+' #start').val();
 		  var endDate = $('#vc'+formNum+' #end').val();
 		  var reason= $('#vc'+formNum+' textarea').val();
 		  
 		  $.ajax({
 	    		 url : '${cpath}/formUpdate.do',
-	    		 data: {'formNum':formNum, 'reason':reason, 'startDate':startDate, 'endDate':endDate},
+	    		 data: {'formNum':formNum, 'utime':utime, 'reason':reason, 'startDate':startDate, 'endDate':endDate},
 	    		 type : 'get', 
 	    		 
 	    		 success:loadOnce,

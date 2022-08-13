@@ -40,6 +40,8 @@ public interface FormMapper {
 
 	@Update("update formInfo set division='반려' where formNum=#{formNum}")
 	public void compForm(FormVO vo);
+	
+	public void formInsert(FormVO vo);
 
 }
 
