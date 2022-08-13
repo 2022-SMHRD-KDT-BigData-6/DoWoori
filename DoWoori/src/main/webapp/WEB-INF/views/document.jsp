@@ -81,54 +81,6 @@
                 </a>
               </div>
             </li>
-            <li class="nav-item dropdown  d-flex">
-              <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
-                <i class="typcn typcn-bell mr-0"></i>
-                <span class="count bg-danger">2</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-success">
-                      <i class="typcn typcn-info-large mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">Application Error</h6>
-                    <p class="font-weight-light small-text mb-0">
-                      Just now
-                    </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-warning">
-                      <i class="typcn typcn-cog mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">Settings</h6>
-                    <p class="font-weight-light small-text mb-0">
-                      Private message
-                    </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-info">
-                      <i class="typcn typcn-user-outline mx-0"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal">New user registration</h6>
-                    <p class="font-weight-light small-text mb-0">
-                      2 days ago
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </li>
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle  pl-0 pr-0" href="#" data-toggle="dropdown" id="profileDropdown">
                 <i class="typcn typcn-user-outline mr-0"></i>
@@ -168,7 +120,7 @@
             </div>
             <div class="nav-search">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Type to search..." aria-label="search" aria-describedby="search">
+                <input type="text" class="form-control" placeholder="Google 검색" aria-label="search" aria-describedby="search">
                 <div class="input-group-append">
                   <span class="input-group-text" id="search">
                     <i class="typcn typcn-zoom"></i>
@@ -339,7 +291,18 @@
 				  }
 
 			  })
-           flist += "<td>"+con.division+"</td>"
+			  
+			  // 승인, 신청, 반려 색 
+          	   if(con.division === '승인'){
+	              	  flist += "<td class='app'>"+con.division+"</td>"
+	              	  
+	                }else if(con.division === '신청'){
+	              	  flist += "<td class='appli'>"+con.division+"</td>"
+	              	  
+	                }else if(con.division === '반려'){
+	              	  flist += "<td class='refuse'>"+con.division+"</td>"
+	                }
+	           	
 			  flist += "<td><button class='btn btn-success' onclick='docuContent("+con.formNum+");'>상세보기</button></td></tr>"
 
 				  
@@ -350,19 +313,19 @@
 			  flist += "<td colspan = '7'>"
 					
 			  		
-				    flist += "&nbsp<label for='admin' id='admin'><h5>제출일자 : </h5></label>&nbsp"
-			        flist += "&nbsp<input type='text' value='"+con.indate+"' disabled><br><br>"
+				    flist += "&nbsp<label for='admin' id='admin'><h4>제출일자 : </h4></label>&nbsp"
+			        flist += "&nbsp<input type='text' value='"+con.indate+"' disabled size='8' class='text-center'><br><br>"
 			        
 				    //시작일
-				    flist += "&nbsp<label for='admin'><h5>시작일자 : </h5></label>&nbsp"
+				    flist += "&nbsp<label for='admin'><h4>시작일자 : </h4></label>&nbsp"
 					flist += "<input type='date' id='start' value='"+con.startDate+"' class='text-center'>&emsp;&emsp;"
 					
 					//종료일
-					flist += "<label for='admin'><h5>종료일자 : </h5></label>&nbsp;"
+					flist += "<label for='admin'><h4>종료일자 : </h4></label>&nbsp;"
 					flist += "<input type='date' id='end' value='"+con.endDate+"' class='text-center'><br><br>"
 				    
 					//시간구분
-					flist += "&nbsp<label for='admin'><h5>시간구분 : </h5></label>&nbsp"
+					flist += "&nbsp<label for='admin'><h4>시간구분 : </h4></label>&nbsp"
 				  	if(con.utime === null){
 				  		flist += "<input type='text' value='"+time+"' size='1' disabled class='text-center'><br><br>"
 		                  	
@@ -380,7 +343,7 @@
 				  	}
 					
 					//사유
-					flist += "&nbsp<label for='comment'><h5>사유</h5></label>"
+					flist += "&nbsp<label for='comment'><h4>사유</h4></label>"
 			  		flist += "<textarea id='comment' rows='7' name='con"+con.formNum+"' class='form-control'>"+con.reason+"</textarea>"
 			  		flist += "<br>" 
 			 		

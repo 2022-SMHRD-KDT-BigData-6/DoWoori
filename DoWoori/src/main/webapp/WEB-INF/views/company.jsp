@@ -87,50 +87,6 @@
 								</div>
 							</a>
 						</div></li>
-					<li class="nav-item dropdown  d-flex"><a
-						class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center"
-						id="notificationDropdown" href="#" data-toggle="dropdown"> <i
-							class="typcn typcn-bell mr-0"></i> <span class="count bg-danger">2</span>
-					</a>
-						<div
-							class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
-							aria-labelledby="notificationDropdown">
-							<p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-							<a class="dropdown-item preview-item">
-								<div class="preview-thumbnail">
-									<div class="preview-icon bg-success">
-										<i class="typcn typcn-info-large mx-0"></i>
-									</div>
-								</div>
-								<div class="preview-item-content">
-									<h6 class="preview-subject font-weight-normal">Application
-										Error</h6>
-									<p class="font-weight-light small-text mb-0">Just now</p>
-								</div>
-							</a> <a class="dropdown-item preview-item">
-								<div class="preview-thumbnail">
-									<div class="preview-icon bg-warning">
-										<i class="typcn typcn-cog mx-0"></i>
-									</div>
-								</div>
-								<div class="preview-item-content">
-									<h6 class="preview-subject font-weight-normal">Settings</h6>
-									<p class="font-weight-light small-text mb-0">Private
-										message</p>
-								</div>
-							</a> <a class="dropdown-item preview-item">
-								<div class="preview-thumbnail">
-									<div class="preview-icon bg-info">
-										<i class="typcn typcn-user-outline mx-0"></i>
-									</div>
-								</div>
-								<div class="preview-item-content">
-									<h6 class="preview-subject font-weight-normal">New user
-										registration</h6>
-									<p class="font-weight-light small-text mb-0">2 days ago</p>
-								</div>
-							</a>
-						</div></li>
 					<li class="nav-item nav-profile dropdown"><a
 						class="nav-link dropdown-toggle  pl-0 pr-0" href="#"
 						data-toggle="dropdown" id="profileDropdown"> <i
@@ -170,7 +126,7 @@
 						<div class="nav-search">
 							<div class="input-group">
 								<input type="text" class="form-control"
-									placeholder="Type to search..." aria-label="search"
+									placeholder="Google 검색" aria-label="search"
 									aria-describedby="search">
 								<div class="input-group-append">
 									<span class="input-group-text" id="search"> <i
