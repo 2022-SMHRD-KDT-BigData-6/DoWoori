@@ -263,7 +263,7 @@
     
     function CheckSession(){
        if(sessionStorage.getItem("loginKey") == null){
-          window.location.replace("${cpath}/")
+          window.location.replace("${cpath}/logout.do")
        }
     }
     
@@ -375,29 +375,13 @@
         })
      }
      
-/*      //제출자 이름 가져오는 함수
-     function loadUser(deptNum){
-        $.ajax({
-           url : '${cpath}/userAjax.do',
-           data : {'deptNum':deptNum},
-           type : 'get',
-           dataType : 'json',
-           success: writerView,           
-           error : function(){
-              alert('실패!');
-           }
-        })
-     } */
+
      
 
      var dicWriter = {};
      var userName = "";
 
-/*      // 제출자 정보 변수에 담는 함수
-	 function writerView(data){
-	    	 dicWriter = data;
-      } */
-	     
+
      
 
      function adminView(data){
@@ -412,18 +396,12 @@
               var time = "종일";
            }
     	   
-/*            // 제출자 id 일치하면 제출자 이름 로드
-           $.each(dicWriter, function(ind, w){
-	           	if(w.id === con.userId){
-	           		userName = w.name;
-	          	 }
-   	  		}) */
+
                   
            flist += "<tr>"
                flist += "<td>"+num+"</td>"
            	   flist += "<td id = 'info'>"+con.docuType+"</td>"
                flist += "<td>"+con.division+"</td>"
-/*                flist += "<td>"+userName+"</td>" */
                flist += "<td>"+con.indate+"</td>"
            flist += "</tr>"
 	        num += 1;

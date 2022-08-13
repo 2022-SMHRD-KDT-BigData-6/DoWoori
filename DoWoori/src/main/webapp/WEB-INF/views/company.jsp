@@ -265,7 +265,7 @@
 	<script type="text/javascript">
 		function CheckSession() {
 			if (sessionStorage.getItem("loginKey") == null) {
-				window.location.replace("${cpath}/")
+				window.location.replace("${cpath}/logout.do")
 			}
 		}
 	</script>
