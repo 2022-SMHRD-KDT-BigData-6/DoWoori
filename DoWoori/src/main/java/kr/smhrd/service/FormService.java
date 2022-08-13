@@ -77,5 +77,10 @@ public class FormService {
 		
 	}
 
+	public void chatInsert(String vo) {
+		mapper.chatInsert(vo);
+		
+	}
+
 
 }

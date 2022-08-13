@@ -15,6 +15,12 @@
         insert into formInfo(docuType, userId, startDate, endDate, utime, reason, adminId) 
 		values (#{docuType}, #{userId}, #{startDate}, #{endDate}, #{utime}, #{reason}, #{adminId})
     </insert>
+    
+    <insert id="chatInsert" parameterType="kr.smhrd.model.FormVO">
+        insert into formInfo(docuType, userId, startDate, endDate, utime, reason, adminId) 
+		values (#{docuType}, #{userId}, #{startDate}, #{endDate}, #{utime}, #{reason}, #{adminId})
+    </insert>
+    
 </mapper>
 
 

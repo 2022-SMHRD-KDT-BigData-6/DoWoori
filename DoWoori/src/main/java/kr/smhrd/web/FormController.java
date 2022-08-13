@@ -12,12 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.mysql.fabric.Response;
 
+
+import jdk.nashorn.internal.parser.JSONParser;
 import kr.smhrd.model.FormVO;
 import kr.smhrd.model.UserVO;
 import kr.smhrd.service.FormService;
@@ -28,7 +30,7 @@ public class FormController {
 	//DB 쿼리문을 수행할 수 있는 인터페이스 생성
 	@Autowired //★필수!! 자동으로 연결, 객체 생성하는 annotation
 	private FormService service;
-	
+
 	
 	@RequestMapping("/")
 	public String login(HttpSession session) {
@@ -59,7 +61,9 @@ public class FormController {
 	
 	@RequestMapping("/logout.do")
 	public String logout(HttpSession session) {
-		session.invalidate();
+		session.removeAttribute("id");
+		System.out.println(session.getAttribute("id"));
+
 		return "redirect:/";
 	}
 	
@@ -99,8 +103,15 @@ public class FormController {
 		service.formInsert(vo);
 		return "redirect:/document.do";
 	}
-	
-	
+
+	@RequestMapping("/chatInsert.do")
+	public String chatInsert(@RequestBody String vo, HttpServletResponse response) {
+		System.out.println(vo);
+		
+		/* service.chatInsert(vo); */
+		return "redirect:/document.do";
+		
+	}
 	
 
 }
