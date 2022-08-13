@@ -9,10 +9,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>document</title>  
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>CelestialUI Admin</title>
   <link rel="stylesheet" href="resources/vendors/typicons.font/font/typicons.css">
   <link rel="stylesheet" href="resources/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="resources/vendors/select2/select2.min.css">
@@ -20,8 +20,8 @@
   <link rel="stylesheet" href="resources/css/vertical-layout-light/style.css">
   <link rel="shortcut icon" href="resources/images/favicon.png" />
 <meta charset="UTF-8">
-<title>document</title>
 </head>
+
 <body>
   <div class="container-scroller">
     <!-- partial:resources/partials/_navbar.html -->
@@ -343,18 +343,18 @@
 				  	}
 					
 					//사유
-					flist += "&nbsp<label for='comment'><h4>사유</h4></label>"
+					flist += "&nbsp<label for='comment'><h4>사유 : </h4></label>"
 			  		flist += "<textarea id='comment' rows='7' name='con"+con.formNum+"' class='form-control'>"+con.reason+"</textarea>"
 			  		flist += "<br>" 
 			 		
 			  		//수정, 닫기버튼
 			  		if(con.division === '신청'){
-			  		  flist += "&nbsp<button class = 'btn-success btn btn-sm' onclick='javascript:formUpdate("+con.formNum+")'>수정</button>"
+			  		  flist += "&nbsp<button class = 'btn-success btn btn-sm' onclick='javascript:formUpdate("+con.formNum+")'>🖍 수정</button>"
 				  	  flist += "&nbsp<button class = 'btn-warning btn btn-sm' onclick='formDelete("+con.formNum+");'>삭제</button>"
 			  		}
 			  		
 
-			  		flist += "&nbsp<button class = 'btn-warning btn btn-sm' onclick='docuContent("+con.formNum+")' style='float: right';>닫기</button>"
+			  		flist += "&nbsp<button class = 'btn-warning btn btn-sm close' onclick='docuContent("+con.formNum+")' style='float: right';>닫기</button>"
 			  		
 			  	flist += "</td>"
 			  flist += "</tr>" 

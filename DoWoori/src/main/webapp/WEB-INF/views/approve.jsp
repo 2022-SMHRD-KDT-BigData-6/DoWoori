@@ -300,7 +300,7 @@
 	                flist += "<input type='text' value='"+time+"' disabled size='2' class='text-center'><br><br>"
 	               
 	               //사유
-	               flist += "&nbsp<label for='comment'><h4>사유</h4></label>"
+	               flist += "&nbsp<label for='comment'><h4>사유 : </h4></label>"
 	                 flist += "<textarea readonly id='comment' rows='7' name='con"+con.formNum+"' class='form-control'>"+con.reason+"</textarea>"
 	                 flist += "<br>" 
 	                

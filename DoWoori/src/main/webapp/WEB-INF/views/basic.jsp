@@ -254,19 +254,16 @@
     <!-- 캘린더 스크립트 -->
     <script src="resources/js/popper.min.js"></script>
     <script src="resources/js/bootstrap.min.js"></script>
-
     <script src='resources/fullcalendar/packages/core/main.js'></script>
     <script src='resources/fullcalendar/packages/interaction/main.js'></script>
     <script src='resources/fullcalendar/packages/daygrid/main.js'></script>
 
     <script>
-    
     function CheckSession(){
        if(sessionStorage.getItem("loginKey") == null){
           window.location.replace("${cpath}/")
        }
     }
-    
     
     //캘린더
       document.addEventListener('DOMContentLoaded', function() {

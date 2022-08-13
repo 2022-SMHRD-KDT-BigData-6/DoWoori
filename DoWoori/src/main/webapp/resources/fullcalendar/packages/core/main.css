@@ -477,7 +477,7 @@ tr:first-child > td > .fc-day-grid-event {
 .fc-day-grid-event .fc-content {
   /* force events to be one-line tall */
   white-space: nowrap;
-  overflow: hidden;
+  
 }
 
 .fc-day-grid-event .fc-time {
@@ -736,8 +736,9 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 
 .fc-button-primary:disabled {
   color: #fff;
-  background-color: #4a7ead;
-  border-color: #4a7ead;
+  background-color: #3b73b3;
+  border-radius: 50px;
+  font-size: 1rem;
 }
 
 .fc-button-primary:not(:disabled):active,

@@ -8538,14 +8538,6 @@ body, h1, h2, h3, h4, h5, h6, input, textarea, select {
   }
 }
 
-/*-------------------------------------------------------------------*/
-/* === Boostrap Main SCSS === */
-/*!
- * Bootstrap v4.3.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
 :root {
   --blue: #5E50F9;
   --indigo: #6610f2;
@@ -10890,23 +10882,6 @@ fieldset:disabled a.btn {
   box-shadow: 0 0 0 0.2rem rgba(244, 54, 118, 0.5);
 }
 
-.btn-primary.disabled, .btn-primary:disabled {
-  color: #fff;
-  background-color: #f2125e;
-  border-color: #f2125e;
-}
-
-.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
-.show > .btn-primary.dropdown-toggle {
-  color: #fff;
-  background-color: #c60b4a;
-  border-color: #ba0a46;
-}
-
-.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
-.show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(244, 54, 118, 0.5);
-}
 
 .btn-secondary {
   color: #fff;
@@ -10924,18 +10899,6 @@ fieldset:disabled a.btn {
   box-shadow: 0 0 0 0.2rem rgba(87, 76, 213, 0.5);
 }
 
-.btn-secondary.disabled, .btn-secondary:disabled {
-  color: #fff;
-  background-color: #392ccd;
-  border-color: #392ccd;
-}
-
-.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active,
-.show > .btn-secondary.dropdown-toggle {
-  color: #fff;
-  background-color: #2d23a3;
-  border-color: #2a2199;
-}
 
 .btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-secondary.dropdown-toggle:focus {
@@ -10966,8 +10929,8 @@ fieldset:disabled a.btn {
 .btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active,
 .show > .btn-success.dropdown-toggle {
   color: #fff;
-  background-color: #129b4d;
-  border-color: #109048;
+  background-color: #3f648d;
+  border-color: #3f648d;
 }
 
 .btn-success:not(:disabled):not(.disabled):active:focus, .btn-success:not(:disabled):not(.disabled).active:focus,
@@ -10989,17 +10952,6 @@ fieldset:disabled a.btn {
   box-shadow: 0 0 0 0.2rem rgba(75, 147, 255, 0.5);
 }
 
-.btn-info.disabled, .btn-info:disabled {
-  color: #fff;
-  background-color: #2b80ff;
-}
-
-.btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active,
-.show > .btn-info.dropdown-toggle {
-  color: #fff;
-  background-color: #0063f7;
-  border-color: #005eea;
-}
 
 .btn-info:not(:disabled):not(.disabled):active:focus, .btn-info:not(:disabled):not(.disabled).active:focus,
 .show > .btn-info.dropdown-toggle:focus {
@@ -11008,37 +10960,18 @@ fieldset:disabled a.btn {
 
 .btn-warning {
   color: #212529;
-  background-color: #ff8300;
-  border-color: #ff8300;
+  background-color: #ebebeb;
 }
 
 .btn-warning:hover {
   color: #fff;
-  background-color: #d96f00;
-  border-color: #cc6900;
+  background-color: #b1b1b1;
 }
 
 .btn-warning:focus, .btn-warning.focus {
   box-shadow: 0 0 0 0.2rem rgba(222, 117, 6, 0.5);
 }
 
-.btn-warning.disabled, .btn-warning:disabled {
-  color: #212529;
-  background-color: #ff8300;
-  border-color: #ff8300;
-}
-
-.btn-warning:not(:disabled):not(.disabled):active, .btn-warning:not(:disabled):not(.disabled).active,
-.show > .btn-warning.dropdown-toggle {
-  color: #fff;
-  background-color: #cc6900;
-  border-color: #bf6200;
-}
-
-.btn-warning:not(:disabled):not(.disabled):active:focus, .btn-warning:not(:disabled):not(.disabled).active:focus,
-.show > .btn-warning.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(222, 117, 6, 0.5);
-}
 
 .btn-danger {
   color: #fff;
@@ -11236,16 +11169,6 @@ fieldset:disabled a.btn {
   box-shadow: 0 0 0 0.2rem rgba(23, 201, 100, 0.5);
 }
 
-.btn-outline-info {
-  color: #2b80ff;
-  border-color: #2b80ff;
-}
-
-.btn-outline-info:hover {
-  color: #fff;
-  background-color: #2b80ff;
-  border-color: #2b80ff;
-}
 
 .btn-outline-info:focus, .btn-outline-info.focus {
   box-shadow: 0 0 0 0.2rem rgba(43, 128, 255, 0.5);
@@ -13415,20 +13338,6 @@ a.badge-success:focus, .preview-list .preview-item .preview-thumbnail a.badge.ba
   box-shadow: 0 0 0 0.2rem rgba(23, 201, 100, 0.5);
 }
 
-.badge-info, .preview-list .preview-item .preview-thumbnail .badge.badge-offline {
-  color: #fff;
-  background-color: #2b80ff;
-}
-
-a.badge-info:hover, .preview-list .preview-item .preview-thumbnail a.badge.badge-offline:hover, a.badge-info:focus, .preview-list .preview-item .preview-thumbnail a.badge.badge-offline:focus {
-  color: #fff;
-  background-color: #0063f7;
-}
-
-a.badge-info:focus, .preview-list .preview-item .preview-thumbnail a.badge.badge-offline:focus, a.badge-info.focus, .preview-list .preview-item .preview-thumbnail a.focus.badge.badge-offline {
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(43, 128, 255, 0.5);
-}
 
 .badge-warning, .preview-list .preview-item .preview-thumbnail .badge.badge-busy {
   color: #212529;
@@ -18047,7 +17956,7 @@ a.text-success:hover, a.text-success:focus {
 }
 
 .text-info {
-  color: #2b80ff !important;
+  color: #000080!important;
 }
 
 a.text-info:hover, a.text-info:focus {
@@ -18305,6 +18214,7 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
+  
 }
 
 .form-control, .select2-container--default .select2-selection--single, .select2-container--default .select2-selection--single .select2-search__field, .typeahead,
@@ -18509,7 +18419,7 @@ input:focus {
 
 /* 기안문 제출 테이블 */
 body {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: initial;
   line-height: normal;
@@ -19306,9 +19216,17 @@ code {
 }
 
 .btn.btn-sm, .btn-group-sm > .btn {
-  font-size: 0.875rem;
+  font-size: 1rem;
   padding: .5rem .75rem;
   border-radius: 4px;
+}
+
+.close{
+  font-size: 1rem;
+  padding: .5rem .75rem;
+  border-radius: 20px;
+  color: #212529;
+  background-color: #ebebeb;
 }
 
 .btn.btn-lg, .btn-group-lg > .btn {
@@ -19968,7 +19886,7 @@ code {
   color: #000000;
   margin-bottom: 1.5rem;
   text-transform: capitalize;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
@@ -21623,7 +21541,7 @@ dl li {
 }
 
 .table td {
-  font-size: 0.97rem;
+  font-size: 1.04rem;
   line-height: 1.7rem;
   font-weight: 400;
 }
