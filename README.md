@@ -29,15 +29,20 @@
 <br>
 
 ## 유스케이스
+![image](https://user-images.githubusercontent.com/105588954/184627602-e9100ac1-0b94-4b39-a36e-0da7bcd4f23c.png)
 <br>
 
 ## 서비스 흐름도
+![image](https://user-images.githubusercontent.com/105588954/184627869-fa34789f-ea54-4161-88e5-4e3c090aefda.png)
+![image](https://user-images.githubusercontent.com/105588954/184627893-e6b2d5c7-b5eb-475e-8379-5e19213bf7a0.png)
 <br>
 
 ## ER 다이어그램
+![image](https://user-images.githubusercontent.com/105588954/184627698-be449b42-4356-442d-912c-aee4d760c5f9.png)
 <br>
 
 ## 화면설계서
+[화면설계서_도우리.pptx](https://github.com/2022-SMHRD-KDT-BigData-6/DoWoori/files/9336880/_.pptx)
 <br>
 
 ## 팀원 역할
