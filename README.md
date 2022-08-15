@@ -35,7 +35,7 @@
 
 ## 서비스 흐름도
 ![image](https://user-images.githubusercontent.com/105588954/184627869-fa34789f-ea54-4161-88e5-4e3c090aefda.png)
-![image](https://user-images.githubusercontent.com/105588954/184627893-e6b2d5c7-b5eb-475e-8379-5e19213bf7a0.png)
+![image](https://user-images.githubusercontent.com/105588954/184635921-6c535947-d778-482c-be1d-0ad8964ee6ef.png)
 <br>
 
 ## ER 다이어그램
