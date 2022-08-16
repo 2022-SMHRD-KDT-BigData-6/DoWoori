@@ -172,8 +172,27 @@
 					</div>
 
 					<div class="row">
-						<div class="col-lg-6 grid-margin grid-margin-lg-0 stretch-card">
-							<div class="card"></div>
+						<div class="col-lg-12 grid-margin grid-margin-lg-0 stretch-card">
+							<div class="card">
+								<div class="card-body">
+									<div class="d-flex flex-wrap justify-content-between">
+										<h4 class="card-title mb-3">회사 조직도</h4>
+									</div>
+									<div class="table-responsive">
+										<table class="table">
+											<tbody>
+												<tr>
+													<td>
+														<div class="d-flex">
+															
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
 						</div>
 
 						<div class="col-lg-6 grid-margin grid-margin-lg-0 stretch-card">
