@@ -33,8 +33,7 @@
     <!-- partial:resources/partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="${cpath}/basic.do"><img src="resources/images/logo.svg" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="${cpath}/basic.do"><img src="resources/images/logo-mini.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="${cpath}/basic.do"><img src="resources/images/logob.png" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center d-none d-lg-flex" type="button" data-toggle="minimize">
             <span class="typcn typcn-th-menu"></span>
           </button>
@@ -134,7 +133,7 @@
                 </div>
               </div>
             </div>
-            <p class="sidebar-menu-title">menu</p>
+            <p class="sidebar-menu-title">Menu</p>
           </li>
          <li class="nav-item">
             <a class="nav-link" href="${cpath}/basic.do">
@@ -255,7 +254,7 @@
 		               
 		               <div class="form-group">
 		                  <div class="col-sm-offset-2 col-sm-10">
-		                     <button type="submit" class="btn btn-default btn-primary btn-sm">제출</button>
+		                     <button type="submit" class="btn btn-default btn-primary btn-sm btn-submit">제출</button>
 		                  </div>
 		               </div>
 		            </form>

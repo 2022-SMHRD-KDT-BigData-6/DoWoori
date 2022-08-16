@@ -8604,7 +8604,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Noto Sans", sans-serif, "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -8615,14 +8615,14 @@ body {
 
 /*---메인페이지 기안문 제출  진행구분 글씨색---*/
 .app{
-	color: #28a745;
+	color: #10ab20;
 }
 
 .appli{
-	color: #3d86d5;
+	color: #2a3cbd;
 }
 
-.refuce{
+.refuse{
 	color: #dd2424;
 }
 
@@ -8805,7 +8805,7 @@ optgroup,
 textarea {
   margin: 0;
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: inherit;
+  font-size: 1rem;
   line-height: inherit;
 }
 
@@ -10327,7 +10327,7 @@ pre code {
 .tt-hint:disabled, .form-control[readonly], .select2-container--default .select2-selection--single[readonly], .select2-container--default .select2-selection--single .select2-search__field[readonly], .typeahead[readonly],
 .tt-query[readonly],
 .tt-hint[readonly] {
-  background-color: #e9ecef;
+  background-color: #ffffff;
   opacity: 1;
 }
 
@@ -10398,6 +10398,7 @@ select.tt-hint:focus::-ms-value {
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem;
+  color: #212529;
 }
 
 select.form-control[size], .select2-container--default select.select2-selection--single[size], .select2-container--default .select2-selection--single select.select2-search__field[size], select.typeahead[size],
@@ -10868,19 +10869,16 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #ffffff;
-  background-color: #4d7baf;
+  background-color: #3f7ec5;
  
 }
 
 .btn-primary:hover {
   color:  #ffffff;
-  background-color: #3f648d;
+  background-color: #346faf;
   
 }
 
-.btn-primary:focus, .btn-primary.focus {
-  box-shadow: 0 0 0 0.2rem rgba(244, 54, 118, 0.5);
-}
 
 
 .btn-secondary {
@@ -10907,13 +10905,13 @@ fieldset:disabled a.btn {
 
 .btn-success {
   color: #fff;
-  background-color: #4a7ead;
+  background-color: #3f7ec5;
   border-radius: 10px;
 }
 
 .btn-success:hover {
   color: #fff;
-  background-color: #3f648d;
+  background-color: #3065a0;
 
 }
 
@@ -10921,22 +10919,6 @@ fieldset:disabled a.btn {
   box-shadow: 0 0 0 0.2rem rgba(58, 209, 123, 0.5);
 }
 
-.btn-success.disabled, .btn-success:disabled {
-  color: #fff;
-  background-color: #3f648d;
-}
-
-.btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active,
-.show > .btn-success.dropdown-toggle {
-  color: #fff;
-  background-color: #3f648d;
-  border-color: #3f648d;
-}
-
-.btn-success:not(:disabled):not(.disabled):active:focus, .btn-success:not(:disabled):not(.disabled).active:focus,
-.show > .btn-success.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(58, 209, 123, 0.5);
-}
 
 .btn-info {
   color: #fff;
@@ -10960,7 +10942,7 @@ fieldset:disabled a.btn {
 
 .btn-warning {
   color: #212529;
-  background-color: #ebebeb;
+  background-color: #c0c0c0;
 }
 
 .btn-warning:hover {
@@ -10968,9 +10950,6 @@ fieldset:disabled a.btn {
   background-color: #b1b1b1;
 }
 
-.btn-warning:focus, .btn-warning.focus {
-  box-shadow: 0 0 0 0.2rem rgba(222, 117, 6, 0.5);
-}
 
 
 .btn-danger {
@@ -13950,8 +13929,9 @@ a.badge-dark:focus, a.badge-dark.focus {
 button.close {
   padding: 0;
   background-color: transparent;
-  border: 0;
   appearance: none;
+  border-color: #909090;
+  color: #000;
 }
 
 a.close.disabled {
@@ -17932,7 +17912,16 @@ button.bg-dark:focus,
 }
 
 .text-primary, .list-wrapper .completed .remove {
-  color: #4d7baf !important;
+  color: #3f7ec5 !important;
+  font-weight: 400;
+
+}
+
+.join{
+  color: #3f7ec5;
+  font-weight: 400;
+  font-size: 0.93rem;
+	
 }
 
 a.text-primary:hover, .list-wrapper .completed a.remove:hover, a.text-primary:focus, .list-wrapper .completed a.remove:focus {
@@ -18419,7 +18408,7 @@ input:focus {
 
 /* 기안문 제출 테이블 */
 body {
-  font-size: 1.1rem;
+  font-size: 1.13rem;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: initial;
   line-height: normal;
@@ -19221,6 +19210,14 @@ code {
   border-radius: 4px;
 }
 
+.update{
+	background-color: #c58d3f;
+}
+
+.delete{
+	background-color: #e5e5e5;
+}
+
 .close{
   font-size: 1rem;
   padding: .5rem .75rem;
@@ -19230,7 +19227,7 @@ code {
 }
 
 .btn.btn-lg, .btn-group-lg > .btn {
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 .btn.btn-xs {
@@ -19886,7 +19883,7 @@ code {
   color: #000000;
   margin-bottom: 1.5rem;
   text-transform: capitalize;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
@@ -20349,7 +20346,7 @@ select.tt-hint {
   padding: .4375rem .75rem;
   border: 0;
   outline: 1px solid #e8eff9;
-  color: #7e7e7e;
+  color: #000000;
 }
 
 select.form-control:focus, .select2-container--default select.select2-selection--single:focus, .select2-container--default .select2-selection--single select.select2-search__field:focus, select.typeahead:focus,
@@ -20459,7 +20456,7 @@ select.border-dark.tt-hint:focus {
 }
 
 .form-group label {
-  font-size: 0.875rem;
+  font-size: 0.97rem;
   line-height: 1.4rem;
   vertical-align: top;
   margin-bottom: .5rem;
@@ -20480,7 +20477,7 @@ select.border-dark.tt-hint:focus {
   background: transparent;
 }
 
-/* Icons */
+/* 아이콘*/
 .icons-list {
   border-left: 1px solid #e8eff9;
   border-top: 1px solid #e8eff9;
@@ -21541,7 +21538,7 @@ dl li {
 }
 
 .table td {
-  font-size: 1.04rem;
+  font-size: 1.1rem;
   line-height: 1.7rem;
   font-weight: 400;
 }
@@ -23177,7 +23174,7 @@ body.avgrund-active {
 }
 
 .sidebar .nav .nav-item.active > .nav-link i {
-  color: #2b80ff;
+  color: #5c9add;
 }
 
 .sidebar .nav:not(.sub-menu) {
@@ -23345,7 +23342,7 @@ body.avgrund-active {
 }
 
 .sidebar-light .sidebar .nav .nav-item.active > .nav-link i {
-  color: #2b80ff;
+  color: #0e91cf;
 }
 
 .sidebar-light .sidebar .nav:not(.sub-menu) > .nav-item:hover > .nav-link {
@@ -25101,6 +25098,15 @@ body.avgrund-active {
   font-size: 1.5rem;
   margin-right: .5rem;
   color: #9a9ea2;
+}
+
+.btn-submit{
+	font-size: 1.1rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    width: 100px;
+    margin: auto;
+    display: block;
 }
 
 /*# sourceMappingURL=../maps/vertical-layout-light/style.css.map */

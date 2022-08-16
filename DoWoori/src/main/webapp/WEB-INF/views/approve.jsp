@@ -22,8 +22,7 @@
  <div class="container-scroller">
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="${cpath}/basic.do"><img src="resources/images/logo.svg" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="${cpath}/basic.do"><img src="resources/images/logo-mini.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="${cpath}/basic.do"><img src="resources/images/logob.png" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center d-none d-lg-flex" type="button" data-toggle="minimize">
             <span class="typcn typcn-th-menu"></span>
           </button>
@@ -123,7 +122,7 @@
                 </div>
               </div>
             </div>
-            <p class="sidebar-menu-title">menu</p>
+            <p class="sidebar-menu-title">Menu</p>
           </li>
          <li class="nav-item">
             <a class="nav-link" href="${cpath}/basic.do">
@@ -311,7 +310,7 @@
 		                 flist += "&nbsp<button type='button' class = 'btn-danger btn btn-sm' onclick='compForm("+con.formNum+")'>✖  반려</button>"
 	                 }
 	              //닫기버튼
-	                 flist += "&nbsp<button type='button' class = 'btn-light btn btn-sm' onclick='docuContent("+con.formNum+")' style='float: right;'>닫기</button>"
+	                 flist += "&nbsp<button type='button' class = 'btn-light btn btn-sm close' onclick='docuContent("+con.formNum+")' style='float: right;'>닫기</button>"
 	              flist += "</td>"
 	           flist += "</tr>" 
 		        

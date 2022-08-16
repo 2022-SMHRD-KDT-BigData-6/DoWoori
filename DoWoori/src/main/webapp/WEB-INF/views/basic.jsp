@@ -41,7 +41,6 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
           <a class="navbar-brand brand-logo" href="${cpath}/basic.do"><img src="resources/images/logob.png" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="${cpath}/basic.do"><img src="resources/images/logo-mini.svg" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center d-none d-lg-flex" type="button" data-toggle="minimize">
             <span class="typcn typcn-th-menu"></span>
           </button>
@@ -200,13 +199,13 @@
 	                      <h4 class="card-title mb-3">결재 현황 목록  <button class="btn btn-primary btn-sm" onclick="location.href='${cpath}/approve.do'">GO →</button></h4>                     
 	                    </div>
 	                    <div class="table-responsive">
-	                      <table class="table">
+	                      <table class="table text-center">
 	                         <tr class="lists">
 	                          <th>번호</th>
 	                          <th>유형</th>
 <!-- 	                          <th>제출자</th> -->
+							  <th>진행구분</th> 
 	                          <th>제출일자</th>  
-	                          <th>진행구분</th>     
 	                        </tr>
 	                      </table>
 	                    </div>
@@ -220,12 +219,12 @@
 	                      <h4 class="card-title mb-3">기안문 제출 현황   <button class="btn btn-primary btn-sm" onclick="location.href='${cpath}/document.do'">GO →</button></h4>                     
 	                    </div>
 	                    <div class="table-responsive">
-	                      <table class="table">
+	                      <table class="table text-center">
 	                         <tr class="lists">
 	                          <th>번호</th>
 	                          <th>유형</th>
+	                  		  <th>진행구분</th> 
 	                          <th>제출일자</th>  
-	                          <th>진행구분</th>     
 	                        </tr>
 	                      </table>
 	                    </div>
@@ -342,10 +341,20 @@
           flist += "<tr>"
           flist += "<td>"+num+"</td>"
           flist += "<td>"+con.docuType+"</td>"
+          
+     	   if(con.division === '승인'){
+           	  flist += "<td class='app'>"+con.division+"</td>"
+           	  
+             }else if(con.division === '신청'){
+           	  flist += "<td class='appli'>"+con.division+"</td>"
+           	  
+             }else if(con.division === '반려'){
+           	  flist += "<td class='refuse'>"+con.division+"</td>"
+             }
+          
           flist += "<td>"+con.indate+"</td>"
           
-          /*강조하고 싶어영  */
-          flist += "<td>"+con.division+"</td>"
+          
 		  num += 1;
         })
         
@@ -398,8 +407,19 @@
            flist += "<tr>"
                flist += "<td>"+num+"</td>"
            	   flist += "<td id = 'info'>"+con.docuType+"</td>"
-               flist += "<td>"+con.division+"</td>"
-               flist += "<td>"+con.indate+"</td>"
+
+          	   if(con.division === '승인'){
+	              	  flist += "<td class='app'>"+con.division+"</td>"
+	              	  
+	                }else if(con.division === '신청'){
+	              	  flist += "<td class='appli'>"+con.division+"</td>"
+	              	  
+	                }else if(con.division === '반려'){
+	              	  flist += "<td class='refuse'>"+con.division+"</td>"
+	                }
+	           	
+           	   
+           	   flist += "<td>"+con.indate+"</td>"
            flist += "</tr>"
 	        num += 1;
         })

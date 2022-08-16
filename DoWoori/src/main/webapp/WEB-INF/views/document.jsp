@@ -27,8 +27,7 @@
     <!-- partial:resources/partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="${cpath}/basic.do"><img src="resources/images/logo.svg" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="${cpath}/basic.do"><img src="resources/images/logo-mini.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="${cpath}/basic.do"><img src="resources/images/logob.png" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center d-none d-lg-flex" type="button" data-toggle="minimize">
             <span class="typcn typcn-th-menu"></span>
           </button>
@@ -128,7 +127,7 @@
                 </div>
               </div>
             </div>
-            <p class="sidebar-menu-title">menu</p>
+            <p class="sidebar-menu-title">Menu</p>
           </li>
          <li class="nav-item">
             <a class="nav-link" href="${cpath}/basic.do">
@@ -349,8 +348,8 @@
 			 		
 			  		//수정, 닫기버튼
 			  		if(con.division === '신청'){
-			  		  flist += "&nbsp<button class = 'btn-success btn btn-sm' onclick='javascript:formUpdate("+con.formNum+")'>🖍 수정</button>"
-				  	  flist += "&nbsp<button class = 'btn-warning btn btn-sm' onclick='formDelete("+con.formNum+");'>삭제</button>"
+			  		  flist += "&nbsp<button class = 'btn-success btn btn-sm update' onclick='javascript:formUpdate("+con.formNum+")'>🖍 수정</button>"
+				  	  flist += "&nbsp<button class = 'btn-warning btn btn-sm delete' onclick='formDelete("+con.formNum+");'>삭제</button>"
 			  		}
 			  		
 

@@ -46,7 +46,7 @@
                   <button type="submit" id="login" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">로그인</button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                   <a href="${cpath}/join.do" class="text-primary">회원가입</a>
+                   <a href="${cpath}/join.do" class="text-primary join">회원가입</a>
                 </div>
               </form>
 
