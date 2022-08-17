@@ -21,6 +21,48 @@
 	href="resources/css/vertical-layout-light/style.css">
 <link rel="shortcut icon" href="resources/images/favicon.png" />
 <meta charset="UTF-8">
+
+<!-- 조직도  -->
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {packages:["orgchart"]});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Name');
+        data.addColumn('string', 'Manager');
+        data.addColumn('string', 'ToolTip');
+
+        // For each orgchart box, provide the name, manager, and tooltip to show.
+          data.addRows([
+          [{'v':'대표이사', 'f':'대표이사<div style="color:black;">ceo</div>'},
+           '', '연락처 : 062-***-****'],
+           
+          [{'v':'인사관리부', 'f':'인사관리부'},
+           '대표이사', '연락처 : 062-***-****'],
+          ['김진경<div style="color:black;">직위 : 부장</div><div>직책 : 팀장</div>', '인사관리부', '연락처 : 062-***-****'],
+          ['김채윤<div style="color:black;">직위 : 사원</div><div>직책 : 팀원</div>', '인사관리부', '연락처 : 062-***-****'],
+          
+          [{'v':'고객관리부', 'f':'고객관리부'},
+           '대표이사', '연락처 : 062-***-****'],
+          ['황은지<div style="color:black;">직위 : 과장</div><div>직책 : 팀장</div>', '고객관리부', '연락처 : 062-***-****'],
+          ['김준성<div style="color:black;">직위 : 사원</div><div>직책 : 팀원</div>', '고객관리부', '연락처 : 062-***-****'],
+          ['김연이<div style="color:black;">직위 : 사원</div><div>직책 : 팀원</div>', '고객관리부', '연락처 : 062-***-****'],
+      
+          [{'v':'경영지원부', 'f':'경영지원부'},
+           '대표이사', '연락처 : 062-***-****'],
+          ['김용남<div style="color:black;">직위 : 부장</div><div>직책 : 팀장</div>', '경영지원부', '연락처 : 062-***-****'],
+          ['황나윤<div style="color:black;">직위 : 사원</div><div>직책 : 팀원</div>', '경영지원부', '연락처 : 062-***-****'],
+          ['황나윤<div style="color:black;">직위 : 사원</div><div>직책 : 팀원</div>', '경영지원부', '연락처 : 062-***-****'],
+        ]);
+
+        // Create the chart.
+        var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+        // Draw the chart, setting the allowHtml option to true for the tooltips.
+        chart.draw(data, {'allowHtml':true});
+      }
+   </script>
 </head>
 
 <body>
@@ -183,8 +225,8 @@
 											<tbody>
 												<tr>
 													<td>
-														<div class="d-flex">
-															
+														<div class="chart-box">
+    														<div id="chart_div"></div>
 														</div>
 													</td>
 												</tr>
