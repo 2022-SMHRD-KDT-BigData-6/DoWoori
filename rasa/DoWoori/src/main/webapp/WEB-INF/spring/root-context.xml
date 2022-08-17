@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 스키마 설정값 (xsd : 스키마 확장자)이 있어야 태그 사용 가능 -->
+<!-- 해당하는 xml에 어떤 태그들을 사용할 수 있는지 정의해놓은 스키마 파일들을 로드하는 코드 -->
+<!-- mybatis:scan 태그를 사용하기 위해 넣어줌 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis="http://mybatis.org/schema/mybatis-spring" 
+	xsi:schemaLocation="
+	http://mybatis.org/schema/mybatis-spring
+	http://mybatis.org/schema/mybatis-spring.xsd
+	http://www.springframework.org/schema/beans 
+	https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+    <!-- 추가함 
+    xmlns:mybatis="http://mybatis.org/schema/mybatis-spring
+    http://mybatis.org/schema/mybatis-spring
+	http://mybatis.org/schema/mybatis-spring.xsd
+    -->
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- JDBC(=Connection) 정의 -->
+	<!-- DBCP / HikariCP 설정 잡아주기 -->
+	<!-- beans 안에 객체(bean)를 생성한 다음에 모든 파일이 공유할 수 있도록 함 -->
+	
+	<!-- 1. 객체 생성 / DB 클래스 정의 -->
+	<!-- id : 변수명을 지정하는 어트리뷰트 -->
+	<!-- class : 어떤 클래스를 생성할건지 경로까지 잡아주기-->
+	<bean class="com.zaxxer.hikari.HikariConfig" id="hikariConfig">
+	    <!-- setter 메소드 사용 (필드 채워야 함) -->
+	    
+	    <!-- property : setter 채우는 방식 -->
+	    <property name="driverClassName" value="com.mysql.jdbc.Driver"/> <!-- 드라이버 클래스 이름 -->
+	    <property name="jdbcUrl" value="jdbc:mysql://project-db-stu.ddns.net:3307/help"/><!-- url 필드 이름 -->
+	    <property name="username" value="help"/> <!-- user 이름 -->
+	    <property name="password" value="help"/> <!-- 패스워드 -->
+	</bean>
+	
+	
+	<!-- 2. DBCP 만들어주는 클래스 생성 -->
+	<!-- SQL을 실행하지는 않고, DB와 연결해둔 상태 -->
+	<bean class="com.zaxxer.hikari.HikariDataSource" id="hikariDataSource"
+	    destroy-method="close">
+	     <!-- constructor : 생성자 사용하는 태그 -->
+	     <!-- ref : 참조할 때 씀, 의존성 주입 참조하려는 bean class id값(변수명) 넣기 -->
+	   <constructor-arg ref="hikariConfig"/>
+	</bean>
+	
+	
+	<!-- DI : Dependency Injection(의존성 주입) 
+	     -> 클래스 간 결합도 낮아짐 : 하나의 클래스 변경해도 다른 클래스가 영향을 받지 않음(쉬운 유지보수)
+	      1) setter 메소드를 사용
+	      2) constructor를 사용
+	-->
+	
+	
+	<!-- 3. SqlSessionFactory : connection을 가져다가 CRUD 작업을 수행하게 하는 클래스 -->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean">
+	    <property name="dataSource" ref="hikariDataSource"/>
+	</bean>
+	
+	<!-- mapper 파일 연결에 대한 설정값을 추가해야함  -->
+	<!-- mapper 파일이 있는 패키지를 통째로 스캔할 수 있게 코드로 설정 -->
+	<mybatis:scan base-package="kr.smhrd.mapper"/>
+	
+</beans><!-- bean : 객체 하나 -->
+	
+	
+
+
