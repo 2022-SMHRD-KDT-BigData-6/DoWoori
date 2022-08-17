@@ -1,6 +1,10 @@
 package kr.smhrd.web;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +21,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
+import com.fasterxml.jackson.core.Base64Variant;
+import com.fasterxml.jackson.core.JsonLocation;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonStreamContext;
+import com.fasterxml.jackson.core.JsonToken;
+import com.fasterxml.jackson.core.ObjectCodec;
+import com.fasterxml.jackson.core.Version;
+import com.fasterxml.jackson.core.JsonParser.NumberType;
+import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor;
 
 import jdk.nashorn.internal.parser.JSONParser;
 import kr.smhrd.model.FormVO;
@@ -104,11 +116,14 @@ public class FormController {
 		return "redirect:/document.do";
 	}
 
-	@RequestMapping("/chatInsert.do")
+	@RequestMapping(value = "/chatInsert.do", produces = "text/json; charset=UTF-8")
 	public String chatInsert(@RequestBody String vo, HttpServletResponse response) {
-		System.out.println(vo);
+
 		
-		/* service.chatInsert(vo); */
+		String data = vo.replaceAll("\\\\", "");
+
+		System.out.println(data);
+		//String -> JSON 변환 자바(라이브러리) : JSON Array로 검색
 		return "redirect:/document.do";
 		
 	}
