@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,8 +34,9 @@ import com.fasterxml.jackson.core.ObjectCodec;
 import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.core.JsonParser.NumberType;
 import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor;
+import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonObjectFormatVisitor;
 
-import jdk.nashorn.internal.parser.JSONParser;
+
 import kr.smhrd.model.FormVO;
 import kr.smhrd.model.UserVO;
 import kr.smhrd.service.FormService;
@@ -116,13 +121,19 @@ public class FormController {
 		return "redirect:/document.do";
 	}
 
-	@RequestMapping(value = "/chatInsert.do", produces = "text/json; charset=UTF-8")
-	public String chatInsert(@RequestBody String vo, HttpServletResponse response) {
-
-		
-		String data = vo.replaceAll("\\\\", "");
-
+	@RequestMapping("/chatInsert.do")
+	public String chatInsert(@RequestBody String vo, HttpServletResponse response) throws ParseException {
+		response.setCharacterEncoding("UTF-8"); 
+	
+		JSONParser parser = new JSONParser();
+		String data = vo;
 		System.out.println(data);
+		JSONArray arr = (JSONArray) parser.parse(data);
+		
+		
+		 for (Object o:arr) { JSONObject jo = (JSONObject) o;
+		 System.out.println(jo.get("fields")); }
+		
 		//String -> JSON 변환 자바(라이브러리) : JSON Array로 검색
 		return "redirect:/document.do";
 		
