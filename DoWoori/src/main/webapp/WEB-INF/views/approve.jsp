@@ -22,8 +22,7 @@
  <div class="container-scroller">
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="${cpath}/basic.do"><img src="resources/images/logo.svg" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href="${cpath}/basic.do"><img src="resources/images/logo-mini.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="${cpath}/basic.do"><img src="resources/images/logob.png" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center d-none d-lg-flex" type="button" data-toggle="minimize">
             <span class="typcn typcn-th-menu"></span>
           </button>
@@ -37,43 +36,6 @@
                 <span class="count bg-success">2</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="resources/images/faces/face4.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content flex-grow">
-                    <h6 class="preview-subject ellipsis font-weight-normal">David Grey
-                    </h6>
-                    <p class="font-weight-light small-text mb-0">
-                      The meeting is cancelled
-                    </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="resources/images/faces/face2.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content flex-grow">
-                    <h6 class="preview-subject ellipsis font-weight-normal">Tim Cook
-                    </h6>
-                    <p class="font-weight-light small-text mb-0">
-                      New product launch
-                    </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="resources/images/faces/face3.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content flex-grow">
-                    <h6 class="preview-subject ellipsis font-weight-normal"> Johnson
-                    </h6>
-                    <p class="font-weight-light small-text mb-0">
-                      Upcoming board meeting
-                    </p>
-                  </div>
-                </a>
               </div>
             </li>
             <li class="nav-item nav-profile dropdown">
@@ -123,7 +85,7 @@
                 </div>
               </div>
             </div>
-            <p class="sidebar-menu-title">menu</p>
+            <p class="sidebar-menu-title">Menu</p>
           </li>
          <li class="nav-item">
             <a class="nav-link" href="${cpath}/basic.do">
@@ -311,7 +273,7 @@
 		                 flist += "&nbsp<button type='button' class = 'btn-danger btn btn-sm' onclick='compForm("+con.formNum+")'>✖  반려</button>"
 	                 }
 	              //닫기버튼
-	                 flist += "&nbsp<button type='button' class = 'btn-light btn btn-sm' onclick='docuContent("+con.formNum+")' style='float: right;'>닫기</button>"
+	                 flist += "&nbsp<button type='button' class = 'btn-light btn btn-sm close' onclick='docuContent("+con.formNum+")' style='float: right;'>닫기</button>"
 	              flist += "</td>"
 	           flist += "</tr>" 
 		        

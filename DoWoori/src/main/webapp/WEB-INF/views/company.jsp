@@ -30,9 +30,7 @@
 			<div
 				class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
 				<a class="navbar-brand brand-logo" href="${cpath}/basic.do"><img
-					src="resources/images/logo.svg" alt="logo" /></a> <a
-					class="navbar-brand brand-logo-mini" href="${cpath}/basic.do"><img
-					src="resources/images/logo-mini.svg" alt="logo" /></a>
+					src="resources/images/logob.png" alt="logo" /></a> 
 				<button
 					class="navbar-toggler navbar-toggler align-self-center d-none d-lg-flex"
 					type="button" data-toggle="minimize">
@@ -135,7 +133,7 @@
 								</div>
 							</div>
 						</div>
-						<p class="sidebar-menu-title">menu</p>
+						<p class="sidebar-menu-title">Menu</p>
 					</li>
 					<li class="nav-item"><a class="nav-link"
 						href="${cpath}/basic.do"> <i
@@ -174,8 +172,27 @@
 					</div>
 
 					<div class="row">
-						<div class="col-lg-6 grid-margin grid-margin-lg-0 stretch-card">
-							<div class="card"></div>
+						<div class="col-lg-12 grid-margin grid-margin-lg-0 stretch-card">
+							<div class="card">
+								<div class="card-body">
+									<div class="d-flex flex-wrap justify-content-between">
+										<h4 class="card-title mb-3">회사 조직도</h4>
+									</div>
+									<div class="table-responsive">
+										<table class="table">
+											<tbody>
+												<tr>
+													<td>
+														<div class="d-flex">
+															
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
 						</div>
 
 						<div class="col-lg-6 grid-margin grid-margin-lg-0 stretch-card">
