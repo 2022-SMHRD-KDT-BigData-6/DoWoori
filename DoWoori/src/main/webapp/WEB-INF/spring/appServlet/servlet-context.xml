@@ -25,6 +25,22 @@
 	    <!-- 경로 뒤에 붙일 수 있게 준비 -->
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
+		
+	</beans:bean>
+	
+	<beans:bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+			<beans:property name="messageConverters">
+				<beans:list>
+		 			<beans:bean class="org.springframework.http.converter.StringHttpMessageConverter">
+						<beans:property name="supportedMediaTypes">
+							<beans:list>
+								<beans:value>text/html;charset=UTF-8</beans:value>
+							</beans:list>
+						</beans:property>
+			 		</beans:bean>
+				</beans:list>
+			</beans:property>
+
 	</beans:bean>
 	
 	<!-- Controller(POJO)가 있는 패키지를 전부 스캔하라는 의미 -->

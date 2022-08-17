@@ -44,7 +44,7 @@
                 <span class="nav-profile-name">${uvo.name}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                <a class="dropdown-item" onclick="CheckSession()">
+                <a class="dropdown-item" onclick="CheckSession(); localStorage.clear()">
                 <i class="typcn typcn-power text-primary"></i>
                		 로그아웃
                 </a>
