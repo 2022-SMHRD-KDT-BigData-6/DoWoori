@@ -16,6 +16,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +28,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fasterxml.jackson.core.Base64Variant;
 import com.fasterxml.jackson.core.JsonLocation;
-import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonStreamContext;
 import com.fasterxml.jackson.core.JsonToken;
 import com.fasterxml.jackson.core.ObjectCodec;
@@ -121,19 +121,47 @@ public class FormController {
 		return "redirect:/document.do";
 	}
 
-	@RequestMapping("/chatInsert.do")
+	@RequestMapping(value = "/chatInsert.do", produces="application/json; charset=utf-8")
 	public String chatInsert(@RequestBody String vo, HttpServletResponse response) throws ParseException {
-		response.setCharacterEncoding("UTF-8"); 
-	
+		//인코딩 왜 앙대
+
 		JSONParser parser = new JSONParser();
-		String data = vo;
-		System.out.println(data);
-		JSONArray arr = (JSONArray) parser.parse(data);
+		
+		//슬래시 제거하는거
+		/* String data = vo.replaceAll("\\\\", ""); */
+		/* System.out.println(data); */
 		
 		
-		 for (Object o:arr) { JSONObject jo = (JSONObject) o;
-		 System.out.println(jo.get("fields")); }
 		
+		//Object
+		/*
+		 * JSONObject obj = (JSONObject) parser.parse(vo);
+		 * 
+		 * System.out.println(obj.get("fields"));
+		 */
+		
+		
+		//Array
+		/*
+		 * JSONArray arr = (JSONArray) parser.parse(vo);
+		 * 
+		 * for(Object o : arr) { JSONObject jo = (JSONObject) o;
+		 * System.out.println(jo.get("fields")); }
+		 */
+		System.out.println(vo);
+		Object obj = parser.parse(vo);
+		JSONObject jobj = (JSONObject) obj;
+		 
+		Object jo = jobj.get("fields");
+		 
+		JSONArray temp = (JSONArray) jo;
+		
+		for(int i=0; i<temp.size(); i++) {
+			JSONObject jsonObj = (JSONObject) temp.get(i);
+			
+		}
+		
+		System.out.println(jo);
 		//String -> JSON 변환 자바(라이브러리) : JSON Array로 검색
 		return "redirect:/document.do";
 		
