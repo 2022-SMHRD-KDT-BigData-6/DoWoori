@@ -163,8 +163,7 @@ public class FormController {
 		if(obj.get("utime") != null) {
 			fvo.setUtime((String)obj.get("utime"));
 		}
-		
-		
+
 		service.chatInsert(fvo);
 		
 		return "redirect:/document.do";
