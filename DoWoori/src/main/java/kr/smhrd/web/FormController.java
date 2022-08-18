@@ -7,6 +7,7 @@ import java.math.BigInteger;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +17,9 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.converter.json.GsonFactoryBean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,7 +30,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fasterxml.jackson.core.Base64Variant;
 import com.fasterxml.jackson.core.JsonLocation;
-import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonStreamContext;
 import com.fasterxml.jackson.core.JsonToken;
 import com.fasterxml.jackson.core.ObjectCodec;
@@ -35,7 +37,11 @@ import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.core.JsonParser.NumberType;
 import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor;
 import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonObjectFormatVisitor;
-
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonPrimitive;
 
 import kr.smhrd.model.FormVO;
 import kr.smhrd.model.UserVO;
@@ -121,20 +127,16 @@ public class FormController {
 		return "redirect:/document.do";
 	}
 
-	@RequestMapping("/chatInsert.do")
-	public String chatInsert(@RequestBody String vo, HttpServletResponse response) throws ParseException {
-		response.setCharacterEncoding("UTF-8"); 
 	
-		JSONParser parser = new JSONParser();
-		String data = vo;
-		System.out.println(data);
-		JSONArray arr = (JSONArray) parser.parse(data);
-		
-		
-		 for (Object o:arr) { JSONObject jo = (JSONObject) o;
-		 System.out.println(jo.get("fields")); }
-		
-		//String -> JSON 변환 자바(라이브러리) : JSON Array로 검색
+	@RequestMapping(value = "/chatInsert.do", produces="application/json; charset=UTF-8")
+	public String chatInsert(@RequestBody String vo, HttpServletResponse response) throws ParseException {
+
+		//JSON으로 파싱. 파싱할 때 / 형태 꼭 확인해야 함!! -> JSON 아니라고 인식해버림
+		JSONObject obj = (JSONObject) new JSONParser().parse(vo);
+		System.out.println(obj);
+		System.out.println(obj.get("reason"));
+	
+		service.chatInsert(vo);
 		return "redirect:/document.do";
 		
 	}

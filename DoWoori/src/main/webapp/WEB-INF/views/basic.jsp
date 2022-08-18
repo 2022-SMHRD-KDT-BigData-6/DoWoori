@@ -299,14 +299,14 @@
 
       // 팀장이 로그인 했을때와 아닐 때 로드하는 함수 구분
        $(document).ready(function(){
-         
+    	   
          if('${uvo.position}' === '팀장'){
              loadAdmin('${uvo.id}');
 /*              loadUser('${uvo.deptNum}'); */
          }else{
         	 loadContents('${uvo.id}');
          }
-
+         localStorage.clear()
      })
 
      
