@@ -1,0 +1,3 @@
+[submodule "DoWooRi_RASA"]
+	path = DoWooRi_RASA
+	url = https://github.com/gomshiki/DoWooRi_RASA.git

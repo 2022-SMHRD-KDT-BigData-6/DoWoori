@@ -77,8 +77,8 @@ public class FormService {
 		
 	}
 
-	public void chatInsert(String vo) {
-		mapper.chatInsert(vo);
+	public void chatInsert(FormVO fvo) {
+		mapper.chatInsert(fvo);
 		
 	}
 

@@ -17,6 +17,13 @@
   <link rel="stylesheet" href="resources/vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="resources/css/vertical-layout-light/style.css">
   <link rel="shortcut icon" href="resources/images/favicon.png" />
+  <!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
  <div class="container-scroller">
@@ -36,43 +43,6 @@
                 <span class="count bg-success">2</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="resources/images/faces/face4.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content flex-grow">
-                    <h6 class="preview-subject ellipsis font-weight-normal">David Grey
-                    </h6>
-                    <p class="font-weight-light small-text mb-0">
-                      The meeting is cancelled
-                    </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="resources/images/faces/face2.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content flex-grow">
-                    <h6 class="preview-subject ellipsis font-weight-normal">Tim Cook
-                    </h6>
-                    <p class="font-weight-light small-text mb-0">
-                      New product launch
-                    </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="resources/images/faces/face3.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content flex-grow">
-                    <h6 class="preview-subject ellipsis font-weight-normal"> Johnson
-                    </h6>
-                    <p class="font-weight-light small-text mb-0">
-                      Upcoming board meeting
-                    </p>
-                  </div>
-                </a>
               </div>
             </li>
             <li class="nav-item nav-profile dropdown">
@@ -81,7 +51,7 @@
                 <span class="nav-profile-name">${uvo.name}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                <a class="dropdown-item" onclick="CheckSession()">
+                <a class="dropdown-item" onclick="CheckSession(); localStorage.clear()">
                 <i class="typcn typcn-power text-primary"></i>
                		 로그아웃
                 </a>

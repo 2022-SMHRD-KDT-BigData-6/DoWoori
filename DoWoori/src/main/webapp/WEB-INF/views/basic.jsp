@@ -33,11 +33,18 @@
    <link rel="stylesheet" href="resources/css/vertical-layout-light/style.css">
    <link rel="shortcut icon" href="resources/images/favicon.png" />
 <meta charset="UTF-8">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
     <div class="container-scroller">
-      <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
           <a class="navbar-brand brand-logo" href="${cpath}/basic.do"><img src="resources/images/logob.png" alt="logo"/></a>
@@ -98,7 +105,7 @@
                 <span class="nav-profile-name">${uvo.name}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                <a class="dropdown-item" onclick="CheckSession()">
+                <a class="dropdown-item" onclick="CheckSession(); localStorage.clear()">
                 <i class="typcn typcn-power text-primary"></i>
                 로그아웃
                 </a>
@@ -175,7 +182,6 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper main">
-
             <div class="row">
               <div class="col-lg-12 d-flex grid-margin stretch-card">
              
@@ -301,14 +307,14 @@
 
       // 팀장이 로그인 했을때와 아닐 때 로드하는 함수 구분
        $(document).ready(function(){
-         
+    	   
          if('${uvo.position}' === '팀장'){
              loadAdmin('${uvo.id}');
 /*              loadUser('${uvo.deptNum}'); */
          }else{
         	 loadContents('${uvo.id}');
          }
-
+         localStorage.clear()
      })
 
      

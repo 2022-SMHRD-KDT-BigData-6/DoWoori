@@ -20,6 +20,13 @@
   <link rel="stylesheet" href="resources/css/vertical-layout-light/style.css">
   <link rel="shortcut icon" href="resources/images/favicon.png" />
 <meta charset="UTF-8">
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -87,7 +94,7 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
 
-							<a class="dropdown-item" onclick="CheckSession()"> <i
+							<a class="dropdown-item" onclick="CheckSession(); localStorage.clear()"> <i
 								class="typcn typcn-power text-primary" ></i> 로그아웃
 							</a>
               </div>
@@ -349,7 +356,7 @@
 			  		//수정, 닫기버튼
 			  		if(con.division === '신청'){
 			  		  flist += "&nbsp<button class = 'btn-success btn btn-sm update' onclick='javascript:formUpdate("+con.formNum+")'>🖍 수정</button>"
-				  	  flist += "&nbsp<button class = 'btn-warning btn btn-sm delete' onclick='formDelete("+con.formNum+");'>삭제</button>"
+				  	  flist += "&nbsp<button class = 'btn-warning btn btn-sm delete' onclick='formDelete("+con.formNum+");'>✂ 삭제</button>"
 			  		}
 			  		
 

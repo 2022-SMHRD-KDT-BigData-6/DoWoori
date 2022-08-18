@@ -25,12 +25,12 @@
 	    <!-- 경로 뒤에 붙일 수 있게 준비 -->
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
+		<beans:property name="contentType" value="application/json;charset=UTF-8" />
 	</beans:bean>
 	
 	<!-- Controller(POJO)가 있는 패키지를 전부 스캔하라는 의미 -->
 	<context:component-scan base-package="kr.smhrd.web" />
 	<context:component-scan base-package="kr.smhrd.service" />
-	
 	
 	
 </beans:beans>

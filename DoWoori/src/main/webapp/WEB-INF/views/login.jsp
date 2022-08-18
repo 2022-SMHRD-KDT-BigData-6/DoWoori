@@ -43,7 +43,7 @@
                   <input type="password" class="form-control form-control-lg" name="pw" placeholder="비밀번호">
                 </div>
                 <div class="mt-3">
-                  <button type="submit" id="login" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">로그인</button>
+                  <button type="submit" id="login"  class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">로그인</button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
                    <a href="${cpath}/join.do" class="text-primary join">회원가입</a>

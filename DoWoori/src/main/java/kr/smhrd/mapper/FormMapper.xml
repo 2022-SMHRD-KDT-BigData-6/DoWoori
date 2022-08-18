@@ -18,7 +18,9 @@
     
     <insert id="chatInsert" parameterType="kr.smhrd.model.FormVO">
         insert into formInfo(docuType, userId, startDate, endDate, utime, reason, adminId) 
-		values (#{docuType}, #{userId}, #{startDate}, #{endDate}, #{utime}, #{reason}, #{adminId})
+		select #{docuType}, #{userId}, #{startDate}, #{endDate}, #{utime}, #{reason}, id from userInfo 
+		where deptNum = (select deptNum from userInfo where id = #{userId})
+		and position='팀장'
     </insert>
     
 </mapper>
