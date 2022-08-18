@@ -35,26 +35,26 @@
         data.addColumn('string', 'ToolTip');
 
         // For each orgchart box, provide the name, manager, and tooltip to show.
-          data.addRows([
+           data.addRows([
           [{'v':'대표이사', 'f':'대표이사<div style="color:black;">ceo</div>'},
            '', '연락처 : 062-***-****'],
            
           [{'v':'인사관리부', 'f':'인사관리부'},
            '대표이사', '연락처 : 062-***-****'],
-          ['김진경<div style="color:black;">직위 : 부장</div><div>직책 : 팀장</div>', '인사관리부', '연락처 : 062-***-****'],
-          ['김채윤<div style="color:black;">직위 : 사원</div><div>직책 : 팀원</div>', '인사관리부', '연락처 : 062-***-****'],
+          ['김진경<div style="color:gray; font-size:13px">직위 : 부장</div><div style="color:gray; font-size:13px">직책 : 팀장</div>', '인사관리부', '연락처 : 062-***-****'],
+          ['김채윤<div style="color:gray; font-size:13px">직위 : 사원</div><div style="color:gray; font-size:13px">직책 : 팀원</div>', '김진경<div style="color:gray; font-size:13px">직위 : 부장</div><div style="color:gray; font-size:13px">직책 : 팀장</div>', '연락처 : 062-***-****'],
           
           [{'v':'고객관리부', 'f':'고객관리부'},
            '대표이사', '연락처 : 062-***-****'],
-          ['황은지<div style="color:black;">직위 : 과장</div><div>직책 : 팀장</div>', '고객관리부', '연락처 : 062-***-****'],
-          ['김준성<div style="color:black;">직위 : 사원</div><div>직책 : 팀원</div>', '고객관리부', '연락처 : 062-***-****'],
-          ['김연이<div style="color:black;">직위 : 사원</div><div>직책 : 팀원</div>', '고객관리부', '연락처 : 062-***-****'],
+          ['황은지<div style="color:gray; font-size:13px">직위 : 과장</div><div style="color:gray; font-size:13px">직책 : 팀장</div>', '고객관리부', '연락처 : 062-***-****'],
+          ['김준성<div style="color:gray; font-size:13px">직위 : 사원</div><div style="color:gray; font-size:13px">직책 : 팀원</div>', '황은지<div style="color:gray; font-size:13px">직위 : 과장</div><div style="color:gray; font-size:13px">직책 : 팀장</div>', '연락처 : 062-***-****'],
+          ['김연이<div style="color:gray; font-size:13px">직위 : 사원</div><div style="color:gray; font-size:13px">직책 : 팀원</div>', '황은지<div style="color:gray; font-size:13px">직위 : 과장</div><div style="color:gray; font-size:13px">직책 : 팀장</div>', '연락처 : 062-***-****'],
       
           [{'v':'경영지원부', 'f':'경영지원부'},
            '대표이사', '연락처 : 062-***-****'],
-          ['김용남<div style="color:black;">직위 : 부장</div><div>직책 : 팀장</div>', '경영지원부', '연락처 : 062-***-****'],
-          ['황나윤<div style="color:black;">직위 : 사원</div><div>직책 : 팀원</div>', '경영지원부', '연락처 : 062-***-****'],
-          ['황나윤<div style="color:black;">직위 : 사원</div><div>직책 : 팀원</div>', '경영지원부', '연락처 : 062-***-****'],
+          ['김용남<div style="color:gray; font-size:13px">직위 : 부장</div><div style="color:gray; font-size:13px">직책 : 팀장</div>', '경영지원부', '연락처 : 062-***-****'],
+          ['황나윤<div style="color:gray; font-size:13px">직위 : 사원</div><div style="color:gray; font-size:13px">직책 : 팀원</div>', '김용남<div style="color:gray; font-size:13px">직위 : 부장</div><div style="color:gray; font-size:13px">직책 : 팀장</div>', '연락처 : 062-***-****'],
+          ['류민호<div style="color:gray; font-size:13px">직위 : 사원</div><div style="color:gray; font-size:13px">직책 : 팀원</div>', '김용남<div style="color:gray; font-size:13px">직위 : 부장</div><div style="color:gray; font-size:13px">직책 : 팀장</div>', '연락처 : 062-***-****'],
         ]);
 
         // Create the chart.
@@ -66,87 +66,79 @@
 </head>
 
 <body>
-	<div class="container-scroller">
-		<!-- partial:resources/partials/_navbar.html -->
-		<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-			<div
-				class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-				<a class="navbar-brand brand-logo" href="${cpath}/basic.do"><img
-					src="resources/images/logob.png" alt="logo" /></a> 
-				<button
-					class="navbar-toggler navbar-toggler align-self-center d-none d-lg-flex"
-					type="button" data-toggle="minimize">
-					<span class="typcn typcn-th-menu"></span>
-				</button>
-			</div>
-			<div
-				class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-				<ul class="navbar-nav navbar-nav-right">
-					<li class="nav-item dropdown d-flex"><a
-						class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center"
-						id="messageDropdown" href="#" data-toggle="dropdown"> <i
-							class="typcn typcn-message-typing"></i> <span
-							class="count bg-success">2</span>
-					</a>
-						<div
-							class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
-							aria-labelledby="messageDropdown">
-							<p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
-							<a class="dropdown-item preview-item">
-								<div class="preview-thumbnail">
-									<img src="resources/images/faces/face4.jpg" alt="image"
-										class="profile-pic">
-								</div>
-								<div class="preview-item-content flex-grow">
-									<h6 class="preview-subject ellipsis font-weight-normal">David
-										Grey</h6>
-									<p class="font-weight-light small-text mb-0">The meeting is
-										cancelled</p>
-								</div>
-							</a> <a class="dropdown-item preview-item">
-								<div class="preview-thumbnail">
-									<img src="resources/images/faces/face2.jpg" alt="image"
-										class="profile-pic">
-								</div>
-								<div class="preview-item-content flex-grow">
-									<h6 class="preview-subject ellipsis font-weight-normal">Tim
-										Cook</h6>
-									<p class="font-weight-light small-text mb-0">New product
-										launch</p>
-								</div>
-							</a> <a class="dropdown-item preview-item">
-								<div class="preview-thumbnail">
-									<img src="resources/images/faces/face3.jpg" alt="image"
-										class="profile-pic">
-								</div>
-								<div class="preview-item-content flex-grow">
-									<h6 class="preview-subject ellipsis font-weight-normal">
-										Johnson</h6>
-									<p class="font-weight-light small-text mb-0">Upcoming board
-										meeting</p>
-								</div>
-							</a>
-						</div></li>
-					<li class="nav-item nav-profile dropdown"><a
-						class="nav-link dropdown-toggle  pl-0 pr-0" href="#"
-						data-toggle="dropdown" id="profileDropdown"> <i
-							class="typcn typcn-user-outline mr-0"></i> <span
-							class="nav-profile-name">${uvo.name}</span>
-					</a>
-						<div class="dropdown-menu dropdown-menu-right navbar-dropdown"
-							aria-labelledby="profileDropdown">
-							<a class="dropdown-item" onclick="CheckSession(); localStorage.clear()"> <i
-								class="typcn typcn-power text-primary"></i> 로그아웃
-							</a>
-						</div></li>
-				</ul>
-				<button
-					class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
-					type="button" data-toggle="offcanvas">
-					<span class="typcn typcn-th-menu"></span>
-				</button>
-			</div>
-		</nav>
+    <div class="container-scroller">
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+          <a class="navbar-brand brand-logo" href="${cpath}/basic.do"><img src="resources/images/logob.png" alt="logo"/></a>
+          <button class="navbar-toggler navbar-toggler align-self-center d-none d-lg-flex" type="button" data-toggle="minimize">
+            <span class="typcn typcn-th-menu"></span>
+          </button>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item dropdown d-flex">
+              <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
+                <i class="typcn typcn-message-typing"></i>
+                <span class="count bg-success">2</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+                <p class="mb-0 font-weight-normal float-left dropdown-header">메세지</p>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <img src="resources/images/faces/face4.jpg" alt="image" class="profile-pic">
+                  </div>
+                  <div class="preview-item-content flex-grow">
+                    <h6 class="preview-subject ellipsis font-weight-normal">David Grey
+                    </h6>
+                    <p class="font-weight-light small-text mb-0">
+                      The meeting is cancelled
+                    </p>
+                  </div>
+                </a>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <img src="resources/images/faces/face2.jpg" alt="image" class="profile-pic">
+                  </div>
+                  <div class="preview-item-content flex-grow">
+                    <h6 class="preview-subject ellipsis font-weight-normal">Tim Cook
+                    </h6>
+                    <p class="font-weight-light small-text mb-0">
+                      New product launch
+                    </p>
+                  </div>
+                </a>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <img src="resources/images/faces/face3.jpg" alt="image" class="profile-pic">
+                  </div>
+                  <div class="preview-item-content flex-grow">
+                    <h6 class="preview-subject ellipsis font-weight-normal"> Johnson
+                    </h6>
+                    <p class="font-weight-light small-text mb-0">
+                      Upcoming board meeting
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="nav-item nav-profile dropdown">
+              <a class="nav-link dropdown-toggle  pl-0 pr-0" href="#" data-toggle="dropdown" id="profileDropdown">
+                <i class="typcn typcn-user-outline mr-0"></i>
+                <span class="nav-profile-name">${uvo.name}</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                <a class="dropdown-item" onclick="CheckSession(); localStorage.clear()">
+                <i class="typcn typcn-power text-primary"></i>
+                로그아웃
+                </a>
+              </div>
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="typcn typcn-th-menu"></span>
+          </button>
+        </div>
+      </nav>
 		<!-- partial -->
 		<div class="container-fluid page-body-wrapper">
 			<!-- partial:resources/partials/_settings-panel.html -->
@@ -214,14 +206,13 @@
 					</div>
 
 					<div class="row">
-						<div class="col-lg-12 grid-margin grid-margin-lg-0 stretch-card">
+						<div class="col-lg-8 grid-margin grid-margin-lg-0 stretch-card">
 							<div class="card">
 								<div class="card-body">
 									<div class="d-flex flex-wrap justify-content-between">
 										<h4 class="card-title mb-3">회사 조직도</h4>
 									</div>
 									<div class="table-responsive">
-										<table class="table">
 											<tbody>
 												<tr>
 													<td>
@@ -231,13 +222,12 @@
 													</td>
 												</tr>
 											</tbody>
-										</table>
 									</div>
 								</div>
 							</div>
 						</div>
 
-						<div class="col-lg-6 grid-margin grid-margin-lg-0 stretch-card">
+						<div class="col-lg-4 grid-margin grid-margin-lg-0 stretch-card">
 							<div class="card">
 								<div class="card-body">
 									<div class="d-flex flex-wrap justify-content-between">
@@ -284,5 +274,10 @@
 			}
 		}
 	</script>
+	
+	<!-- 조직도 -->
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <div id="chart_div"></div>
+
 </body>
 </html>
