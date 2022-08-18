@@ -69,12 +69,6 @@
     
     
     
-    
-	  $(document).ready(function(){
-		  var id = '${uvo.id}';
-		  location.href='${cpath}/chatInsert.do?id='+id
-	  })
-
 
     
     

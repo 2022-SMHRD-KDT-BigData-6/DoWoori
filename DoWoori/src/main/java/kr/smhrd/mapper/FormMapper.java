@@ -43,7 +43,7 @@ public interface FormMapper {
 	
 	public void formInsert(FormVO vo);
 
-	public void chatInsert(String vo);
+	public void chatInsert(FormVO fvo);
 
 }
 

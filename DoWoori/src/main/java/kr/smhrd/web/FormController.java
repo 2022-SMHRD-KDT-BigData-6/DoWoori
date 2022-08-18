@@ -65,7 +65,9 @@ public class FormController {
 	public String basic() {
 		return "basic";
 	}
-	
+
+	UserVO vou = null;
+	String userId = "";
 	@RequestMapping("/login.do")
 	public void signin(UserVO vo, HttpSession session, HttpServletResponse response) {
 		UserVO uvo = service.login(vo);
@@ -78,15 +80,17 @@ public class FormController {
 	    	}
 		}else {
 			session.setAttribute("uvo", uvo);
+			vou = (UserVO) session.getAttribute("uvo");
+			userId = vou.getId();
 		}
 
 	}
 	
+	
 	@RequestMapping("/logout.do")
 	public String logout(HttpSession session) {
 		session.removeAttribute("id");
-		System.out.println(session.getAttribute("id"));
-
+		
 		return "redirect:/";
 	}
 	
@@ -129,14 +133,40 @@ public class FormController {
 
 	@RequestMapping(value = "/chatInsert.do", produces="application/json; charset=UTF-8")
 	public String chatInsert(@RequestBody String vo, HttpSession session, HttpServletResponse response) throws ParseException {
-		String id = (String) session.getAttribute("uvo");
-		System.out.println(id);
+
+		System.out.println(userId+"메롱");
+
 		//JSON으로 파싱. 파싱할 때 / 형태 꼭 확인해야 함!! -> JSON 아니라고 인식해버림
 		JSONObject obj = (JSONObject) new JSONParser().parse(vo);
-		System.out.println(obj);
-		System.out.println(obj.get("reason"));
-	
-		service.chatInsert(vo);
+		/*
+		 * System.out.println(obj); System.out.println((String)obj.get("reason"));
+		 */
+	    
+		
+		//insert할 VO 만들어주기
+		FormVO fvo = new FormVO(); 
+
+		fvo.setDocuType((String)obj.get("docuType"));
+		fvo.setUserId(userId);
+		fvo.setStartDate((String)obj.get("startDate"));
+		fvo.setReason((String)obj.get("reason"));
+		
+		
+		//종료일자 없을 때 ( 사직, 반차 )
+		if(obj.get("endDate") != null) {
+			fvo.setEndDate((String)obj.get("endDate"));
+		}else {
+			fvo.setEndDate((String)obj.get("startDate"));
+		}
+		
+		//반차 시간구분
+		if(obj.get("utime") != null) {
+			fvo.setUtime((String)obj.get("utime"));
+		}
+		
+		
+		service.chatInsert(fvo);
+		
 		return "redirect:/document.do";
 		
 	}

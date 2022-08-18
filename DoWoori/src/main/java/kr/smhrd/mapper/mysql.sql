@@ -103,8 +103,11 @@ delete from formInfo;
 
 
 
-
+select deptNum from userInfo where id = 'bbb';
 
 select * from formInfo;
-insert into formInfo(docuType, userId, startdate, enddate, reason, adminId) 
-select '연차', 'ccc', '2022-08-06', '2022-08-10', '개인사정ㅇㅇ', id from userInfo where position='팀장';
+
+insert into formInfo(docuType, userId, startDate, endDate, utime, reason, adminId) 
+select '반차', 'bbb', '2022-07-09', '2022-07-9', '오전', '병원', id from userInfo 
+where deptNum = (select deptNum from userInfo where id = 'bbb')
+and position='팀장'
