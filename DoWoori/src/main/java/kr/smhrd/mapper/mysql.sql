@@ -99,3 +99,12 @@ update formInfo set startDate='2022-09-02', endDate='2022-09-14', reason='이유
 select (docuType, startdate, enddate, division, indate) from formInfo;
 
 delete from formInfo;
+
+
+
+
+
+
+select * from formInfo;
+insert into formInfo(docuType, userId, startdate, enddate, reason, adminId) 
+select '연차', 'ccc', '2022-08-06', '2022-08-10', '개인사정ㅇㅇ', id from userInfo where position='팀장';

@@ -127,10 +127,10 @@ public class FormController {
 		return "redirect:/document.do";
 	}
 
-	
 	@RequestMapping(value = "/chatInsert.do", produces="application/json; charset=UTF-8")
-	public String chatInsert(@RequestBody String vo, HttpServletResponse response) throws ParseException {
-
+	public String chatInsert(@RequestBody String vo, HttpSession session, HttpServletResponse response) throws ParseException {
+		String id = (String) session.getAttribute("uvo");
+		System.out.println(id);
 		//JSON으로 파싱. 파싱할 때 / 형태 꼭 확인해야 함!! -> JSON 아니라고 인식해버림
 		JSONObject obj = (JSONObject) new JSONParser().parse(vo);
 		System.out.println(obj);
@@ -140,6 +140,7 @@ public class FormController {
 		return "redirect:/document.do";
 		
 	}
+
 	
 
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,6 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 <style>
@@ -16,9 +24,14 @@
 	.rw-conversation-container .rw-reply{background-color: #6188e2; border: 1px solid #6188e2; font-family: 'Noto Sans KR', sans-serif;}
 	.rw-markdown{font-family: 'Noto Sans KR', sans-serif;}
 </style>
+		              
+		              
 
+		               
 
-    <script>!(function () {
+  <script type="text/javascript">
+    
+    !(function () {
         let e = document.createElement("script"),
           t = document.head || document.getElementsByTagName("head")[0];
         (e.src =
@@ -53,6 +66,19 @@
           }),
           t.insertBefore(e, t.firstChild);
       })();
+    
+    
+    
+    
+	  $(document).ready(function(){
+		  var id = '${uvo.id}';
+		  location.href='${cpath}/chatInsert.do?id='+id
+	  })
+
+
+    
+    
+
       </script>
 </body>
 </html>
