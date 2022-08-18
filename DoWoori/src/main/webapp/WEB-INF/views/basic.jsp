@@ -45,7 +45,6 @@
 
 <body>
     <div class="container-scroller">
-      <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
           <a class="navbar-brand brand-logo" href="${cpath}/basic.do"><img src="resources/images/logob.png" alt="logo"/></a>
@@ -183,7 +182,6 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper main">
-
             <div class="row">
               <div class="col-lg-12 d-flex grid-margin stretch-card">
              

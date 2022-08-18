@@ -19214,6 +19214,9 @@ code {
 	background-color: #c58d3f;
 }
 
+.update:hover{
+	background-color: #a87633;
+}
 .delete{
 	background-color: #e5e5e5;
 }
@@ -25109,4 +25112,32 @@ body.avgrund-active {
     display: block;
 }
 
-/*# sourceMappingURL=../maps/vertical-layout-light/style.css.map */
+/*---------회사복지----------*/
+.d-flex{
+	line-height: 2rem;
+}
+
+
+/* --------조직도-----------*/
+#chart_div .google-visualization-orgchart-table {
+    width: 700px;
+    height: 500px;
+}
+
+.google-visualization-orgchart-table td {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+}
+
+.google-visualization-orgchart-linebottom{
+	border-bottom: 1px solid #808080;
+}
+
+.google-visualization-orgchart-lineleft{
+	border-left: 1px solid #808080;
+}
+
+.google-visualization-orgchart-lineright{
+	border-right: 1px solid #808080;
+	
+}

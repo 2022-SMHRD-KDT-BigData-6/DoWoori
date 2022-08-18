@@ -356,7 +356,7 @@
 			  		//수정, 닫기버튼
 			  		if(con.division === '신청'){
 			  		  flist += "&nbsp<button class = 'btn-success btn btn-sm update' onclick='javascript:formUpdate("+con.formNum+")'>🖍 수정</button>"
-				  	  flist += "&nbsp<button class = 'btn-warning btn btn-sm delete' onclick='formDelete("+con.formNum+");'>삭제</button>"
+				  	  flist += "&nbsp<button class = 'btn-warning btn btn-sm delete' onclick='formDelete("+con.formNum+");'>✂ 삭제</button>"
 			  		}
 			  		
 
