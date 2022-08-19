@@ -25139,5 +25139,74 @@ body.avgrund-active {
 
 .google-visualization-orgchart-lineright{
 	border-right: 1px solid #808080;
-	
+}
+
+/*----------챗봇------------*/
+.rw-launcher img{
+	width: 104%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.rw-conversation-container .rw-header.rw-with-subtitle .rw-avatar{
+	    top: 6px;
+}
+
+.rw-conversation-container .rw-header .rw-avatar{
+	all: initial;
+    height: 61px;
+    width: 61px;
+    position: absolute;
+    top: 12px;
+    left: 0px;
+}
+
+.rw-with-avatar{
+	font-family: font-family: 'Noto Sans KR', sans-serif;
+}
+
+.rw-message-date{
+	font-family: font-family: 'Noto Sans KR', sans-serif;
+}
+
+.rw-conversation-container .rw-message{
+	margin: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    font-family: 'Noto Sans KR',sans-serif;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.rw-conversation-container .rw-new-message{
+	font-size: 1em;
+    width: 100%;
+    border: 0;
+    background-color: #f4f7f9;
+    padding-left: 15px;
+    font-family: 'Noto Sans KR',sans-serif;
+    resize: none;
+}
+
+.rw-conversation-container .rw-title{
+	font-size: 20px;
+    margin: 0;
+    font-family: 'Noto Sans KR',sans-serif;
+    position: absolute;
+    left: 20px;
+    font-weight: 700;
+}
+
+.rw-markdown p{
+	color: #000000;
+	font-weight: 400;
+}
+
+.rw-conversation-container .rw-avatar{
+	width: 51px;
+    height: 51px;
+    border-radius: 100%;
+    position: relative;
+    bottom: 5px;
 }

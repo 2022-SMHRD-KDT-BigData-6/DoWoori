@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/css/vertical-layout-light/style.css">
     <title>Document</title>
     <!-- jQuery library -->
 <script
@@ -18,11 +19,14 @@
 </head>
 <body>
 <style>
-	.rw-conversation-container .rw-header{background-color: #6188e2; font-family: 'Noto Sans KR', sans-serif;}
-	.rw-conversation-container .rw-messages-container .rw-message .rw-client{background-color: #6188e2; font-family: 'Noto Sans KR', sans-serif;}
-	.rw-launcher{background-color: #6188e2; font-family: 'Noto Sans KR', sans-serif;}
-	.rw-conversation-container .rw-reply{background-color: #6188e2; border: 1px solid #6188e2; font-family: 'Noto Sans KR', sans-serif;}
-	.rw-markdown{font-family: 'Noto Sans KR', sans-serif;}
+	.rw-conversation-container .rw-header{background-color: #efd06c; font-family: 'Noto Sans KR', sans-serif;}
+	.rw-conversation-container .rw-messages-container .rw-message .rw-client{color:#ffffff; background-color: #efd06c; font-family: 'Noto Sans KR', sans-serif;}
+	.rw-launcher{background-color: #efd06c; font-family: 'Noto Sans KR', sans-serif;}
+	.rw-conversation-container .rw-reply{background-color: #efd06c; border: 1px solid #efd06c; font-family: 'Noto Sans KR', sans-serif;}
+	.rw-markdown{color:#000000; font-family: 'Noto Sans KR', sans-serif;}
+	.rw-title rw-with-avatar{font-family: 'Noto Sans KR', sans-serif;}
+	.rw-header rw-with-subtitle{font-family: 'Noto Sans KR', sans-serif;}
+	.rw-message rw-with-avatar{font-family: 'Noto Sans KR', sans-serif;}
 </style>
 		              
 		              
@@ -48,17 +52,12 @@
                 // add other props here
                 title: 'Dowoori Bot',
                 subtitle:'도우리가 도와드립니다.',
-                profileAvatar: "resources/images/wooribot.png",
-                openLauncherImage: "resources/images/wooribot.png",
+                profileAvatar: "resources/images/bot.png",
+                openLauncherImage: "resources/images/bot.png",
                 closeImage: "resources/images/down.png",
                 showMessageDate: true,
                 inputTextFieldHint: "이곳에 작성하세요.",
-                customMessageDelay:(message) => {
-                	let delay = message.length * 10;
-                	if(delay > 3 * 1000) delay = 3 * 1000;
-                	if(delay < 800) delay = 800;
-                	return delay;
-                }
+
                 
               },
               null
