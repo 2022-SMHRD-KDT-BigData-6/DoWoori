@@ -19,10 +19,10 @@
 </head>
 <body>
 <style>
-	.rw-conversation-container .rw-header{background-color: #efd06c; font-family: 'Noto Sans KR', sans-serif;}
-	.rw-conversation-container .rw-messages-container .rw-message .rw-client{color:#ffffff; background-color: #efd06c; font-family: 'Noto Sans KR', sans-serif;}
-	.rw-launcher{background-color: #efd06c; font-family: 'Noto Sans KR', sans-serif;}
-	.rw-conversation-container .rw-reply{background-color: #efd06c; border: 1px solid #efd06c; font-family: 'Noto Sans KR', sans-serif;}
+	.rw-conversation-container .rw-header{background-color: #5ece95; font-family: 'Noto Sans KR', sans-serif;}
+	.rw-conversation-container .rw-messages-container .rw-message .rw-client{color:#ffffff; background-color: #5ece95; font-family: 'Noto Sans KR', sans-serif;}
+	.rw-launcher{background-color: #5ece95; font-family: 'Noto Sans KR', sans-serif;}
+	.rw-conversation-container .rw-reply{background-color: #5ece95; border: 1px solid #5ece95; font-family: 'Noto Sans KR', sans-serif;}
 	.rw-markdown{color:#000000; font-family: 'Noto Sans KR', sans-serif;}
 	.rw-title rw-with-avatar{font-family: 'Noto Sans KR', sans-serif;}
 	.rw-header rw-with-subtitle{font-family: 'Noto Sans KR', sans-serif;}
@@ -50,8 +50,8 @@
                 customData: { language: "ko" },
                 socketUrl: "http://localhost:5005", //rasa core
                 // add other props here
-                title: 'Dowoori Bot',
-                subtitle:'도우리가 도와드립니다.',
+                title: 'Dowoori',
+                subtitle:'도우리가 도와드립니다!',
                 profileAvatar: "resources/images/bot.png",
                 openLauncherImage: "resources/images/bot.png",
                 closeImage: "resources/images/down.png",

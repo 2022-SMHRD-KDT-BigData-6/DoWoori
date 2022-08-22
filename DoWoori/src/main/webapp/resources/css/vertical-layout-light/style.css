@@ -10869,7 +10869,7 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #ffffff;
-  background-color: #3f7ec5;
+  background-color: #3e73af;
  
 }
 
@@ -10905,7 +10905,7 @@ fieldset:disabled a.btn {
 
 .btn-success {
   color: #fff;
-  background-color: #3f7ec5;
+  background-color: #3e73af;
   border-radius: 10px;
 }
 
@@ -17912,13 +17912,13 @@ button.bg-dark:focus,
 }
 
 .text-primary, .list-wrapper .completed .remove {
-  color: #3f7ec5 !important;
+  color: #3e73af !important;
   font-weight: 400;
 
 }
 
 .join{
-  color: #3f7ec5;
+  color: #3e73af;
   font-weight: 400;
   font-size: 0.93rem;
 	
@@ -25209,4 +25209,15 @@ body.avgrund-active {
     border-radius: 100%;
     position: relative;
     bottom: 5px;
+}
+
+.rw-conversation-container .rw-header.rw-with-subtitle .rw-avatar {
+	top: 6px;
+    width: 1px;
+
+}
+	
+.rw-conversation-container .rw-send .rw-send-icon-ready {
+    fill: #879f8c;
+    transition: fill .35s;
 }

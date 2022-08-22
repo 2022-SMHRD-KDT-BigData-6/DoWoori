@@ -37,14 +37,6 @@
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         
           <ul class="navbar-nav navbar-nav-right">
-            <li class="nav-item dropdown d-flex">
-              <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
-                <i class="typcn typcn-message-typing"></i>
-                <span class="count bg-success">2</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-              </div>
-            </li>
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle  pl-0 pr-0" href="#" data-toggle="dropdown" id="profileDropdown">
                 <i class="typcn typcn-user-outline mr-0"></i>
@@ -70,7 +62,7 @@
           <li class="nav-item">
             <div class="d-flex sidebar-profile">
               <div class="sidebar-profile-image">
-                <img src="resources/images/faces/face21.jpg" alt="image">
+                <img src="resources/images/faces/face.png" alt="image">
                 <span class="sidebar-status-indicator"></span>
               </div>
               <div class="sidebar-profile-name">

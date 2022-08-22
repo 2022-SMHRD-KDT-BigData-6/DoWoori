@@ -134,14 +134,14 @@ public class FormController {
 	@RequestMapping(value = "/chatInsert.do", produces="application/json; charset=UTF-8")
 	public String chatInsert(@RequestBody String vo, HttpSession session, HttpServletResponse response) throws ParseException {
 
-		System.out.println(userId+"메롱");
+		
 
 		//JSON으로 파싱. 파싱할 때 / 형태 꼭 확인해야 함!! -> JSON 아니라고 인식해버림
 		JSONObject obj = (JSONObject) new JSONParser().parse(vo);
 		/*
 		 * System.out.println(obj); System.out.println((String)obj.get("reason"));
 		 */
-	    
+		System.out.println(obj);
 		
 		//insert할 VO 만들어주기
 		FormVO fvo = new FormVO(); 
