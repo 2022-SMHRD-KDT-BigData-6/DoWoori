@@ -1,4 +1,6 @@
-# rasa 오픈소스를 활용한 대화형 업무 비서 챗봇 (팀명 : DoWoori)
+# Rasa 오픈소스를 활용한 대화형 업무 비서 챗봇 (팀명 : DoWoori)
+![도우리](https://user-images.githubusercontent.com/105576721/200106440-9783ebe0-4a59-4706-ace8-0121237e570c.JPG)
+
 <br>
 
 ## 서비스 소개
@@ -18,15 +20,8 @@
 * 상급자 승인(웹) 
 <br>
 
-## 기술 스택
-* RASA 오픈소스
-* Docker
-* Socket API
-* Restful API
-* Linux
-* Spring
-* JavaScript
-* HTML/CSS
+## 서비스 흐름
+![서비스흐름](https://user-images.githubusercontent.com/105576721/200106448-7f3cfa46-9555-44cc-a5a9-37baf9558570.JPG)
 <br>
 
 ## 유스케이스
@@ -54,3 +49,6 @@
 | 김준성  |챗봇 데이터 생성, 챗봇 intent 서류 작성, RASA 오픈소스 활용한 챗봇 개발 |   
 | 류민호  |챗봇 캘린더 입력값 받기 구현, 화면설계서 챗봇 제작 |
 | 황나윤  |챗봇 데이터 생성, 챗봇  form 서류 작성, RASA 오픈소스 활용한 챗봇 개발| 
+
+## 시연 영상
+[![Video Label](https://user-images.githubusercontent.com/105576721/200106364-16224c7c-15e5-45ba-9f37-81b20fe887f8.png)](https://youtu.be/EhTs93buX4c?t=9647)
