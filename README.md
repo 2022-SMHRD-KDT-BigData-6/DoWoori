@@ -1,4 +1,4 @@
-# Rasa 오픈소스를 활용한 대화형 업무 비서 챗봇 (팀명 : DoWoori)
+# 대화형 업무 비서 챗봇 (팀명 : DoWoori)
 ![도우리](https://user-images.githubusercontent.com/105576721/200106440-9783ebe0-4a59-4706-ace8-0121237e570c.JPG)
 
 <br>
